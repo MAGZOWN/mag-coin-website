@@ -1,3 +1,4 @@
+'use client';
 export default function Home() {
   return (
     <div style={{background:'#000',color:'#fff',minHeight:'100vh',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',textAlign:'center',padding:'20px',fontFamily:'Arial'}}>
