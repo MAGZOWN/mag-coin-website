@@ -4,7 +4,7 @@ export default function Home() {
       <h1 style={{fontSize:'3rem',color:'#FFD700',marginBottom:'10px'}}>MAG COIN</h1>
       <div style={{fontSize:'1.2rem',color:'#ccc',marginBottom:'30px'}}>Make America Great Again — On Base Chain</div>
       
-      <div style={{background:'#111',border:'2px solid #FFD700',padding:'15px',borderRadius:'10px',margin:'20px auto',max-width:'600px',wordBreak:'break-all'}}>
+      <div style={{background:'#111',border:'2px solid #FFD700',padding:'15px',borderRadius:'10px',margin:'20px auto',maxWidth:'600px',wordBreak:'break-all'}}>
         0xbbd95ed6eF00031b6E86dDc1f02E4dE793857Ac1
       </div>
       
