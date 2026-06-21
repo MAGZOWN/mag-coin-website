@@ -22,7 +22,7 @@ export default function Home() {
       
       <div style={{marginTop:'30px'}}>
         <a href="https://basescan.org/token/0xbbd95ed6eF00031b6E86dDc1f02E4dE793857Ac1" target="_blank" rel="noopener noreferrer" style={{color:'#FFD700',margin:'0 15px'}}>BaseScan</a>
-        <a href="https://twitter.com/MagCoinOnBase" target="_blank" rel="noopener noreferrer" style={{color:'#FFD700',margin:'0 15px'}}>Twitter</a>
+        <a href="https://x.com/MAGCOINBASE" target="_blank" rel="noopener noreferrer" style={{color:'#FFD700',margin:'0 15px'}}>Twitter</a>
         <a href="https://t.me/MagCoinBase" target="_blank" rel="noopener noreferrer" style={{color:'#FFD700',margin:'0 15px'}}>Telegram</a>
       </div>
     </div>
