@@ -9,12 +9,16 @@ export default function Home() {
         0xbbd95ed6eF00031b6E86dDc1f02E4dE793857Ac1
       </div>
       
-      <button
-        onClick={() => {navigator.clipboard.writeText('0xbbd95ed6eF00031b6E86dDc1f02E4dE793857Ac1'); alert('CA COPIED!')}}
-        style={{background:'#FFD700',color:'#000',border:'none',padding:'15px 30px',fontSize:'1.1rem',fontWeight:'bold',borderRadius:'8px',cursor:'pointer',margin:'10px'}}
-      >
-        COPY CA
-      </button>
+<button
+  onClick={() => {
+    const CA = '0xbbd95ed6eF00031b6E86dDc1f02E4dE793857Ac1';
+    navigator.clipboard.writeText(CA);
+    window.open(`https://basescan.org/token/${CA}`, '_blank');
+  }}
+  style={{background:'#FFD700',color:'#000',border:'none',padding:'15px 30px',fontSize:'1.1rem',fontWeight:'bold',borderRadius:'10px',cursor:'pointer'}}
+>
+  COPY CA
+</button>
       
       <div style={{marginTop:'30px'}}>
         <a href="https://basescan.org/token/0xbbd95ed6eF00031b6E86dDc1f02E4dE793857Ac1" target="_blank" rel="noopener noreferrer" style={{color:'#FFD700',margin:'0 15px'}}>BaseScan</a>
