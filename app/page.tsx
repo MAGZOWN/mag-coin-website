@@ -92,13 +92,15 @@ const styles = {
     maxWidth: "1100px",
     margin: "0 auto",
     textAlign: "center" as const,
-  },
-  logo: {
-    width: "170px",
-    height: "170px",
-    objectFit: "contain" as const,
-    marginBottom: "18px",
-  },
+ logo: {
+  width: "200px",
+  height: "200px",
+  objectFit: "contain" as const,
+  marginBottom: "28px",
+  display: "block",
+  marginLeft: "auto",
+  marginRight: "auto",
+},
   title: {
     fontSize: "56px",
     color: "#f5c542",
