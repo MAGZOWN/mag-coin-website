@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function Constitution() {
   return (
@@ -79,11 +80,13 @@ export default function Constitution() {
             </p>
           </div>
 
-          <p style={styles.footer}>
+          <p style={styles.footerNote}>
             Version 1.0 — Official Founding Constitution of MAG COIN
           </p>
         </section>
       </main>
+
+      <Footer />
     </>
   );
 }
@@ -133,7 +136,7 @@ const styles: Record<string, CSSProperties> = {
     marginBottom: "14px",
   },
 
-  footer: {
+  footerNote: {
     color: "#888",
     textAlign: "center",
     marginTop: "40px",
