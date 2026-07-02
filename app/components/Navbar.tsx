@@ -1,10 +1,11 @@
 export default function Navbar() {
   return (
     <nav style={styles.nav}>
-      <div style={styles.brand}>MAG Coin</div>
+      <div style={styles.brand}>MAG COIN</div>
 
       <div style={styles.links}>
         <span>Home</span>
+        <span>About</span>
         <span>Whitepaper</span>
         <span>Constitution</span>
         <span>Roadmap</span>
@@ -23,15 +24,20 @@ const styles = {
     borderBottom: "1px solid #222",
     background: "#050505",
     color: "#ffffff",
+    position: "sticky",
+    top: 0,
+    zIndex: 1000,
   },
   brand: {
     color: "#f5c542",
     fontWeight: "bold",
     fontSize: "22px",
+    letterSpacing: "1px",
   },
   links: {
     display: "flex",
     gap: "24px",
     fontSize: "14px",
+    cursor: "pointer",
   },
 };
