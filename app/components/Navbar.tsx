@@ -17,6 +17,7 @@ export default function Navbar() {
         <Link href="/roadmap" style={styles.link}>Roadmap</Link>
         <Link href="/transparency" style={styles.link}>Transparency</Link>
         <Link href="/audit" style={styles.link}>Audit</Link>
+        <Link href="/security" style={styles.link}>Security</Link>
         <Link href="/faq" style={styles.link}>FAQ</Link>
       </div>
     </nav>
@@ -46,7 +47,7 @@ const styles: Record<string, CSSProperties> = {
 
   links: {
     display: "flex",
-    gap: "22px",
+    gap: "20px",
     alignItems: "center",
     flexWrap: "wrap",
   },
