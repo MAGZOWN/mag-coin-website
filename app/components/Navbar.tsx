@@ -1,17 +1,18 @@
 import type { CSSProperties } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
     <nav style={styles.nav}>
-      <div style={styles.brand}>MAG COIN</div>
+      <Link href="/" style={styles.brand}>MAG COIN</Link>
 
       <div style={styles.links}>
-        <span>Home</span>
-        <span>About</span>
-        <span>Whitepaper</span>
-        <span>Constitution</span>
-        <span>Roadmap</span>
-        <span>Transparency</span>
+        <Link href="/" style={styles.link}>Home</Link>
+        <Link href="/about" style={styles.link}>About</Link>
+        <Link href="/whitepaper" style={styles.link}>Whitepaper</Link>
+        <Link href="/constitution" style={styles.link}>Constitution</Link>
+        <Link href="/roadmap" style={styles.link}>Roadmap</Link>
+        <Link href="/transparency" style={styles.link}>Transparency</Link>
       </div>
     </nav>
   );
@@ -35,11 +36,15 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: "bold",
     fontSize: "22px",
     letterSpacing: "1px",
+    textDecoration: "none",
   },
   links: {
     display: "flex",
     gap: "24px",
     fontSize: "14px",
-    cursor: "pointer",
+  },
+  link: {
+    color: "#ffffff",
+    textDecoration: "none",
   },
 };
