@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 export default function Navbar() {
   return (
     <nav style={styles.nav}>
@@ -15,7 +17,7 @@ export default function Navbar() {
   );
 }
 
-const styles = {
+const styles: Record<string, CSSProperties> = {
   nav: {
     display: "flex",
     justifyContent: "space-between",
