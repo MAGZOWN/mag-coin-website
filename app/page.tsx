@@ -10,8 +10,6 @@ export default function Home() {
         <section style={styles.hero}>
           <img src="/mag-logo.png" alt="MAG Coin Logo" style={styles.logo} />
 
-          <h1 style={styles.title}>MAG Coin</h1>
-
           <h2 style={styles.motto}>
             Built with Integrity. Trusted for Generations. Empowering Global Growth.
           </h2>
@@ -95,21 +93,18 @@ const styles: Record<string, CSSProperties> = {
     textAlign: "center",
   },
   logo: {
-    width: "200px",
-    height: "200px",
+    width: "220px",
+    height: "220px",
     objectFit: "contain",
-    marginBottom: "28px",
+    marginBottom: "40px",
     display: "block",
     marginLeft: "auto",
     marginRight: "auto",
   },
-  title: {
-    fontSize: "56px",
-    color: "#f5c542",
-    marginBottom: "14px",
-  },
   motto: {
-    fontSize: "28px",
+    fontSize: "30px",
+    fontWeight: "bold",
+    lineHeight: "1.5",
     marginBottom: "24px",
   },
   subtitle: {
