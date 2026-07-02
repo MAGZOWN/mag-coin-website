@@ -20,13 +20,15 @@ export default function Home() {
           </p>
 
           <div style={styles.buttons}>
-            <a href="#documentation" style={styles.button}>Read Whitepaper</a>
-            <a href="#audit" style={styles.button}>View Audit Report</a>
+            <a href="/whitepaper" style={styles.button}>Read Whitepaper</a>
+            <a href="#documentation" style={styles.button}>View Audit Report</a>
             <a
-              href="https://basescan.org/token/0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94"
+              href="https://basescan.org/address/0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94"
+              target="_blank"
+              rel="noopener noreferrer"
               style={styles.button}
             >
-              BaseScan
+              View on BaseScan
             </a>
           </div>
 
