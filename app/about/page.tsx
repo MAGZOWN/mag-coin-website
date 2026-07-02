@@ -8,7 +8,7 @@ export default function About() {
 
       <main style={styles.main}>
         <section style={styles.container}>
-          <h1 style={styles.title}>About MAG COIN</h1>
+          <h1 style={styles.title}>Our Story</h1>
 
           <p style={styles.lead}>
             MAG COIN is a long-term blockchain project built on the Base network,
@@ -16,7 +16,7 @@ export default function About() {
           </p>
 
           <div style={styles.card}>
-            <h2 style={styles.heading}>Our Story</h2>
+            <h2 style={styles.heading}>Why MAG COIN Exists</h2>
             <p>
               MAG COIN began with a simple intention: to build a project honestly,
               carefully, and transparently. Rather than depending on hype, the project
@@ -76,7 +76,7 @@ const styles: Record<string, CSSProperties> = {
   },
   title: {
     color: "#f5c542",
-    fontSize: "48px",
+    fontSize: "52px",
     marginBottom: "20px",
     textAlign: "center",
   },
