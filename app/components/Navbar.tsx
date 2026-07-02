@@ -4,15 +4,42 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <nav style={styles.nav}>
-      <Link href="/" style={styles.brand}>MAG COIN</Link>
+      <Link href="/" style={styles.brand}>
+        MAG COIN
+      </Link>
 
       <div style={styles.links}>
-        <Link href="/" style={styles.link}>Home</Link>
-        <Link href="/about" style={styles.link}>About</Link>
-        <Link href="/whitepaper" style={styles.link}>Whitepaper</Link>
-        <Link href="/constitution" style={styles.link}>Constitution</Link>
-        <Link href="/roadmap" style={styles.link}>Roadmap</Link>
-        <Link href="/transparency" style={styles.link}>Transparency</Link>
+        <Link href="/" style={styles.link}>
+          Home
+        </Link>
+
+        <Link href="/about" style={styles.link}>
+          About
+        </Link>
+
+        <Link href="/whitepaper" style={styles.link}>
+          Whitepaper
+        </Link>
+
+        <Link href="/constitution" style={styles.link}>
+          Constitution
+        </Link>
+
+        <Link href="/tokenomics" style={styles.link}>
+          Tokenomics
+        </Link>
+
+        <Link href="/roadmap" style={styles.link}>
+          Roadmap
+        </Link>
+
+        <Link href="/transparency" style={styles.link}>
+          Transparency
+        </Link>
+
+        <Link href="/audit" style={styles.link}>
+          Audit
+        </Link>
       </div>
     </nav>
   );
@@ -31,6 +58,7 @@ const styles: Record<string, CSSProperties> = {
     top: 0,
     zIndex: 1000,
   },
+
   brand: {
     color: "#f5c542",
     fontWeight: "bold",
@@ -38,13 +66,18 @@ const styles: Record<string, CSSProperties> = {
     letterSpacing: "1px",
     textDecoration: "none",
   },
+
   links: {
     display: "flex",
-    gap: "24px",
+    gap: "22px",
     fontSize: "14px",
+    alignItems: "center",
+    flexWrap: "wrap",
   },
+
   link: {
     color: "#ffffff",
     textDecoration: "none",
+    transition: "color 0.2s ease",
   },
 };
