@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -8,11 +9,7 @@ export default function Home() {
 
       <main style={styles.main}>
         <section style={styles.hero}>
-          <img
-            src="/mag-logo.png"
-            alt="MAG COIN Logo"
-            style={styles.logo}
-          />
+          <img src="/mag-logo.png" alt="MAG COIN Logo" style={styles.logo} />
 
           <h2 style={styles.motto}>
             Built with Integrity. Trusted for Generations. Empowering Global Growth.
@@ -44,22 +41,11 @@ export default function Home() {
 
           <div style={styles.snapshot}>
             <h3 style={styles.cardTitle}>Official Project Snapshot</h3>
-
-            <p>
-              <strong>Network:</strong> Base
-            </p>
-
-            <p>
-              <strong>Token Symbol:</strong> MAG
-            </p>
-
-            <p>
-              <strong>Total Supply:</strong> 1,000,000,000 MAG
-            </p>
-
+            <p><strong>Network:</strong> Base</p>
+            <p><strong>Token Symbol:</strong> MAG</p>
+            <p><strong>Total Supply:</strong> 1,000,000,000 MAG</p>
             <p style={styles.contract}>
-              <strong>Official Contract:</strong>
-              <br />
+              <strong>Official Contract:</strong><br />
               0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94
             </p>
           </div>
@@ -67,48 +53,31 @@ export default function Home() {
           <section style={styles.grid}>
             <div style={styles.card}>
               <h3 style={styles.cardTitle}>Integrity</h3>
-              <p>
-                We build with honesty, accountability, and long-term
-                responsibility.
-              </p>
+              <p>We build with honesty, accountability, and long-term responsibility.</p>
             </div>
 
             <div style={styles.card}>
               <h3 style={styles.cardTitle}>Transparency</h3>
-              <p>
-                Major project decisions will be documented and publicly
-                verifiable.
-              </p>
+              <p>Major project decisions will be documented and publicly verifiable.</p>
             </div>
 
             <div style={styles.card}>
               <h3 style={styles.cardTitle}>Stewardship</h3>
-              <p>
-                MAG Coin is designed with future generations and sustainable
-                growth in mind.
-              </p>
+              <p>MAG Coin is designed with future generations and sustainable growth in mind.</p>
             </div>
           </section>
 
           <section id="documentation" style={styles.docs}>
             <h2 style={styles.sectionTitle}>Documentation</h2>
-
             <p>
               Constitution, Whitepaper, Master Audit Report, Roadmap and
               Transparency Reports will be published here.
             </p>
           </section>
-
-          <footer style={styles.footer}>
-            <p>MAG Coin Foundation</p>
-
-            <p>
-              Every major claim on this website should be supported by public
-              documentation or verifiable blockchain data.
-            </p>
-          </footer>
         </section>
       </main>
+
+      <Footer />
     </>
   );
 }
@@ -122,13 +91,11 @@ const styles: Record<string, CSSProperties> = {
     fontFamily: "Arial, sans-serif",
     padding: "50px 24px",
   },
-
   hero: {
     maxWidth: "1100px",
     margin: "0 auto",
     textAlign: "center",
   },
-
   logo: {
     width: "220px",
     height: "220px",
@@ -136,14 +103,12 @@ const styles: Record<string, CSSProperties> = {
     display: "block",
     margin: "0 auto 40px",
   },
-
   motto: {
     fontSize: "30px",
     fontWeight: "bold",
     lineHeight: "1.5",
     marginBottom: "24px",
   },
-
   subtitle: {
     fontSize: "18px",
     color: "#d6d6d6",
@@ -151,7 +116,6 @@ const styles: Record<string, CSSProperties> = {
     maxWidth: "850px",
     margin: "0 auto 34px",
   },
-
   buttons: {
     display: "flex",
     justifyContent: "center",
@@ -159,7 +123,6 @@ const styles: Record<string, CSSProperties> = {
     flexWrap: "wrap",
     marginBottom: "48px",
   },
-
   button: {
     background: "#f5c542",
     color: "#000",
@@ -168,7 +131,6 @@ const styles: Record<string, CSSProperties> = {
     borderRadius: "999px",
     fontWeight: "bold",
   },
-
   snapshot: {
     maxWidth: "760px",
     margin: "0 auto",
@@ -178,18 +140,15 @@ const styles: Record<string, CSSProperties> = {
     padding: "30px",
     color: "#e5e5e5",
   },
-
   contract: {
     wordBreak: "break-all",
   },
-
   grid: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))",
     gap: "24px",
     marginTop: "55px",
   },
-
   card: {
     background: "rgba(17,17,17,0.92)",
     border: "1px solid #333",
@@ -197,25 +156,16 @@ const styles: Record<string, CSSProperties> = {
     padding: "28px",
     color: "#e5e5e5",
   },
-
   cardTitle: {
     color: "#f5c542",
     marginBottom: "14px",
   },
-
   docs: {
     marginTop: "65px",
     color: "#d6d6d6",
   },
-
   sectionTitle: {
     color: "#f5c542",
     marginBottom: "12px",
-  },
-
-  footer: {
-    marginTop: "70px",
-    color: "#999",
-    fontSize: "14px",
   },
 };
