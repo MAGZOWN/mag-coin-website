@@ -21,14 +21,8 @@ export default function Home() {
           </p>
 
           <div style={styles.buttons}>
-            <a href="/whitepaper" style={styles.button}>
-              Read Whitepaper
-            </a>
-
-            <a href="/audit" style={styles.button}>
-              View Audit Report
-            </a>
-
+            <a href="/whitepaper" style={styles.button}>Read Whitepaper</a>
+            <a href="/audit" style={styles.button}>View Audit Report</a>
             <a
               href="https://basescan.org/address/0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94"
               target="_blank"
@@ -84,12 +78,11 @@ export default function Home() {
 
 const styles: Record<string, CSSProperties> = {
   main: {
-    minHeight: "100vh",
     background:
       "radial-gradient(circle at top, #171717 0%, #050505 45%, #000000 100%)",
     color: "#ffffff",
     fontFamily: "Arial, sans-serif",
-    padding: "50px 24px",
+    padding: "35px 24px 30px",
   },
   hero: {
     maxWidth: "1100px",
@@ -97,31 +90,31 @@ const styles: Record<string, CSSProperties> = {
     textAlign: "center",
   },
   logo: {
-    width: "220px",
-    height: "220px",
+    width: "185px",
+    height: "185px",
     objectFit: "contain",
     display: "block",
-    margin: "0 auto 40px",
+    margin: "0 auto 28px",
   },
   motto: {
-    fontSize: "30px",
+    fontSize: "28px",
     fontWeight: "bold",
-    lineHeight: "1.5",
-    marginBottom: "24px",
+    lineHeight: "1.45",
+    marginBottom: "18px",
   },
   subtitle: {
-    fontSize: "18px",
+    fontSize: "17px",
     color: "#d6d6d6",
-    lineHeight: "1.7",
+    lineHeight: "1.6",
     maxWidth: "850px",
-    margin: "0 auto 34px",
+    margin: "0 auto 26px",
   },
   buttons: {
     display: "flex",
     justifyContent: "center",
     gap: "16px",
     flexWrap: "wrap",
-    marginBottom: "48px",
+    marginBottom: "34px",
   },
   button: {
     background: "#f5c542",
@@ -137,7 +130,7 @@ const styles: Record<string, CSSProperties> = {
     background: "rgba(17,17,17,0.92)",
     border: "1px solid #333",
     borderRadius: "18px",
-    padding: "30px",
+    padding: "24px",
     color: "#e5e5e5",
   },
   contract: {
@@ -147,25 +140,25 @@ const styles: Record<string, CSSProperties> = {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))",
     gap: "24px",
-    marginTop: "55px",
+    marginTop: "34px",
   },
   card: {
     background: "rgba(17,17,17,0.92)",
     border: "1px solid #333",
     borderRadius: "18px",
-    padding: "28px",
+    padding: "24px",
     color: "#e5e5e5",
   },
   cardTitle: {
     color: "#f5c542",
-    marginBottom: "14px",
+    marginBottom: "12px",
   },
   docs: {
-    marginTop: "65px",
+    marginTop: "36px",
     color: "#d6d6d6",
   },
   sectionTitle: {
     color: "#f5c542",
-    marginBottom: "12px",
+    marginBottom: "10px",
   },
 };
