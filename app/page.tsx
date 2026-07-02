@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Navbar from "./components/Navbar";
 
 export default function Home() {
@@ -80,7 +81,7 @@ export default function Home() {
   );
 }
 
-const styles = {
+const styles: Record<string, CSSProperties> = {
   main: {
     minHeight: "100vh",
     background: "radial-gradient(circle at top, #171717 0%, #050505 45%, #000 100%)",
@@ -91,16 +92,17 @@ const styles = {
   hero: {
     maxWidth: "1100px",
     margin: "0 auto",
-    textAlign: "center" as const,
- logo: {
-  width: "200px",
-  height: "200px",
-  objectFit: "contain" as const,
-  marginBottom: "28px",
-  display: "block",
-  marginLeft: "auto",
-  marginRight: "auto",
-},
+    textAlign: "center",
+  },
+  logo: {
+    width: "200px",
+    height: "200px",
+    objectFit: "contain",
+    marginBottom: "28px",
+    display: "block",
+    marginLeft: "auto",
+    marginRight: "auto",
+  },
   title: {
     fontSize: "56px",
     color: "#f5c542",
@@ -121,7 +123,7 @@ const styles = {
     display: "flex",
     gap: "14px",
     justifyContent: "center",
-    flexWrap: "wrap" as const,
+    flexWrap: "wrap",
     marginBottom: "46px",
   },
   button: {
@@ -159,7 +161,7 @@ const styles = {
     fontSize: "22px",
   },
   contract: {
-    wordBreak: "break-all" as const,
+    wordBreak: "break-all",
   },
   docs: {
     marginTop: "65px",
