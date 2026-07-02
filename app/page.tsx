@@ -1,76 +1,82 @@
+import Navbar from "./components/Navbar";
+
 export default function Home() {
   return (
-    <main style={styles.main}>
-      <section style={styles.hero}>
-        <img src="/mag-logo.png" alt="MAG Coin Logo" style={styles.logo} />
+    <>
+      <Navbar />
 
-        <h1 style={styles.title}>MAG Coin</h1>
+      <main style={styles.main}>
+        <section style={styles.hero}>
+          <img src="/mag-logo.png" alt="MAG Coin Logo" style={styles.logo} />
 
-        <h2 style={styles.motto}>
-          Built with Integrity. Trusted for Generations. Empowering Global Growth.
-        </h2>
+          <h1 style={styles.title}>MAG Coin</h1>
 
-        <p style={styles.subtitle}>
-          MAG Coin is a long-term blockchain project on Base, built with
-          transparency, responsible stewardship, and continuous improvement.
-        </p>
+          <h2 style={styles.motto}>
+            Built with Integrity. Trusted for Generations. Empowering Global Growth.
+          </h2>
 
-        <div style={styles.buttons}>
-          <a href="#documentation" style={styles.button}>Read Whitepaper</a>
-          <a href="#audit" style={styles.button}>View Audit Report</a>
-          <a
-            href="https://basescan.org/token/0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94"
-            style={styles.button}
-          >
-            BaseScan
-          </a>
-        </div>
-
-        <div style={styles.snapshot}>
-          <h3 style={styles.cardTitle}>Official Project Snapshot</h3>
-          <p><strong>Network:</strong> Base</p>
-          <p><strong>Token Symbol:</strong> MAG</p>
-          <p><strong>Total Supply:</strong> 1,000,000,000 MAG</p>
-          <p style={styles.contract}>
-            <strong>Official Contract:</strong><br />
-            0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94
+          <p style={styles.subtitle}>
+            MAG Coin is a long-term blockchain project on Base, built with
+            transparency, responsible stewardship, and continuous improvement.
           </p>
-        </div>
 
-        <section style={styles.grid}>
-          <div style={styles.card}>
-            <h3 style={styles.cardTitle}>Integrity</h3>
-            <p>We build with honesty, accountability, and long-term responsibility.</p>
+          <div style={styles.buttons}>
+            <a href="#documentation" style={styles.button}>Read Whitepaper</a>
+            <a href="#audit" style={styles.button}>View Audit Report</a>
+            <a
+              href="https://basescan.org/token/0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94"
+              style={styles.button}
+            >
+              BaseScan
+            </a>
           </div>
 
-          <div style={styles.card}>
-            <h3 style={styles.cardTitle}>Transparency</h3>
-            <p>Major project decisions will be documented and publicly verifiable.</p>
+          <div style={styles.snapshot}>
+            <h3 style={styles.cardTitle}>Official Project Snapshot</h3>
+            <p><strong>Network:</strong> Base</p>
+            <p><strong>Token Symbol:</strong> MAG</p>
+            <p><strong>Total Supply:</strong> 1,000,000,000 MAG</p>
+            <p style={styles.contract}>
+              <strong>Official Contract:</strong><br />
+              0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94
+            </p>
           </div>
 
-          <div style={styles.card}>
-            <h3 style={styles.cardTitle}>Stewardship</h3>
-            <p>MAG Coin is designed with future generations and sustainable growth in mind.</p>
-          </div>
+          <section style={styles.grid}>
+            <div style={styles.card}>
+              <h3 style={styles.cardTitle}>Integrity</h3>
+              <p>We build with honesty, accountability, and long-term responsibility.</p>
+            </div>
+
+            <div style={styles.card}>
+              <h3 style={styles.cardTitle}>Transparency</h3>
+              <p>Major project decisions will be documented and publicly verifiable.</p>
+            </div>
+
+            <div style={styles.card}>
+              <h3 style={styles.cardTitle}>Stewardship</h3>
+              <p>MAG Coin is designed with future generations and sustainable growth in mind.</p>
+            </div>
+          </section>
+
+          <section id="documentation" style={styles.docs}>
+            <h2 style={styles.sectionTitle}>Documentation</h2>
+            <p>
+              Constitution, Whitepaper, Master Audit Report, Roadmap and Transparency
+              Reports will be published here.
+            </p>
+          </section>
+
+          <footer style={styles.footer}>
+            <p>MAG Coin Foundation</p>
+            <p>
+              Every major claim on this website should be supported by public
+              documentation or verifiable blockchain data.
+            </p>
+          </footer>
         </section>
-
-        <section id="documentation" style={styles.docs}>
-          <h2 style={styles.sectionTitle}>Documentation</h2>
-          <p>
-            Constitution, Whitepaper, Master Audit Report, Roadmap and Transparency
-            Reports will be published here.
-          </p>
-        </section>
-
-        <footer style={styles.footer}>
-          <p>MAG Coin Foundation</p>
-          <p>
-            Every major claim on this website should be supported by public
-            documentation or verifiable blockchain data.
-          </p>
-        </footer>
-      </section>
-    </main>
+      </main>
+    </>
   );
 }
 
