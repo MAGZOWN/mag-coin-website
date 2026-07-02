@@ -9,37 +9,15 @@ export default function Navbar() {
       </Link>
 
       <div style={styles.links}>
-        <Link href="/" style={styles.link}>
-          Home
-        </Link>
-
-        <Link href="/about" style={styles.link}>
-          About
-        </Link>
-
-        <Link href="/whitepaper" style={styles.link}>
-          Whitepaper
-        </Link>
-
-        <Link href="/constitution" style={styles.link}>
-          Constitution
-        </Link>
-
-        <Link href="/tokenomics" style={styles.link}>
-          Tokenomics
-        </Link>
-
-        <Link href="/roadmap" style={styles.link}>
-          Roadmap
-        </Link>
-
-        <Link href="/transparency" style={styles.link}>
-          Transparency
-        </Link>
-
-        <Link href="/audit" style={styles.link}>
-          Audit
-        </Link>
+        <Link href="/" style={styles.link}>Home</Link>
+        <Link href="/about" style={styles.link}>About</Link>
+        <Link href="/whitepaper" style={styles.link}>Whitepaper</Link>
+        <Link href="/constitution" style={styles.link}>Constitution</Link>
+        <Link href="/tokenomics" style={styles.link}>Tokenomics</Link>
+        <Link href="/roadmap" style={styles.link}>Roadmap</Link>
+        <Link href="/transparency" style={styles.link}>Transparency</Link>
+        <Link href="/audit" style={styles.link}>Audit</Link>
+        <Link href="/faq" style={styles.link}>FAQ</Link>
       </div>
     </nav>
   );
@@ -53,7 +31,6 @@ const styles: Record<string, CSSProperties> = {
     padding: "20px 40px",
     borderBottom: "1px solid #222",
     background: "#050505",
-    color: "#ffffff",
     position: "sticky",
     top: 0,
     zIndex: 1000,
@@ -70,7 +47,6 @@ const styles: Record<string, CSSProperties> = {
   links: {
     display: "flex",
     gap: "22px",
-    fontSize: "14px",
     alignItems: "center",
     flexWrap: "wrap",
   },
@@ -78,6 +54,7 @@ const styles: Record<string, CSSProperties> = {
   link: {
     color: "#ffffff",
     textDecoration: "none",
-    transition: "color 0.2s ease",
+    fontSize: "15px",
+    transition: "0.25s",
   },
 };
