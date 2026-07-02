@@ -5,12 +5,7 @@ export default function Footer() {
   return (
     <footer style={styles.footer}>
       <div style={styles.inner}>
-        <div>
-          <h3 style={styles.brand}>MAG COIN</h3>
-          <p style={styles.text}>
-            Built with Integrity. Trusted for Generations. Empowering Global Growth.
-          </p>
-        </div>
+        <h3 style={styles.brand}>MAG COIN</h3>
 
         <div style={styles.links}>
           <Link href="/about" style={styles.link}>About</Link>
@@ -21,16 +16,12 @@ export default function Footer() {
           <Link href="/audit" style={styles.link}>Audit</Link>
         </div>
 
-        <div style={styles.contractBox}>
-          <p style={styles.smallTitle}>Official Contract</p>
-          <p style={styles.contract}>
-            0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94
-          </p>
-        </div>
+        <p style={styles.contract}>
+          Contract: 0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94
+        </p>
 
         <p style={styles.disclaimer}>
           MAG COIN does not promise guaranteed returns, future prices, or investment outcomes.
-          All users should conduct independent research.
         </p>
 
         <p style={styles.copyright}>
@@ -46,8 +37,7 @@ const styles: Record<string, CSSProperties> = {
     background: "#050505",
     borderTop: "1px solid #222",
     color: "#ffffff",
-    padding: "45px 24px",
-    marginTop: "70px",
+    padding: "26px 24px",
   },
   inner: {
     maxWidth: "1100px",
@@ -56,52 +46,35 @@ const styles: Record<string, CSSProperties> = {
   },
   brand: {
     color: "#f5c542",
-    fontSize: "26px",
+    fontSize: "18px",
     letterSpacing: "1px",
-    marginBottom: "10px",
-  },
-  text: {
-    color: "#d6d6d6",
-    marginBottom: "25px",
+    marginBottom: "14px",
   },
   links: {
     display: "flex",
     justifyContent: "center",
-    gap: "20px",
+    gap: "18px",
     flexWrap: "wrap",
-    marginBottom: "28px",
+    marginBottom: "14px",
   },
   link: {
     color: "#ffffff",
     textDecoration: "none",
-    fontSize: "14px",
-  },
-  contractBox: {
-    background: "rgba(17,17,17,0.9)",
-    border: "1px solid #333",
-    borderRadius: "14px",
-    padding: "18px",
-    marginBottom: "24px",
-  },
-  smallTitle: {
-    color: "#f5c542",
-    marginBottom: "8px",
-    fontWeight: "bold",
+    fontSize: "13px",
   },
   contract: {
     color: "#d6d6d6",
+    fontSize: "12px",
     wordBreak: "break-all",
-    fontSize: "14px",
+    marginBottom: "10px",
   },
   disclaimer: {
     color: "#999",
-    fontSize: "13px",
-    lineHeight: "1.6",
-    maxWidth: "850px",
-    margin: "0 auto 18px",
+    fontSize: "12px",
+    marginBottom: "8px",
   },
   copyright: {
     color: "#777",
-    fontSize: "13px",
+    fontSize: "12px",
   },
 };
