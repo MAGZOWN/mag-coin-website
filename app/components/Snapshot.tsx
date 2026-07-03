@@ -55,25 +55,25 @@ export default function Snapshot() {
       <h3 style={styles.snapshotTitle}>Official Project Snapshot</h3>
 
       <div style={styles.snapshotGrid}>
-        <div style={styles.snapshotItem}>
+        <div style={styles.snapshotItem} className="cardHover">
           <GlobeIcon />
           <strong>Network</strong>
           <p>Base</p>
         </div>
 
-        <div style={styles.snapshotItem}>
+        <div style={styles.snapshotItem} className="cardHover">
           <CoinIcon />
           <strong>Token Symbol</strong>
           <p>MAG</p>
         </div>
 
-        <div style={styles.snapshotItem}>
+        <div style={styles.snapshotItem} className="cardHover">
           <SupplyIcon />
           <strong>Total Supply</strong>
           <p>1,000,000,000 MAG</p>
         </div>
 
-        <div style={styles.snapshotItem}>
+        <div style={styles.snapshotItem} className="cardHover">
           <DocumentIcon />
           <strong>Official Contract</strong>
           <p style={styles.contract}>0xbBd9041...F51A94</p>
