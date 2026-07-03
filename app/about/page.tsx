@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 
 import AboutHero from "../components/AboutHero";
 import AboutSections from "../components/AboutSections";
+import CorePrinciples from "../components/CorePrinciples";
 import FounderCommitment from "../components/FounderCommitment";
 
 export default function About() {
@@ -16,6 +17,7 @@ export default function About() {
         <section style={styles.container}>
           <AboutHero />
           <AboutSections />
+          <CorePrinciples />
           <FounderCommitment />
         </section>
       </main>
