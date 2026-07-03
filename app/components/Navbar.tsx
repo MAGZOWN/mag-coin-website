@@ -1,54 +1,95 @@
 import type { CSSProperties } from "react";
-import Link from "next/link";
+
+const links = [
+  ["Home", "/"],
+  ["About", "/about"],
+  ["Whitepaper", "/whitepaper"],
+  ["Constitution", "/constitution"],
+  ["Tokenomics", "/tokenomics"],
+  ["Roadmap", "/roadmap"],
+  ["Transparency", "/transparency"],
+  ["Audit", "/audit"],
+  ["Security", "/security"],
+  ["FAQ", "/faq"],
+];
 
 export default function Navbar() {
   return (
-    <nav style={styles.nav}>
-      <Link href="/" style={styles.brand}>
-        MAG COIN
-      </Link>
+    <header style={styles.header}>
+      <div style={styles.container}>
+        <a href="/" style={styles.brand}>
+          <img
+            src="/mag-logo.png"
+            alt="MAG Coin"
+            style={styles.logo}
+          />
 
-      <div style={styles.links}>
-        <Link href="/" style={styles.link}>Home</Link>
-        <Link href="/about" style={styles.link}>About</Link>
-        <Link href="/whitepaper" style={styles.link}>Whitepaper</Link>
-        <Link href="/constitution" style={styles.link}>Constitution</Link>
-        <Link href="/tokenomics" style={styles.link}>Tokenomics</Link>
-        <Link href="/roadmap" style={styles.link}>Roadmap</Link>
-        <Link href="/transparency" style={styles.link}>Transparency</Link>
-        <Link href="/audit" style={styles.link}>Audit</Link>
-        <Link href="/security" style={styles.link}>Security</Link>
-        <Link href="/faq" style={styles.link}>FAQ</Link>
+          <span style={styles.brandText}>
+            MAG COIN
+          </span>
+        </a>
+
+        <nav style={styles.nav}>
+          {links.map(([label, href]) => (
+            <a
+              key={label}
+              href={href}
+              className="navLink"
+              style={styles.link}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 }
 
 const styles: Record<string, CSSProperties> = {
-  nav: {
+  header: {
+    position: "sticky",
+    top: 0,
+    zIndex: 999,
+    background: "rgba(5,5,5,.92)",
+    backdropFilter: "blur(14px)",
+    borderBottom: "1px solid rgba(255,255,255,.08)",
+  },
+
+  container: {
+    maxWidth: "1400px",
+    margin: "0 auto",
+    padding: "14px 32px",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "20px 40px",
-    borderBottom: "1px solid #222",
-    background: "#050505",
-    position: "sticky",
-    top: 0,
-    zIndex: 1000,
   },
 
   brand: {
+    display: "flex",
+    alignItems: "center",
+    gap: "14px",
     color: "#f5c542",
-    fontWeight: "bold",
-    fontSize: "22px",
-    letterSpacing: "1px",
     textDecoration: "none",
+    fontWeight: 700,
+    letterSpacing: ".5px",
   },
 
-  links: {
+  logo: {
+    width: "48px",
+    height: "48px",
+    borderRadius: "50%",
+  },
+
+  brandText: {
+    fontSize: "18px",
+    fontWeight: 700,
+  },
+
+  nav: {
     display: "flex",
-    gap: "20px",
     alignItems: "center",
+    gap: "28px",
     flexWrap: "wrap",
   },
 
@@ -56,6 +97,6 @@ const styles: Record<string, CSSProperties> = {
     color: "#ffffff",
     textDecoration: "none",
     fontSize: "15px",
-    transition: "0.25s",
+    fontWeight: 500,
   },
 };
