@@ -42,23 +42,46 @@ export default function CoreValues() {
       <h2 style={styles.sectionTitle}>Core Values</h2>
 
       <div style={styles.grid}>
-        <div style={styles.card}>
-          <div style={styles.icon}><ShieldIcon /></div>
+
+        <div
+          style={styles.card}
+          className="cardHover"
+        >
+          <div style={styles.icon}>
+            <ShieldIcon />
+          </div>
           <h3 style={styles.cardTitle}>Integrity</h3>
-          <p>We build with honesty, accountability, and long-term responsibility.</p>
+          <p>
+            We build with honesty, accountability, and long-term responsibility.
+          </p>
         </div>
 
-        <div style={styles.card}>
-          <div style={styles.icon}><DocumentIcon /></div>
+        <div
+          style={styles.card}
+          className="cardHover"
+        >
+          <div style={styles.icon}>
+            <DocumentIcon />
+          </div>
           <h3 style={styles.cardTitle}>Transparency</h3>
-          <p>Major project decisions will be documented and publicly verifiable.</p>
+          <p>
+            Major project decisions will be documented and publicly verifiable.
+          </p>
         </div>
 
-        <div style={styles.card}>
-          <div style={styles.icon}><GrowthIcon /></div>
+        <div
+          style={styles.card}
+          className="cardHover"
+        >
+          <div style={styles.icon}>
+            <GrowthIcon />
+          </div>
           <h3 style={styles.cardTitle}>Stewardship</h3>
-          <p>MAG Coin is designed with future generations and sustainable growth in mind.</p>
+          <p>
+            MAG Coin is designed with future generations and sustainable growth in mind.
+          </p>
         </div>
+
       </div>
     </section>
   );
@@ -68,17 +91,20 @@ const styles: Record<string, CSSProperties> = {
   section: {
     marginTop: "42px",
   },
+
   sectionTitle: {
     color: "#f5c542",
     marginBottom: "10px",
     textAlign: "center",
   },
+
   grid: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))",
     gap: "24px",
     marginTop: "22px",
   },
+
   card: {
     background:
       "linear-gradient(145deg, rgba(18,18,18,0.96), rgba(7,7,7,0.96))",
@@ -89,6 +115,7 @@ const styles: Record<string, CSSProperties> = {
     minHeight: "190px",
     textAlign: "center",
   },
+
   icon: {
     width: "54px",
     height: "54px",
@@ -100,6 +127,7 @@ const styles: Record<string, CSSProperties> = {
     justifyContent: "center",
     margin: "0 auto 18px",
   },
+
   cardTitle: {
     color: "#f5c542",
     marginBottom: "12px",
