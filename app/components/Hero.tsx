@@ -4,11 +4,11 @@ export default function Hero() {
   return (
     <section style={styles.hero}>
       <img
-  src="/mag-logo.png"
-  alt="MAG COIN Logo"
-  style={styles.logo}
-  className="logoFloat fadeIn"
-/>
+        src="/mag-logo.png"
+        alt="MAG COIN Logo"
+        style={styles.logo}
+        className="logoFloat fadeIn cardHover"
+      />
 
       <h1 style={styles.title}>
         Built with Integrity.
@@ -23,11 +23,11 @@ export default function Hero() {
       </p>
 
       <div style={styles.buttons}>
-        <a href="/whitepaper" style={styles.primaryButton}>
+        <a href="/whitepaper" style={styles.primaryButton} className="primaryButton">
           Read Whitepaper
         </a>
 
-        <a href="/audit" style={styles.secondaryButton}>
+        <a href="/audit" style={styles.secondaryButton} className="secondaryButton">
           Audit Report
         </a>
 
@@ -36,6 +36,7 @@ export default function Hero() {
           target="_blank"
           rel="noopener noreferrer"
           style={styles.secondaryButton}
+          className="secondaryButton"
         >
           BaseScan ↗
         </a>
