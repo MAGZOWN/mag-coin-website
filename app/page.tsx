@@ -34,14 +34,35 @@ export default function Home() {
           </div>
 
           <div style={styles.snapshot}>
-            <h3 style={styles.cardTitle}>Official Project Snapshot</h3>
-            <p><strong>Network:</strong> Base</p>
-            <p><strong>Token Symbol:</strong> MAG</p>
-            <p><strong>Total Supply:</strong> 1,000,000,000 MAG</p>
-            <p style={styles.contract}>
-              <strong>Official Contract:</strong><br />
-              0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94
-            </p>
+            <h3 style={styles.snapshotTitle}>Official Project Snapshot</h3>
+
+            <div style={styles.snapshotGrid}>
+              <div style={styles.snapshotItem}>
+                <span style={styles.snapshotIcon}>🌐</span>
+                <strong>Network</strong>
+                <p>Base</p>
+              </div>
+
+              <div style={styles.snapshotItem}>
+                <span style={styles.snapshotIcon}>🪙</span>
+                <strong>Token Symbol</strong>
+                <p>MAG</p>
+              </div>
+
+              <div style={styles.snapshotItem}>
+                <span style={styles.snapshotIcon}>🟡</span>
+                <strong>Total Supply</strong>
+                <p>1,000,000,000 MAG</p>
+              </div>
+
+              <div style={styles.snapshotItem}>
+                <span style={styles.snapshotIcon}>📄</span>
+                <strong>Official Contract</strong>
+                <p style={styles.contract}>
+                  0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94
+                </p>
+              </div>
+            </div>
           </div>
 
           <section style={styles.grid}>
@@ -158,17 +179,45 @@ const styles: Record<string, CSSProperties> = {
   },
 
   snapshot: {
-    maxWidth: "760px",
+    maxWidth: "1000px",
     margin: "0 auto",
-    background: "rgba(17,17,17,0.92)",
-    border: "1px solid #333",
-    borderRadius: "18px",
-    padding: "24px",
+    background:
+      "linear-gradient(145deg, rgba(18,18,18,0.96), rgba(5,5,5,0.96))",
+    border: "1px solid #3a3a3a",
+    borderRadius: "22px",
+    padding: "34px",
     color: "#e5e5e5",
+  },
+
+  snapshotTitle: {
+    color: "#f5c542",
+    fontSize: "24px",
+    marginBottom: "30px",
+  },
+
+  snapshotGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))",
+    gap: "24px",
+  },
+
+  snapshotItem: {
+    background: "rgba(255,255,255,0.03)",
+    border: "1px solid #2a2a2a",
+    borderRadius: "16px",
+    padding: "18px",
+    lineHeight: "1.7",
+  },
+
+  snapshotIcon: {
+    display: "block",
+    fontSize: "30px",
+    marginBottom: "10px",
   },
 
   contract: {
     wordBreak: "break-all",
+    fontSize: "13px",
   },
 
   grid: {
