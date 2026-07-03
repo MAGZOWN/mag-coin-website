@@ -26,34 +26,33 @@ export default function Footer() {
 const styles: Record<string, CSSProperties> = {
   footer: {
     background: "#050505",
-    borderTop: "1px solid #222",
-    padding: "28px 24px",
-    marginTop: "60px",
+    padding: "18px 24px 24px",
   },
 
   inner: {
-    maxWidth: "900px",
+    maxWidth: "820px",
     margin: "0 auto",
     textAlign: "center",
   },
 
   disclaimer: {
-    color: "#bdbdbd",
-    fontSize: "14px",
-    lineHeight: "1.8",
-    marginBottom: "18px",
+    color: "#a9a9a9",
+    fontSize: "13px",
+    lineHeight: "1.7",
+    marginBottom: "14px",
   },
 
   values: {
     color: "#f5c542",
-    fontSize: "13px",
-    letterSpacing: "0.8px",
-    marginBottom: "16px",
+    fontSize: "12px",
+    letterSpacing: "1px",
+    marginBottom: "12px",
     fontWeight: "bold",
+    textTransform: "uppercase",
   },
 
   copyright: {
-    color: "#777",
-    fontSize: "13px",
+    color: "#666",
+    fontSize: "12px",
   },
 };
