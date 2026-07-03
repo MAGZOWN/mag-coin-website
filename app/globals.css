@@ -1,26 +1,109 @@
-@import "tailwindcss";
+/* ===========================
+   MAG COIN GLOBAL STYLES
+=========================== */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  margin: 0;
+  background: #050505;
+  color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===========================
+   Smooth Animations
+=========================== */
+
+* {
+  transition:
+    background-color .25s ease,
+    color .25s ease,
+    border-color .25s ease,
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+a {
+  transition: all .25s ease;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.primaryButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(245,197,66,.35);
+}
+
+.secondaryButton:hover {
+  background: rgba(245,197,66,.12);
+  transform: translateY(-3px);
+}
+
+/* ===========================
+   Cards
+=========================== */
+
+.cardHover:hover {
+  transform: translateY(-6px);
+  border-color: #f5c542;
+  box-shadow: 0 18px 40px rgba(245,197,66,.12);
+}
+
+/* ===========================
+   Navigation
+=========================== */
+
+.navLink:hover {
+  color: #f5c542 !important;
+}
+
+/* ===========================
+   Logo
+=========================== */
+
+.logoFloat {
+  animation: floatLogo 5s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ===========================
+   Fade In
+=========================== */
+
+.fadeIn {
+  animation: fadeInUp .8s ease both;
+}
+
+@keyframes fadeInUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 }
