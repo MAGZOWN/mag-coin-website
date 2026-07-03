@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 import WhitepaperHero from "../components/WhitepaperHero";
+import ExecutiveSummary from "../components/ExecutiveSummary";
 import WhitepaperSections from "../components/WhitepaperSections";
 import RiskDisclosure from "../components/RiskDisclosure";
 import WhitepaperConclusion from "../components/WhitepaperConclusion";
@@ -16,8 +17,13 @@ export default function Whitepaper() {
       <main style={styles.main}>
         <section style={styles.container}>
           <WhitepaperHero />
+
+          <ExecutiveSummary />
+
           <WhitepaperSections />
+
           <RiskDisclosure />
+
           <WhitepaperConclusion />
         </section>
       </main>
