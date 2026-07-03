@@ -1,5 +1,41 @@
 import type { CSSProperties } from "react";
 
+const iconStyle: CSSProperties = {
+  width: "30px",
+  height: "30px",
+  color: "#f5c542",
+};
+
+function ShieldIcon() {
+  return (
+    <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <path d="M12 3l7 3v5c0 5-3.2 8.5-7 10-3.8-1.5-7-5-7-10V6z" />
+      <path d="M9 12l2 2 4-5" />
+    </svg>
+  );
+}
+
+function DocumentIcon() {
+  return (
+    <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <path d="M7 3h7l5 5v13H7z" />
+      <path d="M14 3v5h5" />
+      <path d="M9 13h6" />
+      <path d="M9 17h6" />
+    </svg>
+  );
+}
+
+function GrowthIcon() {
+  return (
+    <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <path d="M12 21V10" />
+      <path d="M12 10c-4 0-7-2-8-6 4 0 7 2 8 6z" />
+      <path d="M12 10c4 0 7-2 8-6-4 0-7 2-8 6z" />
+    </svg>
+  );
+}
+
 export default function CoreValues() {
   return (
     <section style={styles.section}>
@@ -7,19 +43,19 @@ export default function CoreValues() {
 
       <div style={styles.grid}>
         <div style={styles.card}>
-          <div style={styles.icon}>🛡️</div>
+          <div style={styles.icon}><ShieldIcon /></div>
           <h3 style={styles.cardTitle}>Integrity</h3>
           <p>We build with honesty, accountability, and long-term responsibility.</p>
         </div>
 
         <div style={styles.card}>
-          <div style={styles.icon}>📘</div>
+          <div style={styles.icon}><DocumentIcon /></div>
           <h3 style={styles.cardTitle}>Transparency</h3>
           <p>Major project decisions will be documented and publicly verifiable.</p>
         </div>
 
         <div style={styles.card}>
-          <div style={styles.icon}>🌱</div>
+          <div style={styles.icon}><GrowthIcon /></div>
           <h3 style={styles.cardTitle}>Stewardship</h3>
           <p>MAG Coin is designed with future generations and sustainable growth in mind.</p>
         </div>
@@ -63,7 +99,6 @@ const styles: Record<string, CSSProperties> = {
     alignItems: "center",
     justifyContent: "center",
     margin: "0 auto 18px",
-    fontSize: "26px",
   },
   cardTitle: {
     color: "#f5c542",
