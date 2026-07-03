@@ -8,6 +8,7 @@ import Snapshot from "./components/Snapshot";
 import CoreValues from "./components/CoreValues";
 import ProjectStatus from "./components/ProjectStatus";
 import LatestProjectUpdates from "./components/LatestProjectUpdates";
+import DevelopmentTimeline from "./components/DevelopmentTimeline";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
           <CoreValues />
           <ProjectStatus />
           <LatestProjectUpdates />
+          <DevelopmentTimeline />
         </section>
       </main>
 
