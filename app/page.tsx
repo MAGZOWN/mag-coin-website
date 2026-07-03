@@ -7,6 +7,7 @@ import Hero from "./components/Hero";
 import Snapshot from "./components/Snapshot";
 import CoreValues from "./components/CoreValues";
 import ProjectStatus from "./components/ProjectStatus";
+import LatestProjectUpdates from "./components/LatestProjectUpdates";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
           <Snapshot />
           <CoreValues />
           <ProjectStatus />
+          <LatestProjectUpdates />
         </section>
       </main>
 
