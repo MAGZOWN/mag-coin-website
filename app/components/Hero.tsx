@@ -5,8 +5,6 @@ export default function Hero() {
     <section style={styles.hero}>
       <img src="/mag-logo.png" alt="MAG COIN Logo" style={styles.logo} />
 
-      <p style={styles.brand}>MAG COIN</p>
-
       <h1 style={styles.title}>
         Built with Integrity.
         <br />
@@ -53,15 +51,7 @@ const styles: Record<string, CSSProperties> = {
     height: "210px",
     objectFit: "contain",
     display: "block",
-    margin: "0 auto 18px",
-  },
-
-  brand: {
-    color: "#f5c542",
-    fontSize: "18px",
-    letterSpacing: "4px",
-    fontWeight: "bold",
-    marginBottom: "14px",
+    margin: "0 auto 28px",
   },
 
   title: {
@@ -96,7 +86,6 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: "bold",
     fontSize: "15px",
     border: "2px solid #f5c542",
-    transition: "0.25s",
   },
 
   secondaryButton: {
@@ -108,6 +97,5 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: "bold",
     fontSize: "15px",
     border: "2px solid #f5c542",
-    transition: "0.25s",
   },
 };
