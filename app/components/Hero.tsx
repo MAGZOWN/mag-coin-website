@@ -3,7 +3,12 @@ import type { CSSProperties } from "react";
 export default function Hero() {
   return (
     <section style={styles.hero}>
-      <img src="/mag-logo.png" alt="MAG COIN Logo" style={styles.logo} />
+      <img
+  src="/mag-logo.png"
+  alt="MAG COIN Logo"
+  style={styles.logo}
+  className="logoFloat fadeIn"
+/>
 
       <h1 style={styles.title}>
         Built with Integrity.
