@@ -1,5 +1,54 @@
 import type { CSSProperties } from "react";
 
+const iconStyle: CSSProperties = {
+  width: "34px",
+  height: "34px",
+  margin: "0 auto 12px",
+  color: "#f5c542",
+};
+
+function GlobeIcon() {
+  return (
+    <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18" />
+      <path d="M12 3c3 3.5 3 14 0 18" />
+      <path d="M12 3c-3 3.5-3 14 0 18" />
+    </svg>
+  );
+}
+
+function CoinIcon() {
+  return (
+    <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <circle cx="12" cy="12" r="8" />
+      <path d="M12 8v8" />
+      <path d="M9 12h6" />
+    </svg>
+  );
+}
+
+function SupplyIcon() {
+  return (
+    <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <ellipse cx="12" cy="6" rx="7" ry="3" />
+      <path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6" />
+      <path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" />
+    </svg>
+  );
+}
+
+function DocumentIcon() {
+  return (
+    <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <path d="M7 3h7l5 5v13H7z" />
+      <path d="M14 3v5h5" />
+      <path d="M9 13h6" />
+      <path d="M9 17h6" />
+    </svg>
+  );
+}
+
 export default function Snapshot() {
   return (
     <section style={styles.snapshot}>
@@ -7,25 +56,25 @@ export default function Snapshot() {
 
       <div style={styles.snapshotGrid}>
         <div style={styles.snapshotItem}>
-          <span style={styles.snapshotIcon}>🌐</span>
+          <GlobeIcon />
           <strong>Network</strong>
           <p>Base</p>
         </div>
 
         <div style={styles.snapshotItem}>
-          <span style={styles.snapshotIcon}>🪙</span>
+          <CoinIcon />
           <strong>Token Symbol</strong>
           <p>MAG</p>
         </div>
 
         <div style={styles.snapshotItem}>
-          <span style={styles.snapshotIcon}>🟡</span>
+          <SupplyIcon />
           <strong>Total Supply</strong>
           <p>1,000,000,000 MAG</p>
         </div>
 
         <div style={styles.snapshotItem}>
-          <span style={styles.snapshotIcon}>📄</span>
+          <DocumentIcon />
           <strong>Official Contract</strong>
           <p style={styles.contract}>0xbBd9041...F51A94</p>
         </div>
@@ -66,12 +115,6 @@ const styles: Record<string, CSSProperties> = {
     padding: "22px 18px",
     lineHeight: "1.7",
     minHeight: "130px",
-  },
-
-  snapshotIcon: {
-    display: "block",
-    fontSize: "32px",
-    marginBottom: "12px",
   },
 
   contract: {
