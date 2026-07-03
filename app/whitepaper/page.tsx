@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import WhitepaperHero from "../components/WhitepaperHero";
 import ExecutiveSummary from "../components/ExecutiveSummary";
 import ProjectPhilosophy from "../components/ProjectPhilosophy";
+import Governance from "../components/Governance";
 import WhitepaperSections from "../components/WhitepaperSections";
 import RiskDisclosure from "../components/RiskDisclosure";
 import WhitepaperConclusion from "../components/WhitepaperConclusion";
@@ -22,6 +23,8 @@ export default function Whitepaper() {
           <ExecutiveSummary />
 
           <ProjectPhilosophy />
+
+          <Governance />
 
           <WhitepaperSections />
 
