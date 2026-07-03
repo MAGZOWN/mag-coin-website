@@ -5,25 +5,36 @@ export default function Hero() {
     <section style={styles.hero}>
       <img src="/mag-logo.png" alt="MAG COIN Logo" style={styles.logo} />
 
-      <h2 style={styles.motto}>
-        Built with Integrity. Trusted for Generations. Empowering Global Growth.
-      </h2>
+      <p style={styles.brand}>MAG COIN</p>
+
+      <h1 style={styles.title}>
+        Built with Integrity.
+        <br />
+        Trusted for Generations.
+      </h1>
 
       <p style={styles.subtitle}>
-        MAG Coin is a long-term blockchain project on Base, built with
-        transparency, responsible stewardship, and continuous improvement.
+        A long-term blockchain project built on the Base Network with
+        transparency, responsible stewardship, continuous improvement,
+        and sustainable growth at its foundation.
       </p>
 
       <div style={styles.buttons}>
-        <a href="/whitepaper" style={styles.button}>Read Whitepaper</a>
-        <a href="/audit" style={styles.button}>View Audit Report</a>
+        <a href="/whitepaper" style={styles.primaryButton}>
+          Read Whitepaper
+        </a>
+
+        <a href="/audit" style={styles.secondaryButton}>
+          Audit Report
+        </a>
+
         <a
           href="https://basescan.org/address/0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94"
           target="_blank"
           rel="noopener noreferrer"
-          style={styles.button}
+          style={styles.secondaryButton}
         >
-          View on BaseScan
+          BaseScan ↗
         </a>
       </div>
     </section>
@@ -33,40 +44,70 @@ export default function Hero() {
 const styles: Record<string, CSSProperties> = {
   hero: {
     textAlign: "center",
+    paddingTop: "20px",
+    paddingBottom: "20px",
   },
+
   logo: {
-    width: "185px",
-    height: "185px",
+    width: "210px",
+    height: "210px",
     objectFit: "contain",
     display: "block",
-    margin: "0 auto 28px",
+    margin: "0 auto 18px",
   },
-  motto: {
-    fontSize: "28px",
+
+  brand: {
+    color: "#f5c542",
+    fontSize: "18px",
+    letterSpacing: "4px",
     fontWeight: "bold",
-    lineHeight: "1.45",
-    marginBottom: "18px",
+    marginBottom: "14px",
   },
+
+  title: {
+    fontSize: "42px",
+    lineHeight: "1.25",
+    fontWeight: "800",
+    marginBottom: "22px",
+    color: "#ffffff",
+  },
+
   subtitle: {
-    fontSize: "17px",
-    color: "#d6d6d6",
-    lineHeight: "1.6",
-    maxWidth: "850px",
-    margin: "0 auto 26px",
+    fontSize: "18px",
+    color: "#cfcfcf",
+    lineHeight: "1.8",
+    maxWidth: "760px",
+    margin: "0 auto 38px",
   },
+
   buttons: {
     display: "flex",
     justifyContent: "center",
-    gap: "16px",
+    gap: "18px",
     flexWrap: "wrap",
-    marginBottom: "34px",
   },
-  button: {
+
+  primaryButton: {
     background: "#f5c542",
     color: "#000",
     textDecoration: "none",
-    padding: "14px 24px",
+    padding: "15px 34px",
     borderRadius: "999px",
     fontWeight: "bold",
+    fontSize: "15px",
+    border: "2px solid #f5c542",
+    transition: "0.25s",
+  },
+
+  secondaryButton: {
+    background: "transparent",
+    color: "#f5c542",
+    textDecoration: "none",
+    padding: "15px 34px",
+    borderRadius: "999px",
+    fontWeight: "bold",
+    fontSize: "15px",
+    border: "2px solid #f5c542",
+    transition: "0.25s",
   },
 };
