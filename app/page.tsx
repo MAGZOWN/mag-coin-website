@@ -61,11 +61,37 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="documentation" style={styles.docs}>
-            <h2 style={styles.sectionTitle}>Documentation</h2>
-            <p>
-              Constitution, Whitepaper, Master Audit Report, Roadmap and
-              Transparency Reports will be published here.
+          <section style={styles.status}>
+            <h2 style={styles.sectionTitle}>Project Status</h2>
+
+            <div style={styles.statusGrid}>
+              <div>
+                <strong>Current Phase</strong>
+                <br />
+                Founder Edition – Phase 1
+              </div>
+
+              <div>
+                <strong>Website Version</strong>
+                <br />
+                v1.0.0
+              </div>
+
+              <div>
+                <strong>Last Updated</strong>
+                <br />
+                July 2026
+              </div>
+
+              <div>
+                <strong>Status</strong>
+                <br />
+                Active Development
+              </div>
+            </div>
+
+            <p style={styles.statusText}>
+              Building a transparent and sustainable blockchain project one step at a time.
             </p>
           </section>
         </section>
@@ -82,13 +108,15 @@ const styles: Record<string, CSSProperties> = {
       "radial-gradient(circle at top, #171717 0%, #050505 45%, #000000 100%)",
     color: "#ffffff",
     fontFamily: "Arial, sans-serif",
-    padding: "35px 24px 30px",
+    padding: "35px 24px 0",
   },
+
   hero: {
     maxWidth: "1100px",
     margin: "0 auto",
     textAlign: "center",
   },
+
   logo: {
     width: "185px",
     height: "185px",
@@ -96,12 +124,14 @@ const styles: Record<string, CSSProperties> = {
     display: "block",
     margin: "0 auto 28px",
   },
+
   motto: {
     fontSize: "28px",
     fontWeight: "bold",
     lineHeight: "1.45",
     marginBottom: "18px",
   },
+
   subtitle: {
     fontSize: "17px",
     color: "#d6d6d6",
@@ -109,6 +139,7 @@ const styles: Record<string, CSSProperties> = {
     maxWidth: "850px",
     margin: "0 auto 26px",
   },
+
   buttons: {
     display: "flex",
     justifyContent: "center",
@@ -116,6 +147,7 @@ const styles: Record<string, CSSProperties> = {
     flexWrap: "wrap",
     marginBottom: "34px",
   },
+
   button: {
     background: "#f5c542",
     color: "#000",
@@ -124,6 +156,7 @@ const styles: Record<string, CSSProperties> = {
     borderRadius: "999px",
     fontWeight: "bold",
   },
+
   snapshot: {
     maxWidth: "760px",
     margin: "0 auto",
@@ -133,15 +166,18 @@ const styles: Record<string, CSSProperties> = {
     padding: "24px",
     color: "#e5e5e5",
   },
+
   contract: {
     wordBreak: "break-all",
   },
+
   grid: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))",
     gap: "24px",
     marginTop: "34px",
   },
+
   card: {
     background: "rgba(17,17,17,0.92)",
     border: "1px solid #333",
@@ -149,14 +185,36 @@ const styles: Record<string, CSSProperties> = {
     padding: "24px",
     color: "#e5e5e5",
   },
+
   cardTitle: {
     color: "#f5c542",
     marginBottom: "12px",
   },
-  docs: {
-    marginTop: "36px",
-    color: "#d6d6d6",
+
+  status: {
+    marginTop: "42px",
+    marginBottom: "42px",
+    background: "rgba(17,17,17,0.92)",
+    border: "1px solid #333",
+    borderRadius: "18px",
+    padding: "28px",
   },
+
+  statusGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))",
+    gap: "24px",
+    color: "#e5e5e5",
+    lineHeight: "1.8",
+    marginTop: "20px",
+  },
+
+  statusText: {
+    color: "#bdbdbd",
+    marginTop: "24px",
+    fontSize: "16px",
+  },
+
   sectionTitle: {
     color: "#f5c542",
     marginBottom: "10px",
