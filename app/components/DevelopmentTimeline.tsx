@@ -40,7 +40,11 @@ export default function DevelopmentTimeline() {
 
       <div style={styles.timeline}>
         {phases.map((item, index) => (
-          <div key={index} style={styles.card}>
+          <div
+            key={index}
+            style={styles.card}
+            className="cardHover"
+          >
             <div style={styles.phase}>{item.phase}</div>
 
             <h3 style={styles.heading}>{item.title}</h3>
