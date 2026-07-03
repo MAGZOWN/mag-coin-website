@@ -53,7 +53,11 @@ export default function ProjectStatus() {
       <h2 style={styles.title}>Project Status</h2>
 
       <div style={styles.grid}>
-        <div style={styles.item}>
+
+        <div
+          style={styles.item}
+          className="cardHover"
+        >
           <div style={styles.icon}>
             <RocketIcon />
           </div>
@@ -61,7 +65,10 @@ export default function ProjectStatus() {
           <p style={styles.value}>Founder Edition – Phase 1</p>
         </div>
 
-        <div style={styles.item}>
+        <div
+          style={styles.item}
+          className="cardHover"
+        >
           <div style={styles.icon}>
             <MonitorIcon />
           </div>
@@ -69,7 +76,10 @@ export default function ProjectStatus() {
           <p style={styles.value}>v1.0.0</p>
         </div>
 
-        <div style={styles.item}>
+        <div
+          style={styles.item}
+          className="cardHover"
+        >
           <div style={styles.icon}>
             <CalendarIcon />
           </div>
@@ -77,13 +87,17 @@ export default function ProjectStatus() {
           <p style={styles.value}>July 2026</p>
         </div>
 
-        <div style={styles.item}>
+        <div
+          style={styles.item}
+          className="cardHover"
+        >
           <div style={styles.icon}>
             <StatusIcon />
           </div>
           <h3 style={styles.heading}>Project Status</h3>
           <span style={styles.badge}>ACTIVE DEVELOPMENT</span>
         </div>
+
       </div>
 
       <div style={styles.footer}>
