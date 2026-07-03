@@ -1,5 +1,52 @@
 import type { CSSProperties } from "react";
 
+const iconStyle: CSSProperties = {
+  width: "30px",
+  height: "30px",
+  color: "#f5c542",
+};
+
+function RocketIcon() {
+  return (
+    <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <path d="M14 4c3 1 6 4 7 7-2 4-6 8-10 10l-3-3c2-4 6-8 10-10z" />
+      <path d="M7 17l-3 3" />
+      <path d="M8 16l-4 1 1-4" />
+      <circle cx="15.5" cy="8.5" r="1.2" />
+    </svg>
+  );
+}
+
+function MonitorIcon() {
+  return (
+    <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <rect x="3" y="4" width="18" height="12" rx="2" />
+      <path d="M8 20h8" />
+      <path d="M12 16v4" />
+    </svg>
+  );
+}
+
+function CalendarIcon() {
+  return (
+    <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <rect x="3" y="5" width="18" height="16" rx="2" />
+      <path d="M3 10h18" />
+      <path d="M8 3v4" />
+      <path d="M16 3v4" />
+    </svg>
+  );
+}
+
+function StatusIcon() {
+  return (
+    <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M8 12l2.5 2.5L16 9" />
+    </svg>
+  );
+}
+
 export default function ProjectStatus() {
   return (
     <section style={styles.status}>
@@ -7,25 +54,33 @@ export default function ProjectStatus() {
 
       <div style={styles.grid}>
         <div style={styles.item}>
-          <div style={styles.icon}>🚀</div>
+          <div style={styles.icon}>
+            <RocketIcon />
+          </div>
           <h3 style={styles.heading}>Current Phase</h3>
           <p style={styles.value}>Founder Edition – Phase 1</p>
         </div>
 
         <div style={styles.item}>
-          <div style={styles.icon}>💻</div>
+          <div style={styles.icon}>
+            <MonitorIcon />
+          </div>
           <h3 style={styles.heading}>Website Version</h3>
           <p style={styles.value}>v1.0.0</p>
         </div>
 
         <div style={styles.item}>
-          <div style={styles.icon}>📅</div>
+          <div style={styles.icon}>
+            <CalendarIcon />
+          </div>
           <h3 style={styles.heading}>Last Updated</h3>
           <p style={styles.value}>July 2026</p>
         </div>
 
         <div style={styles.item}>
-          <div style={styles.icon}>🟢</div>
+          <div style={styles.icon}>
+            <StatusIcon />
+          </div>
           <h3 style={styles.heading}>Project Status</h3>
           <span style={styles.badge}>ACTIVE DEVELOPMENT</span>
         </div>
@@ -79,8 +134,15 @@ const styles: Record<string, CSSProperties> = {
   },
 
   icon: {
-    fontSize: "34px",
-    marginBottom: "14px",
+    width: "56px",
+    height: "56px",
+    borderRadius: "50%",
+    background: "rgba(245,197,66,0.12)",
+    border: "1px solid rgba(245,197,66,0.35)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    margin: "0 auto 18px",
   },
 
   heading: {
