@@ -65,20 +65,33 @@ export default function Home() {
             </div>
           </div>
 
-          <section style={styles.grid}>
-            <div style={styles.card}>
-              <h3 style={styles.cardTitle}>Integrity</h3>
-              <p>We build with honesty, accountability, and long-term responsibility.</p>
-            </div>
+          <section style={styles.valuesSection}>
+            <h2 style={styles.sectionTitle}>Core Values</h2>
 
-            <div style={styles.card}>
-              <h3 style={styles.cardTitle}>Transparency</h3>
-              <p>Major project decisions will be documented and publicly verifiable.</p>
-            </div>
+            <div style={styles.grid}>
+              <div style={styles.valueCard}>
+                <div style={styles.valueIcon}>🛡️</div>
+                <h3 style={styles.cardTitle}>Integrity</h3>
+                <p>
+                  We build with honesty, accountability, and long-term responsibility.
+                </p>
+              </div>
 
-            <div style={styles.card}>
-              <h3 style={styles.cardTitle}>Stewardship</h3>
-              <p>MAG Coin is designed with future generations and sustainable growth in mind.</p>
+              <div style={styles.valueCard}>
+                <div style={styles.valueIcon}>📘</div>
+                <h3 style={styles.cardTitle}>Transparency</h3>
+                <p>
+                  Major project decisions will be documented and publicly verifiable.
+                </p>
+              </div>
+
+              <div style={styles.valueCard}>
+                <div style={styles.valueIcon}>🌱</div>
+                <h3 style={styles.cardTitle}>Stewardship</h3>
+                <p>
+                  MAG Coin is designed with future generations and sustainable growth in mind.
+                </p>
+              </div>
             </div>
           </section>
 
@@ -220,19 +233,38 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "13px",
   },
 
+  valuesSection: {
+    marginTop: "42px",
+  },
+
   grid: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))",
     gap: "24px",
-    marginTop: "34px",
+    marginTop: "22px",
   },
 
-  card: {
-    background: "rgba(17,17,17,0.92)",
+  valueCard: {
+    background:
+      "linear-gradient(145deg, rgba(18,18,18,0.96), rgba(7,7,7,0.96))",
     border: "1px solid #333",
-    borderRadius: "18px",
-    padding: "24px",
+    borderRadius: "22px",
+    padding: "30px 24px",
     color: "#e5e5e5",
+    minHeight: "190px",
+  },
+
+  valueIcon: {
+    width: "54px",
+    height: "54px",
+    borderRadius: "50%",
+    background: "rgba(245,197,66,0.12)",
+    border: "1px solid rgba(245,197,66,0.35)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    margin: "0 auto 18px",
+    fontSize: "26px",
   },
 
   cardTitle: {
