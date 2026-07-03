@@ -4,8 +4,8 @@ const phases = [
   "Foundation and website structure",
   "Official documentation and transparency framework",
   "Security review and audit publication",
-  "Community channels and education",
-  "Long-term ecosystem development",
+  "Community growth and education",
+  "Long-term ecosystem expansion",
 ];
 
 export default function DevelopmentStrategy() {
@@ -14,20 +14,29 @@ export default function DevelopmentStrategy() {
       <p style={styles.label}>DEVELOPMENT STRATEGY</p>
 
       <h2 style={styles.title}>
-        MAG COIN will grow through careful, documented milestones.
+        Building steadily, documenting everything, improving continuously.
       </h2>
 
       <p style={styles.text}>
-        The development strategy of MAG COIN is based on steady progress rather
-        than rushed expansion. Each stage is intended to strengthen trust,
-        improve documentation, and support responsible long-term growth.
+        MAG COIN follows a structured development strategy rather than pursuing
+        rapid expansion. Every milestone is designed to strengthen trust,
+        improve transparency, and establish a sustainable blockchain ecosystem.
       </p>
 
-      <div style={styles.list}>
+      <div style={styles.timeline}>
         {phases.map((phase, index) => (
           <div key={index} style={styles.item}>
-            <span style={styles.number}>0{index + 1}</span>
-            <span>{phase}</span>
+            <div style={styles.number}>0{index + 1}</div>
+
+            <div>
+              <strong style={styles.phaseTitle}>
+                Phase {index + 1}
+              </strong>
+
+              <p style={styles.phaseText}>
+                {phase}
+              </p>
+            </div>
           </div>
         ))}
       </div>
@@ -44,7 +53,6 @@ const styles: Record<string, CSSProperties> = {
     borderRadius: "24px",
     padding: "44px",
     color: "#e5e5e5",
-    lineHeight: "1.9",
   },
 
   label: {
@@ -65,20 +73,47 @@ const styles: Record<string, CSSProperties> = {
   text: {
     color: "#d6d6d6",
     fontSize: "18px",
-    marginBottom: "28px",
+    lineHeight: "1.9",
+    marginBottom: "32px",
   },
 
-  list: {
+  timeline: {
     display: "flex",
     flexDirection: "column",
-    gap: "16px",
+    gap: "18px",
   },
 
   item: {
     display: "flex",
-    gap: "18px",
     alignItems: "center",
+    gap: "20px",
     background: "rgba(255,255,255,.03)",
     border: "1px solid #2a2a2a",
-    borderRadius: "16px",
-    padding:
+    borderRadius: "18px",
+    padding: "20px",
+  },
+
+  number: {
+    width: "50px",
+    height: "50px",
+    borderRadius: "50%",
+    background: "rgba(245,197,66,.12)",
+    border: "1px solid rgba(245,197,66,.35)",
+    color: "#f5c542",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontWeight: "bold",
+    flexShrink: 0,
+  },
+
+  phaseTitle: {
+    color: "#f5c542",
+  },
+
+  phaseText: {
+    color: "#d6d6d6",
+    marginTop: "6px",
+    marginBottom: 0,
+  },
+};
