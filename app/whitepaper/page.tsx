@@ -9,6 +9,7 @@ import ProjectPhilosophy from "../components/ProjectPhilosophy";
 import Governance from "../components/Governance";
 import TokenFoundation from "../components/TokenFoundation";
 import DevelopmentStrategy from "../components/DevelopmentStrategy";
+import TransparencyCommitment from "../components/TransparencyCommitment";
 import WhitepaperSections from "../components/WhitepaperSections";
 import RiskDisclosure from "../components/RiskDisclosure";
 import WhitepaperConclusion from "../components/WhitepaperConclusion";
@@ -31,6 +32,8 @@ export default function Whitepaper() {
           <TokenFoundation />
 
           <DevelopmentStrategy />
+
+          <TransparencyCommitment />
 
           <WhitepaperSections />
 
