@@ -27,21 +27,9 @@ export default function Snapshot() {
         <div style={styles.snapshotItem}>
           <span style={styles.snapshotIcon}>📄</span>
           <strong>Official Contract</strong>
-
-          <p style={styles.contract}>
-            0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94
-          </p>
+          <p style={styles.contract}>0xbBd9041...F51A94</p>
         </div>
       </div>
-
-      <a
-        href="https://basescan.org/address/0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={styles.button}
-      >
-        View on BaseScan ↗
-      </a>
     </section>
   );
 }
@@ -54,7 +42,7 @@ const styles: Record<string, CSSProperties> = {
       "linear-gradient(145deg, rgba(18,18,18,0.96), rgba(5,5,5,0.96))",
     border: "1px solid #3a3a3a",
     borderRadius: "22px",
-    padding: "34px",
+    padding: "38px",
     color: "#e5e5e5",
     textAlign: "center",
   },
@@ -62,42 +50,33 @@ const styles: Record<string, CSSProperties> = {
   snapshotTitle: {
     color: "#f5c542",
     fontSize: "24px",
-    marginBottom: "30px",
+    marginBottom: "32px",
   },
 
   snapshotGrid: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))",
-    gap: "24px",
-    marginBottom: "30px",
+    gridTemplateColumns: "repeat(auto-fit,minmax(190px,1fr))",
+    gap: "26px",
   },
 
   snapshotItem: {
-    background: "rgba(255,255,255,0.03)",
-    border: "1px solid #2a2a2a",
-    borderRadius: "16px",
-    padding: "18px",
+    background: "rgba(255,255,255,0.035)",
+    border: "1px solid #2f2f2f",
+    borderRadius: "18px",
+    padding: "22px 18px",
     lineHeight: "1.7",
+    minHeight: "130px",
   },
 
   snapshotIcon: {
     display: "block",
-    fontSize: "30px",
-    marginBottom: "10px",
+    fontSize: "32px",
+    marginBottom: "12px",
   },
 
   contract: {
     wordBreak: "break-all",
     fontSize: "13px",
-  },
-
-  button: {
-    display: "inline-block",
-    background: "#f5c542",
-    color: "#000",
-    textDecoration: "none",
-    padding: "14px 28px",
-    borderRadius: "999px",
-    fontWeight: "bold",
+    color: "#d6d6d6",
   },
 };
