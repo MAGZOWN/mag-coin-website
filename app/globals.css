@@ -11,59 +11,98 @@ body {
   background: #050505;
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 /* ===========================
-   Smooth Animations
+   Global Animation
 =========================== */
 
 * {
   transition:
-    background-color .25s ease,
-    color .25s ease,
-    border-color .25s ease,
-    transform .25s ease,
-    box-shadow .25s ease;
+    background-color .30s ease,
+    color .30s ease,
+    border-color .30s ease,
+    transform .30s ease,
+    box-shadow .30s ease,
+    opacity .30s ease;
 }
 
 /* ===========================
-   Buttons
+   Links
 =========================== */
 
 a {
-  transition: all .25s ease;
-}
-
-a:hover {
   text-decoration: none;
 }
 
+/* ===========================
+   Premium Buttons
+=========================== */
+
+.primaryButton {
+  transition: all .30s ease;
+}
+
 .primaryButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(245,197,66,.35);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow:
+    0 0 18px rgba(245,197,66,.45),
+    0 12px 28px rgba(245,197,66,.20);
+}
+
+.secondaryButton {
+  transition: all .30s ease;
 }
 
 .secondaryButton:hover {
-  background: rgba(245,197,66,.12);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  background: rgba(245,197,66,.10);
+  box-shadow: 0 0 18px rgba(245,197,66,.18);
 }
 
 /* ===========================
-   Cards
+   Premium Cards
 =========================== */
 
+.cardHover {
+  transition: all .30s ease;
+}
+
 .cardHover:hover {
-  transform: translateY(-6px);
-  border-color: #f5c542;
-  box-shadow: 0 18px 40px rgba(245,197,66,.12);
+  transform: translateY(-8px);
+  border-color: rgba(245,197,66,.55);
+  box-shadow:
+    0 0 20px rgba(245,197,66,.08),
+    0 20px 40px rgba(0,0,0,.45);
 }
 
 /* ===========================
    Navigation
 =========================== */
 
+.navLink {
+  position: relative;
+  transition: color .25s ease;
+}
+
 .navLink:hover {
   color: #f5c542 !important;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #f5c542;
+  transition: width .25s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
 }
 
 /* ===========================
@@ -72,6 +111,14 @@ a:hover {
 
 .logoFloat {
   animation: floatLogo 5s ease-in-out infinite;
+  transition: transform .30s ease, filter .30s ease;
+}
+
+.logoFloat:hover {
+  filter:
+    drop-shadow(0 0 10px rgba(245,197,66,.45))
+    drop-shadow(0 0 30px rgba(245,197,66,.20));
+  transform: scale(1.04);
 }
 
 @keyframes floatLogo {
@@ -91,14 +138,14 @@ a:hover {
 =========================== */
 
 .fadeIn {
-  animation: fadeInUp .8s ease both;
+  animation: fadeInUp .9s ease both;
 }
 
 @keyframes fadeInUp {
 
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(22px);
   }
 
   to {
