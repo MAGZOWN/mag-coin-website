@@ -1,0 +1,117 @@
+import type { CSSProperties } from "react";
+
+const items = [
+  "Always verify the official contract address before interacting with MAG COIN.",
+  "Use only links published on the official MAG Foundation website.",
+  "Never share your private keys or recovery phrase with anyone.",
+  "Beware of fake social media accounts impersonating the Foundation.",
+  "Double-check wallet addresses before sending any transaction.",
+  "Report suspicious activity to the Foundation through official channels."
+];
+
+export default function SecurityCenter() {
+  return (
+    <section style={styles.section}>
+      <h2 style={styles.title}>Security Center</h2>
+
+      <p style={styles.subtitle}>
+        Protecting the community begins with education, verification,
+        and responsible blockchain practices.
+      </p>
+
+      <div style={styles.card} className="cardHover">
+
+        {items.map((item, index) => (
+          <div key={index} style={styles.row}>
+            <span style={styles.check}>✓</span>
+            <p style={styles.text}>{item}</p>
+          </div>
+        ))}
+
+      </div>
+    </section>
+  );
+}
+
+const styles: Record<string, CSSProperties> = {
+
+  section: {
+
+    marginBottom: "60px",
+
+  },
+
+  title: {
+
+    textAlign: "center",
+
+    color: "#f5c542",
+
+    fontSize: "32px",
+
+    marginBottom: "14px",
+
+  },
+
+  subtitle: {
+
+    textAlign: "center",
+
+    color: "#d6d6d6",
+
+    maxWidth: "760px",
+
+    margin: "0 auto 34px",
+
+    lineHeight: "1.7",
+
+  },
+
+  card: {
+
+    background:
+      "linear-gradient(145deg, rgba(18,18,18,.96), rgba(5,5,5,.96))",
+
+    border: "1px solid #333",
+
+    borderRadius: "22px",
+
+    padding: "30px",
+
+  },
+
+  row: {
+
+    display: "flex",
+
+    alignItems: "flex-start",
+
+    gap: "14px",
+
+    marginBottom: "18px",
+
+  },
+
+  check: {
+
+    color: "#f5c542",
+
+    fontSize: "22px",
+
+    fontWeight: "bold",
+
+    marginTop: "-2px",
+
+  },
+
+  text: {
+
+    color: "#d6d6d6",
+
+    lineHeight: "1.8",
+
+    margin: 0,
+
+  },
+
+};
