@@ -1,5 +1,4 @@
-import type { CSSProperties } from "react";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 type Props = {
   title: string;
@@ -41,9 +40,10 @@ const styles: Record<string, CSSProperties> = {
       "linear-gradient(145deg, rgba(18,18,18,.96), rgba(5,5,5,.96))",
     border: "1px solid rgba(255,255,255,.08)",
     borderRadius: "22px",
-    padding: "28px",
+    padding: "30px",
     color: "#e5e5e5",
     boxShadow: "0 10px 30px rgba(0,0,0,.35)",
+    transition: "all .3s ease",
   },
 
   status: {
