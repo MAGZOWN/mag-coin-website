@@ -1,27 +1,6 @@
 import type { CSSProperties } from "react";
 
-const updates = [
-  {
-    title: "Homepage Version 2.0 Released",
-    status: "Completed",
-  },
-  {
-    title: "Founder Constitution Published",
-    status: "Completed",
-  },
-  {
-    title: "Tokenomics Documentation Published",
-    status: "Completed",
-  },
-  {
-    title: "Security & FAQ Published",
-    status: "Completed",
-  },
-  {
-    title: "Website Under Continuous Development",
-    status: "Active",
-  },
-];
+import { projectUpdates } from "../data/projectUpdates";
 
 export default function LatestProjectUpdates() {
   return (
@@ -34,7 +13,7 @@ export default function LatestProjectUpdates() {
       </p>
 
       <div style={styles.list}>
-        {updates.map((update, index) => (
+        {projectUpdates.map((update, index) => (
           <div key={index} style={styles.item}>
             <div style={styles.left}>
               <span style={styles.check}>✓</span>
