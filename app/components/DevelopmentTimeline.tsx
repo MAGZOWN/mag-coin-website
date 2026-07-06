@@ -1,32 +1,6 @@
 import type { CSSProperties } from "react";
 
-const phases = [
-  {
-    phase: "Phase 1",
-    title: "Foundation",
-    status: "Completed",
-  },
-  {
-    phase: "Phase 2",
-    title: "Documentation",
-    status: "In Progress",
-  },
-  {
-    phase: "Phase 3",
-    title: "Community Growth",
-    status: "Planned",
-  },
-  {
-    phase: "Phase 4",
-    title: "Ecosystem Expansion",
-    status: "Planned",
-  },
-  {
-    phase: "Phase 5",
-    title: "Long-Term Sustainability",
-    status: "Future",
-  },
-];
+import { developmentTimeline } from "../data/developmentTimeline";
 
 export default function DevelopmentTimeline() {
   return (
@@ -39,7 +13,7 @@ export default function DevelopmentTimeline() {
       </p>
 
       <div style={styles.timeline}>
-        {phases.map((item, index) => (
+        {developmentTimeline.map((item, index) => (
           <div
             key={index}
             style={styles.card}
