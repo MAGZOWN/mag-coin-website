@@ -1,15 +1,6 @@
 import type { CSSProperties } from "react";
 
-const items = [
-  { label: "Official Website", value: "coinmagbase.com", status: "Verified" },
-  { label: "Network", value: "Base", status: "Verified" },
-  { label: "Token Symbol", value: "MAG", status: "Verified" },
-  { label: "Contract", value: "0xbBd9041...F51A94", status: "Verified" },
-  { label: "Whitepaper", value: "Founder Edition", status: "Available" },
-  { label: "Constitution", value: "Version 1.0", status: "In Progress" },
-  { label: "Audit", value: "Master Audit Report", status: "In Progress" },
-  { label: "Security", value: "Security Center", status: "Planned" },
-];
+import { verificationData } from "../data/verificationData";
 
 export default function VerificationDashboard() {
   return (
@@ -22,7 +13,7 @@ export default function VerificationDashboard() {
       </p>
 
       <div style={styles.grid}>
-        {items.map((item) => (
+        {verificationData.map((item) => (
           <div key={item.label} style={styles.card} className="cardHover">
             <p style={styles.label}>{item.label}</p>
             <h3 style={styles.value}>{item.value}</h3>
