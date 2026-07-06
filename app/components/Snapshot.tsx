@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 
-import { foundationData } from "../data/foundationData";
+import { blockchainService } from "../services/blockchainService";
 
 const iconStyle: CSSProperties = {
   width: "34px",
@@ -51,10 +51,6 @@ function DocumentIcon() {
   );
 }
 
-function shortenAddress(address: string) {
-  return `${address.slice(0, 9)}...${address.slice(-6)}`;
-}
-
 export default function Snapshot() {
   return (
     <section style={styles.snapshot}>
@@ -64,25 +60,27 @@ export default function Snapshot() {
         <div style={styles.snapshotItem} className="cardHover">
           <GlobeIcon />
           <strong>Network</strong>
-          <p>{foundationData.network}</p>
+          <p>{blockchainService.getNetwork()}</p>
         </div>
 
         <div style={styles.snapshotItem} className="cardHover">
           <CoinIcon />
           <strong>Token Symbol</strong>
-          <p>{foundationData.symbol}</p>
+          <p>{blockchainService.getSymbol()}</p>
         </div>
 
         <div style={styles.snapshotItem} className="cardHover">
           <SupplyIcon />
           <strong>Total Supply</strong>
-          <p>{foundationData.totalSupply}</p>
+          <p>{blockchainService.getTokenSummary().totalSupply}</p>
         </div>
 
         <div style={styles.snapshotItem} className="cardHover">
           <DocumentIcon />
           <strong>Official Contract</strong>
-          <p style={styles.contract}>{shortenAddress(foundationData.contract)}</p>
+          <p style={styles.contract}>
+            {blockchainService.getShortContract()}
+          </p>
         </div>
       </div>
     </section>
