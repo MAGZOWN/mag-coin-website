@@ -5,11 +5,11 @@ export const foundationData = {
 
   symbol: "MAG",
 
+  tokenStandard: "ERC-20",
+
   totalSupply: "1,000,000,000 MAG",
 
   decimals: 18,
-
-  tokenStandard: "ERC-20",
 
   contract:
     "0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94",
