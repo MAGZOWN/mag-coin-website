@@ -1,31 +1,6 @@
 import type { CSSProperties } from "react";
 
-const milestones = [
-  {
-    title: "Foundation Established",
-    status: "Completed",
-  },
-  {
-    title: "Website Development",
-    status: "In Progress",
-  },
-  {
-    title: "Constitution v1.0",
-    status: "Completed",
-  },
-  {
-    title: "Tokenomics Publication",
-    status: "Upcoming",
-  },
-  {
-    title: "MAG/USDC Pair",
-    status: "Planned",
-  },
-  {
-    title: "Security Audit",
-    status: "Planned",
-  },
-];
+import { transparencyTimeline } from "../data/transparencyTimeline";
 
 export default function TransparencyTimeline() {
   return (
@@ -38,7 +13,7 @@ export default function TransparencyTimeline() {
       </p>
 
       <div style={styles.timeline}>
-        {milestones.map((item) => (
+        {transparencyTimeline.map((item) => (
           <div
             key={item.title}
             style={styles.card}
@@ -67,7 +42,6 @@ export default function TransparencyTimeline() {
 }
 
 const styles: Record<string, CSSProperties> = {
-
   section: {
     marginBottom: "60px",
   },
@@ -116,5 +90,4 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: "bold",
     fontSize: "12px",
   },
-
 };
