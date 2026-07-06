@@ -1,5 +1,7 @@
 import type { CSSProperties } from "react";
 
+import { foundationData } from "@/app/data/foundationData";
+
 export default function TokenOverview() {
   return (
     <section style={styles.section}>
@@ -15,22 +17,22 @@ export default function TokenOverview() {
 
         <div style={styles.card} className="cardHover">
           <h3 style={styles.heading}>Network</h3>
-          <p style={styles.value}>Base</p>
+          <p style={styles.value}>{foundationData.network}</p>
         </div>
 
         <div style={styles.card} className="cardHover">
           <h3 style={styles.heading}>Token Standard</h3>
-          <p style={styles.value}>ERC-20</p>
+          <p style={styles.value}>{foundationData.tokenStandard}</p>
         </div>
 
         <div style={styles.card} className="cardHover">
           <h3 style={styles.heading}>Token Symbol</h3>
-          <p style={styles.value}>MAG</p>
+          <p style={styles.value}>{foundationData.symbol}</p>
         </div>
 
         <div style={styles.card} className="cardHover">
           <h3 style={styles.heading}>Maximum Supply</h3>
-          <p style={styles.value}>1,000,000,000 MAG</p>
+          <p style={styles.value}>{foundationData.totalSupply}</p>
         </div>
 
       </div>
