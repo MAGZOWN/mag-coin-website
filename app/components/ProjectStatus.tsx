@@ -1,5 +1,7 @@
 import type { CSSProperties } from "react";
 
+import { foundationData } from "../data/foundationData";
+
 const iconStyle: CSSProperties = {
   width: "30px",
   height: "30px",
@@ -54,21 +56,15 @@ export default function ProjectStatus() {
 
       <div style={styles.grid}>
 
-        <div
-          style={styles.item}
-          className="cardHover"
-        >
+        <div style={styles.item} className="cardHover">
           <div style={styles.icon}>
             <RocketIcon />
           </div>
           <h3 style={styles.heading}>Current Phase</h3>
-          <p style={styles.value}>Founder Edition – Phase 1</p>
+          <p style={styles.value}>Engineering & Launch Execution</p>
         </div>
 
-        <div
-          style={styles.item}
-          className="cardHover"
-        >
+        <div style={styles.item} className="cardHover">
           <div style={styles.icon}>
             <MonitorIcon />
           </div>
@@ -76,10 +72,7 @@ export default function ProjectStatus() {
           <p style={styles.value}>v1.0.0</p>
         </div>
 
-        <div
-          style={styles.item}
-          className="cardHover"
-        >
+        <div style={styles.item} className="cardHover">
           <div style={styles.icon}>
             <CalendarIcon />
           </div>
@@ -87,15 +80,12 @@ export default function ProjectStatus() {
           <p style={styles.value}>July 2026</p>
         </div>
 
-        <div
-          style={styles.item}
-          className="cardHover"
-        >
+        <div style={styles.item} className="cardHover">
           <div style={styles.icon}>
             <StatusIcon />
           </div>
           <h3 style={styles.heading}>Project Status</h3>
-          <span style={styles.badge}>ACTIVE DEVELOPMENT</span>
+          <span style={styles.badge}>{foundationData.foundationStatus}</span>
         </div>
 
       </div>
@@ -106,7 +96,7 @@ export default function ProjectStatus() {
         <p style={styles.note}>
           Every milestone is being completed carefully with transparency,
           responsible stewardship, and long-term sustainability at the core of
-          MAG COIN.
+          {` ${foundationData.tokenName}`}.
         </p>
       </div>
     </section>
@@ -180,6 +170,7 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "12px",
     fontWeight: "bold",
     letterSpacing: "1px",
+    textTransform: "uppercase",
   },
 
   footer: {
