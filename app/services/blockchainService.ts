@@ -1,4 +1,5 @@
 import { foundationData } from "../data/foundationData";
+import { baseExplorer } from "./baseExplorer";
 
 export const blockchainService = {
   getNetwork() {
@@ -18,16 +19,19 @@ export const blockchainService = {
   },
 
   getExplorer() {
-    return foundationData.explorer;
+    return baseExplorer.getTokenUrl();
   },
 
   getExplorerLink() {
-    return foundationData.explorer;
+    return baseExplorer.getTokenUrl();
+  },
+
+  getContractExplorer() {
+    return baseExplorer.getContractUrl();
   },
 
   getShortContract() {
-    const address = foundationData.contract;
-    return `${address.slice(0, 9)}...${address.slice(-6)}`;
+    return baseExplorer.getShortContract();
   },
 
   getVerificationStatus() {
@@ -47,7 +51,7 @@ export const blockchainService = {
       totalSupply: foundationData.totalSupply,
       decimals: foundationData.decimals,
       contract: foundationData.contract,
-      explorer: foundationData.explorer,
+      explorer: baseExplorer.getTokenUrl(),
       verificationStatus: foundationData.verificationStatus,
       sourceCode: foundationData.sourceCode,
     };
