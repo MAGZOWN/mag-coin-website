@@ -1,11 +1,13 @@
 import type { CSSProperties } from "react";
 
+import { foundationData } from "../data/foundationData";
+
 export default function Hero() {
   return (
     <section style={styles.hero}>
       <img
         src="/mag-logo.png"
-        alt="MAG COIN Logo"
+        alt={`${foundationData.tokenName} Logo`}
         style={styles.logo}
         className="logoFloat fadeIn cardHover"
       />
@@ -17,7 +19,7 @@ export default function Hero() {
       </h1>
 
       <p style={styles.subtitle}>
-        A long-term blockchain project built on the Base Network with
+        A long-term blockchain project built on {foundationData.network} with
         transparency, responsible stewardship, continuous improvement,
         and sustainable growth at its foundation.
       </p>
@@ -32,7 +34,7 @@ export default function Hero() {
         </a>
 
         <a
-          href="https://basescan.org/address/0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94"
+          href={foundationData.explorer}
           target="_blank"
           rel="noopener noreferrer"
           style={styles.secondaryButton}
