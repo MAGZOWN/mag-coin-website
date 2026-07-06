@@ -1,36 +1,29 @@
 import type { CSSProperties } from "react";
 
+import { transparencyCommitment } from "../data/transparencyCommitment";
+
 export default function TransparencyCommitment() {
   return (
     <section style={styles.section} className="cardHover">
-      <p style={styles.label}>TRANSPARENCY COMMITMENT</p>
+      <p style={styles.label}>{transparencyCommitment.label}</p>
 
       <h2 style={styles.title}>
-        Transparency is a continuous commitment, not a one-time statement.
+        {transparencyCommitment.title}
       </h2>
 
-      <p style={styles.text}>
-        MAG COIN is committed to maintaining clear and responsible communication
-        throughout the project's development. Significant milestones, project
-        updates, documentation improvements, and governance decisions will be
-        shared through official channels whenever reasonably possible.
-      </p>
-
-      <p style={styles.text}>
-        Our objective is to build confidence through openness, verifiable
-        information, and consistent communication rather than speculation or
-        unnecessary hype.
-      </p>
+      {transparencyCommitment.paragraphs.map((paragraph) => (
+        <p key={paragraph} style={styles.text}>
+          {paragraph}
+        </p>
+      ))}
 
       <div style={styles.box}>
         <h3 style={styles.boxTitle}>Transparency Principles</h3>
 
         <ul style={styles.list}>
-          <li>Public documentation whenever possible</li>
-          <li>Official BaseScan verification</li>
-          <li>Continuous website updates</li>
-          <li>Clear governance communication</li>
-          <li>Responsible disclosure of project milestones</li>
+          {transparencyCommitment.principles.map((principle) => (
+            <li key={principle}>{principle}</li>
+          ))}
         </ul>
       </div>
     </section>
