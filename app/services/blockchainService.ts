@@ -1,18 +1,41 @@
 import { foundationData } from "../data/foundationData";
 
 export const blockchainService = {
-  network: foundationData.network,
+  getNetwork() {
+    return foundationData.network;
+  },
 
-  contract: foundationData.contract,
+  getTokenName() {
+    return foundationData.tokenName;
+  },
 
-  explorer: foundationData.explorer,
+  getSymbol() {
+    return foundationData.symbol;
+  },
 
-  getContractExplorerUrl() {
+  getContract() {
+    return foundationData.contract;
+  },
+
+  getExplorer() {
+    return foundationData.explorer;
+  },
+
+  getExplorerLink() {
     return foundationData.explorer;
   },
 
   getShortContract() {
-    return `${foundationData.contract.slice(0, 9)}...${foundationData.contract.slice(-6)}`;
+    const address = foundationData.contract;
+    return `${address.slice(0, 9)}...${address.slice(-6)}`;
+  },
+
+  getVerificationStatus() {
+    return foundationData.verificationStatus;
+  },
+
+  getLiquidity() {
+    return foundationData.liquidity;
   },
 
   getTokenSummary() {
@@ -20,17 +43,13 @@ export const blockchainService = {
       network: foundationData.network,
       tokenName: foundationData.tokenName,
       symbol: foundationData.symbol,
+      tokenStandard: foundationData.tokenStandard,
       totalSupply: foundationData.totalSupply,
       decimals: foundationData.decimals,
-      tokenStandard: foundationData.tokenStandard,
       contract: foundationData.contract,
       explorer: foundationData.explorer,
       verificationStatus: foundationData.verificationStatus,
       sourceCode: foundationData.sourceCode,
     };
-  },
-
-  getLiquiditySummary() {
-    return foundationData.liquidity;
   },
 };
