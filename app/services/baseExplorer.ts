@@ -1,29 +1,37 @@
 import { foundationData } from "../data/foundationData";
-
-const BASESCAN_URL = "https://basescan.org";
+import { projectLinks } from "../data/projectLinks";
 
 export const baseExplorer = {
   getBaseUrl() {
-    return BASESCAN_URL;
+    return projectLinks.explorer;
   },
 
   getTokenUrl() {
-    return foundationData.explorer;
+    return projectLinks.tokenExplorer;
   },
 
   getContractUrl() {
-    return `${BASESCAN_URL}/address/${foundationData.contract}`;
+    return projectLinks.contractExplorer;
   },
 
   getAddressUrl(address: string) {
-    return `${BASESCAN_URL}/address/${address}`;
+    return `${projectLinks.explorer}/address/${address}`;
   },
 
   getTransactionUrl(txHash: string) {
-    return `${BASESCAN_URL}/tx/${txHash}`;
+    return `${projectLinks.explorer}/tx/${txHash}`;
   },
 
   getBlockUrl(blockNumber: number | string) {
-    return `${BASESCAN_URL}/block/${blockNumber}`;
+    return `${projectLinks.explorer}/block/${blockNumber}`;
+  },
+
+  getContractAddress() {
+    return foundationData.contract;
+  },
+
+  getShortContract() {
+    const address = foundationData.contract;
+    return `${address.slice(0, 9)}...${address.slice(-6)}`;
   },
 };
