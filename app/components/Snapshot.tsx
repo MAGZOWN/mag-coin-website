@@ -1,5 +1,7 @@
 import type { CSSProperties } from "react";
 
+import { foundationData } from "../data/foundationData";
+
 const iconStyle: CSSProperties = {
   width: "34px",
   height: "34px",
@@ -49,6 +51,10 @@ function DocumentIcon() {
   );
 }
 
+function shortenAddress(address: string) {
+  return `${address.slice(0, 9)}...${address.slice(-6)}`;
+}
+
 export default function Snapshot() {
   return (
     <section style={styles.snapshot}>
@@ -58,25 +64,25 @@ export default function Snapshot() {
         <div style={styles.snapshotItem} className="cardHover">
           <GlobeIcon />
           <strong>Network</strong>
-          <p>Base</p>
+          <p>{foundationData.network}</p>
         </div>
 
         <div style={styles.snapshotItem} className="cardHover">
           <CoinIcon />
           <strong>Token Symbol</strong>
-          <p>MAG</p>
+          <p>{foundationData.symbol}</p>
         </div>
 
         <div style={styles.snapshotItem} className="cardHover">
           <SupplyIcon />
           <strong>Total Supply</strong>
-          <p>1,000,000,000 MAG</p>
+          <p>{foundationData.totalSupply}</p>
         </div>
 
         <div style={styles.snapshotItem} className="cardHover">
           <DocumentIcon />
           <strong>Official Contract</strong>
-          <p style={styles.contract}>0xbBd9041...F51A94</p>
+          <p style={styles.contract}>{shortenAddress(foundationData.contract)}</p>
         </div>
       </div>
     </section>
