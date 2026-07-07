@@ -1,13 +1,15 @@
 import type { CSSProperties } from "react";
 
-import { foundationData } from "../data/foundationData";
+import { blockchainService } from "../services/blockchainService";
 
 export default function Hero() {
+  const token = blockchainService.getTokenSummary();
+
   return (
     <section style={styles.hero}>
       <img
         src="/mag-logo.png"
-        alt={`${foundationData.tokenName} Logo`}
+        alt={`${token.tokenName} Logo`}
         style={styles.logo}
         className="logoFloat fadeIn cardHover"
       />
@@ -19,22 +21,30 @@ export default function Hero() {
       </h1>
 
       <p style={styles.subtitle}>
-        A long-term blockchain project built on {foundationData.network} with
+        A long-term blockchain project built on {token.network} with
         transparency, responsible stewardship, continuous improvement,
         and sustainable growth at its foundation.
       </p>
 
       <div style={styles.buttons}>
-        <a href="/whitepaper" style={styles.primaryButton} className="primaryButton">
+        <a
+          href="/whitepaper"
+          style={styles.primaryButton}
+          className="primaryButton"
+        >
           Read Whitepaper
         </a>
 
-        <a href="/audit" style={styles.secondaryButton} className="secondaryButton">
+        <a
+          href="/audit"
+          style={styles.secondaryButton}
+          className="secondaryButton"
+        >
           Audit Report
         </a>
 
         <a
-          href={foundationData.explorer}
+          href={blockchainService.getExplorerLink()}
           target="_blank"
           rel="noopener noreferrer"
           style={styles.secondaryButton}
