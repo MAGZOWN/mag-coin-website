@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 
-import { projectUpdates } from "../data/projectUpdates";
+import { foundationUpdates } from "../data/foundationUpdates";
 
 export default function FoundationUpdates() {
   return (
@@ -13,23 +13,13 @@ export default function FoundationUpdates() {
       </p>
 
       <div style={styles.grid}>
-        {projectUpdates.map((update) => (
-          <div
-            key={update.title}
-            style={styles.card}
-            className="cardHover"
-          >
-            <span style={styles.version}>
-              {update.version}
-            </span>
+        {foundationUpdates.map((update) => (
+          <div key={update.title} style={styles.card} className="cardHover">
+            <span style={styles.version}>{update.version}</span>
 
-            <h3 style={styles.heading}>
-              {update.title}
-            </h3>
+            <h3 style={styles.heading}>{update.title}</h3>
 
-            <p style={styles.description}>
-              {update.description}
-            </p>
+            <p style={styles.description}>{update.description}</p>
           </div>
         ))}
       </div>
