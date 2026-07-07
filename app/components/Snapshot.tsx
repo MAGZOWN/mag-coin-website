@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 
 import { blockchainService } from "../services/blockchainService";
+import ContractActions from "./ContractActions";
 
 const iconStyle: CSSProperties = {
   width: "34px",
@@ -78,9 +79,12 @@ export default function Snapshot() {
         <div style={styles.snapshotItem} className="cardHover">
           <DocumentIcon />
           <strong>Official Contract</strong>
+
           <p style={styles.contract}>
             {blockchainService.getShortContract()}
           </p>
+
+          <ContractActions />
         </div>
       </div>
     </section>
@@ -125,5 +129,6 @@ const styles: Record<string, CSSProperties> = {
     wordBreak: "break-all",
     fontSize: "13px",
     color: "#d6d6d6",
+    marginBottom: "14px",
   },
 };
