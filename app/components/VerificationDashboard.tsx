@@ -1,8 +1,11 @@
 import type { CSSProperties } from "react";
 
 import { verificationData } from "../data/verificationData";
+import { verificationService } from "../services/verificationService";
 
 export default function VerificationDashboard() {
+  const verification = verificationService.getVerificationSummary();
+
   return (
     <section style={styles.section}>
       <h2 style={styles.title}>Verification Dashboard</h2>
@@ -20,6 +23,18 @@ export default function VerificationDashboard() {
             <span style={styles.badge}>{item.status}</span>
           </div>
         ))}
+
+        <div style={styles.card} className="cardHover">
+          <p style={styles.label}>Live Verification</p>
+
+          <h3 style={styles.value}>
+            {verification.verificationStatus}
+          </h3>
+
+          <span style={styles.badge}>
+            {verification.sourceCode}
+          </span>
+        </div>
       </div>
     </section>
   );
