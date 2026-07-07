@@ -1,15 +1,6 @@
 import type { CSSProperties } from "react";
 
-const principles = [
-  "Integrity before popularity.",
-  "Transparency before speculation.",
-  "Long-term stewardship over short-term hype.",
-  "Documentation over assumptions.",
-  "Community respect in every interaction.",
-  "Security as a continuous responsibility.",
-  "Continuous improvement through measured progress.",
-  "Accountability for every public commitment.",
-];
+import { foundationPrinciples } from "@/app/data/foundationPrinciples";
 
 export default function FoundationPrinciples() {
   return (
@@ -22,12 +13,8 @@ export default function FoundationPrinciples() {
       </p>
 
       <div style={styles.grid}>
-        {principles.map((principle) => (
-          <div
-            key={principle}
-            style={styles.card}
-            className="cardHover"
-          >
+        {foundationPrinciples.map((principle) => (
+          <div key={principle} style={styles.card} className="cardHover">
             <span style={styles.icon}>◆</span>
             <p style={styles.text}>{principle}</p>
           </div>
