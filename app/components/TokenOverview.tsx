@@ -1,8 +1,10 @@
 import type { CSSProperties } from "react";
 
-import { foundationData } from "@/app/data/foundationData";
+import { blockchainService } from "@/app/services/blockchainService";
 
 export default function TokenOverview() {
+  const token = blockchainService.getTokenSummary();
+
   return (
     <section style={styles.section}>
       <h2 style={styles.title}>Token Overview</h2>
@@ -14,27 +16,25 @@ export default function TokenOverview() {
       </p>
 
       <div style={styles.grid}>
-
         <div style={styles.card} className="cardHover">
           <h3 style={styles.heading}>Network</h3>
-          <p style={styles.value}>{foundationData.network}</p>
+          <p style={styles.value}>{token.network}</p>
         </div>
 
         <div style={styles.card} className="cardHover">
           <h3 style={styles.heading}>Token Standard</h3>
-          <p style={styles.value}>{foundationData.tokenStandard}</p>
+          <p style={styles.value}>{token.tokenStandard}</p>
         </div>
 
         <div style={styles.card} className="cardHover">
           <h3 style={styles.heading}>Token Symbol</h3>
-          <p style={styles.value}>{foundationData.symbol}</p>
+          <p style={styles.value}>{token.symbol}</p>
         </div>
 
         <div style={styles.card} className="cardHover">
           <h3 style={styles.heading}>Maximum Supply</h3>
-          <p style={styles.value}>{foundationData.totalSupply}</p>
+          <p style={styles.value}>{token.totalSupply}</p>
         </div>
-
       </div>
     </section>
   );
