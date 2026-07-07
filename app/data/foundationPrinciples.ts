@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 
-import { foundationPrinciples } from "../data/foundationPrinciples";
+import { foundationPrinciples } from "@/app/data/foundationPrinciples";
 
 export default function FoundationPrinciples() {
   return (
@@ -14,16 +14,9 @@ export default function FoundationPrinciples() {
 
       <div style={styles.grid}>
         {foundationPrinciples.map((principle) => (
-          <div
-            key={principle}
-            style={styles.card}
-            className="cardHover"
-          >
+          <div key={principle} style={styles.card} className="cardHover">
             <span style={styles.icon}>◆</span>
-
-            <p style={styles.text}>
-              {principle}
-            </p>
+            <p style={styles.text}>{principle}</p>
           </div>
         ))}
       </div>
