@@ -14,11 +14,8 @@ body {
   overflow-x: hidden;
 }
 
-/* ===========================
-   Global Animation
-=========================== */
-
 * {
+  box-sizing: border-box;
   transition:
     background-color .30s ease,
     color .30s ease,
@@ -28,53 +25,99 @@ body {
     opacity .30s ease;
 }
 
-/* ===========================
-   Links
-=========================== */
-
 a {
   text-decoration: none;
 }
 
 /* ===========================
-   Premium Buttons
+   MAG DESIGN SYSTEM
 =========================== */
 
-.primaryButton {
+.goldGradient,
+.goldGradientHeading {
+  background: linear-gradient(
+    180deg,
+    #fff7d6 0%,
+    #ffd86b 45%,
+    #f5c542 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.sectionTitle {
+  color: #f5c542;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.sectionSubtitle {
+  color: #d6d6d6;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.primaryButton,
+.magButtonPrimary {
   transition: all .30s ease;
 }
 
-.primaryButton:hover {
+.primaryButton:hover,
+.magButtonPrimary:hover {
   transform: translateY(-4px) scale(1.03);
   box-shadow:
     0 0 18px rgba(245,197,66,.45),
     0 12px 28px rgba(245,197,66,.20);
 }
 
-.secondaryButton {
+.secondaryButton,
+.magButtonSecondary {
   transition: all .30s ease;
 }
 
-.secondaryButton:hover {
+.secondaryButton:hover,
+.magButtonSecondary:hover {
   transform: translateY(-4px);
   background: rgba(245,197,66,.10);
   box-shadow: 0 0 18px rgba(245,197,66,.18);
 }
 
-/* ===========================
-   Premium Cards
-=========================== */
-
-.cardHover {
+.cardHover,
+.magCardHover {
   transition: all .30s ease;
 }
 
-.cardHover:hover {
+.cardHover:hover,
+.magCardHover:hover {
   transform: translateY(-8px);
-  border-color: rgba(245,197,66,.55);
+  border-color: rgba(245,197,66,.55) !important;
   box-shadow:
     0 0 20px rgba(245,197,66,.08),
     0 20px 40px rgba(0,0,0,.45);
+}
+
+.magCard {
+  background: linear-gradient(
+    145deg,
+    rgba(18,18,18,.98),
+    rgba(5,5,5,.98)
+  );
+  border: 1px solid #333;
+  border-radius: 22px;
+}
+
+.externalLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.externalLink::after {
+  content: "↗";
+  font-size: .8rem;
 }
 
 /* ===========================
@@ -122,7 +165,6 @@ a {
 }
 
 @keyframes floatLogo {
-
   0%,
   100% {
     transform: translateY(0px);
@@ -142,7 +184,6 @@ a {
 }
 
 @keyframes fadeInUp {
-
   from {
     opacity: 0;
     transform: translateY(22px);
@@ -152,5 +193,17 @@ a {
     opacity: 1;
     transform: translateY(0);
   }
+}
 
+/* ===========================
+   Accessibility & Layout
+=========================== */
+
+section {
+  scroll-margin-top: 90px;
+}
+
+::selection {
+  background: rgba(245,197,66,.35);
+  color: #ffffff;
 }
