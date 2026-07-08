@@ -17,26 +17,17 @@ export default function Navbar() {
   return (
     <header style={styles.header}>
       <div style={styles.container}>
-        <a href="/" style={styles.brand}>
-          <img
-            src="/mag-logo.png"
-            alt="MAG Coin"
-            style={styles.logo}
-          />
+        <a href="/" style={styles.brand} aria-label="MAG COIN Home">
+          <img src="/mag-logo.png" alt="MAG COIN logo" style={styles.logo} />
 
-          <span style={styles.brandText}>
+          <span className="goldGradient" style={styles.brandText}>
             MAG COIN
           </span>
         </a>
 
-        <nav style={styles.nav}>
+        <nav style={styles.nav} aria-label="Main navigation">
           {links.map(([label, href]) => (
-            <a
-              key={label}
-              href={href}
-              className="navLink"
-              style={styles.link}
-            >
+            <a key={label} href={href} className="navLink" style={styles.link}>
               {label}
             </a>
           ))}
@@ -53,7 +44,8 @@ const styles: Record<string, CSSProperties> = {
     zIndex: 999,
     background: "rgba(5,5,5,.92)",
     backdropFilter: "blur(14px)",
-    borderBottom: "1px solid rgba(255,255,255,.08)",
+    borderBottom: "1px solid rgba(245,197,66,.14)",
+    boxShadow: "0 12px 32px rgba(0,0,0,.35)",
   },
 
   container: {
@@ -63,6 +55,7 @@ const styles: Record<string, CSSProperties> = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    gap: "28px",
   },
 
   brand: {
@@ -71,32 +64,36 @@ const styles: Record<string, CSSProperties> = {
     gap: "14px",
     color: "#f5c542",
     textDecoration: "none",
-    fontWeight: 700,
-    letterSpacing: ".5px",
+    fontWeight: 800,
+    letterSpacing: ".6px",
+    flexShrink: 0,
   },
 
   logo: {
     width: "48px",
     height: "48px",
     borderRadius: "50%",
+    boxShadow: "0 0 18px rgba(245,197,66,.20)",
   },
 
   brandText: {
     fontSize: "18px",
-    fontWeight: 700,
+    fontWeight: 900,
   },
 
   nav: {
     display: "flex",
     alignItems: "center",
-    gap: "28px",
+    justifyContent: "flex-end",
+    gap: "24px",
     flexWrap: "wrap",
   },
 
   link: {
     color: "#ffffff",
     textDecoration: "none",
-    fontSize: "15px",
-    fontWeight: 500,
+    fontSize: "14px",
+    fontWeight: 600,
+    letterSpacing: ".2px",
   },
 };
