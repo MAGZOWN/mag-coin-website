@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -17,7 +18,7 @@ export default function Audit() {
             disclosures.
           </p>
 
-          <div style={styles.card}>
+          <div style={styles.card} className="cardHover">
             <h2 style={styles.heading}>Master Audit Status</h2>
 
             <p>
@@ -27,7 +28,7 @@ export default function Audit() {
             </p>
           </div>
 
-          <div style={styles.card}>
+          <div style={styles.card} className="cardHover">
             <h2 style={styles.heading}>Audit Scope</h2>
 
             <ul style={styles.list}>
@@ -40,7 +41,7 @@ export default function Audit() {
             </ul>
           </div>
 
-          <div style={styles.card}>
+          <div style={styles.card} className="cardHover">
             <h2 style={styles.heading}>Transparency Statement</h2>
 
             <p>
@@ -74,10 +75,14 @@ const styles: Record<string, CSSProperties> = {
   },
 
   title: {
-    color: "#f5c542",
     fontSize: "52px",
+    lineHeight: "1.2",
+    fontWeight: "800",
     textAlign: "center",
     marginBottom: "20px",
+    background: "linear-gradient(180deg,#ffffff 0%,#f5c542 100%)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
   },
 
   lead: {
@@ -89,7 +94,8 @@ const styles: Record<string, CSSProperties> = {
   },
 
   card: {
-    background: "rgba(17,17,17,0.92)",
+    background:
+      "linear-gradient(145deg, rgba(18,18,18,.96), rgba(5,5,5,.96))",
     border: "1px solid #333",
     borderRadius: "18px",
     padding: "28px",
@@ -101,6 +107,7 @@ const styles: Record<string, CSSProperties> = {
   heading: {
     color: "#f5c542",
     marginBottom: "14px",
+    fontSize: "30px",
   },
 
   list: {
