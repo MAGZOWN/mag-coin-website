@@ -2,6 +2,10 @@ import type { CSSProperties } from "react";
 
 import { blockchainService } from "../services/blockchainService";
 
+import HeroTitle from "./ui/HeroTitle";
+import PrimaryButton from "./ui/PrimaryButton";
+import SecondaryButton from "./ui/SecondaryButton";
+
 export default function Hero() {
   const token = blockchainService.getTokenSummary();
 
@@ -14,11 +18,13 @@ export default function Hero() {
         className="logoFloat fadeIn cardHover"
       />
 
-      <h1 style={styles.title}>
-        Built with Integrity.
-        <br />
-        Trusted for Generations.
-      </h1>
+      <HeroTitle>
+        <>
+          Built with Integrity.
+          <br />
+          Trusted for Generations.
+        </>
+      </HeroTitle>
 
       <p style={styles.subtitle}>
         A long-term blockchain project built on {token.network} with
@@ -27,31 +33,21 @@ export default function Hero() {
       </p>
 
       <div style={styles.buttons}>
-        <a
-          href="/whitepaper"
-          style={styles.primaryButton}
-          className="primaryButton"
-        >
+        <PrimaryButton href="/whitepaper">
           Read Whitepaper
-        </a>
+        </PrimaryButton>
 
-        <a
-          href="/audit"
-          style={styles.secondaryButton}
-          className="secondaryButton"
-        >
+        <SecondaryButton href="/audit">
           Audit Report
-        </a>
+        </SecondaryButton>
 
-        <a
+        <SecondaryButton
           href={blockchainService.getExplorerLink()}
           target="_blank"
           rel="noopener noreferrer"
-          style={styles.secondaryButton}
-          className="secondaryButton"
         >
           BaseScan ↗
-        </a>
+        </SecondaryButton>
       </div>
     </section>
   );
@@ -72,14 +68,6 @@ const styles: Record<string, CSSProperties> = {
     margin: "0 auto 28px",
   },
 
-  title: {
-    fontSize: "42px",
-    lineHeight: "1.25",
-    fontWeight: "800",
-    marginBottom: "22px",
-    color: "#ffffff",
-  },
-
   subtitle: {
     fontSize: "18px",
     color: "#cfcfcf",
@@ -93,27 +81,5 @@ const styles: Record<string, CSSProperties> = {
     justifyContent: "center",
     gap: "18px",
     flexWrap: "wrap",
-  },
-
-  primaryButton: {
-    background: "#f5c542",
-    color: "#000",
-    textDecoration: "none",
-    padding: "15px 34px",
-    borderRadius: "999px",
-    fontWeight: "bold",
-    fontSize: "15px",
-    border: "2px solid #f5c542",
-  },
-
-  secondaryButton: {
-    background: "transparent",
-    color: "#f5c542",
-    textDecoration: "none",
-    padding: "15px 34px",
-    borderRadius: "999px",
-    fontWeight: "bold",
-    fontSize: "15px",
-    border: "2px solid #f5c542",
   },
 };
