@@ -54,27 +54,32 @@ function DocumentIcon() {
 
 export default function Snapshot() {
   return (
-    <section style={styles.snapshot}>
-      <h3 style={styles.snapshotTitle}>Official Project Snapshot</h3>
+    <section style={styles.snapshot} className="magCard">
+      <h3 className="goldGradient" style={styles.snapshotTitle}>
+        Official Project Snapshot
+      </h3>
 
       <div style={styles.snapshotGrid}>
-        <div style={styles.snapshotItem} className="cardHover">
+        <a href="/about" style={styles.snapshotItem} className="cardHover">
           <GlobeIcon />
           <strong>Network</strong>
           <p>{blockchainService.getNetwork()}</p>
-        </div>
+          <span style={styles.linkHint}>Learn about Base deployment</span>
+        </a>
 
-        <div style={styles.snapshotItem} className="cardHover">
+        <a href="/whitepaper" style={styles.snapshotItem} className="cardHover">
           <CoinIcon />
           <strong>Token Symbol</strong>
           <p>{blockchainService.getSymbol()}</p>
-        </div>
+          <span style={styles.linkHint}>Read project overview</span>
+        </a>
 
-        <div style={styles.snapshotItem} className="cardHover">
+        <a href="/tokenomics" style={styles.snapshotItem} className="cardHover">
           <SupplyIcon />
           <strong>Total Supply</strong>
           <p>{blockchainService.getTokenSummary().totalSupply}</p>
-        </div>
+          <span style={styles.linkHint}>View tokenomics</span>
+        </a>
 
         <div style={styles.snapshotItem} className="cardHover">
           <DocumentIcon />
@@ -95,19 +100,15 @@ const styles: Record<string, CSSProperties> = {
   snapshot: {
     maxWidth: "1000px",
     margin: "42px auto 0",
-    background:
-      "linear-gradient(145deg, rgba(18,18,18,0.96), rgba(5,5,5,0.96))",
-    border: "1px solid #3a3a3a",
-    borderRadius: "22px",
     padding: "38px",
     color: "#e5e5e5",
     textAlign: "center",
   },
 
   snapshotTitle: {
-    color: "#f5c542",
-    fontSize: "24px",
+    fontSize: "26px",
     marginBottom: "32px",
+    fontWeight: 900,
   },
 
   snapshotGrid: {
@@ -122,7 +123,10 @@ const styles: Record<string, CSSProperties> = {
     borderRadius: "18px",
     padding: "22px 18px",
     lineHeight: "1.7",
-    minHeight: "130px",
+    minHeight: "160px",
+    color: "#e5e5e5",
+    textDecoration: "none",
+    display: "block",
   },
 
   contract: {
@@ -130,5 +134,13 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "13px",
     color: "#d6d6d6",
     marginBottom: "14px",
+  },
+
+  linkHint: {
+    display: "block",
+    marginTop: "10px",
+    color: "#f5c542",
+    fontSize: "12px",
+    fontWeight: 700,
   },
 };
