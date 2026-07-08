@@ -25,17 +25,17 @@ export default function Transparency() {
 
       <main style={styles.main}>
         <section style={styles.container}>
-          <div style={styles.statusBanner}>
+          <div style={styles.statusBanner} className="cardHover">
             <span style={styles.statusLabel}>Foundation Release v1.0</span>
             <span style={styles.statusText}>
-              Contract verified • MAG/USDC liquidity live • DEXTools and
-              DEXScreener indexed • Documentation archive in progress
+              Contract verified • MAG/USDC liquidity live • DEXTools indexed •
+              DEXScreener indexed
             </span>
           </div>
 
           <TrustCenterHero />
 
-          <section style={styles.noticeBox}>
+          <section style={styles.noticeBox} className="cardHover">
             <h2 style={styles.noticeTitle}>Transparency First</h2>
             <p style={styles.noticeText}>
               MAG COIN is being built as a long-term blockchain project on Base
@@ -105,7 +105,8 @@ const styles: Record<string, CSSProperties> = {
 
   noticeBox: {
     border: "1px solid rgba(255, 255, 255, 0.12)",
-    background: "rgba(255, 255, 255, 0.04)",
+    background:
+      "linear-gradient(145deg, rgba(18,18,18,.96), rgba(5,5,5,.96))",
     borderRadius: "22px",
     padding: "28px",
     margin: "32px 0",
