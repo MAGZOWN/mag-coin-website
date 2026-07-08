@@ -2,38 +2,44 @@ import type { CSSProperties } from "react";
 
 import { transparencyTimeline } from "../data/transparencyTimeline";
 
+import SectionTitle from "./ui/SectionTitle";
+import StatusBadge from "./ui/StatusBadge";
+
+function getVariant(status: string) {
+  const value = status.toLowerCase();
+
+  if (value.includes("completed")) return "completed";
+  if (value.includes("live")) return "live";
+  if (value.includes("progress")) return "in-progress";
+
+  return "planned";
+}
+
 export default function TransparencyTimeline() {
   return (
     <section style={styles.section}>
-      <h2 style={styles.title}>Transparency Timeline</h2>
-
-      <p style={styles.subtitle}>
-        MAG Foundation believes progress should be visible, documented, and
-        verifiable.
-      </p>
+      <SectionTitle
+        subtitle="MAG Foundation believes progress should be visible, documented and independently verifiable."
+      >
+        Transparency Timeline
+      </SectionTitle>
 
       <div style={styles.timeline}>
         {transparencyTimeline.map((item) => (
           <div
             key={item.title}
             style={styles.card}
-            className="cardHover"
+            className="cardHover magCard"
           >
-            <h3 style={styles.heading}>{item.title}</h3>
+            <h3 className="goldGradient" style={styles.heading}>
+              {item.title}
+            </h3>
 
-            <span
-              style={{
-                ...styles.badge,
-                background:
-                  item.status === "Completed"
-                    ? "#198754"
-                    : item.status === "In Progress"
-                    ? "#0d6efd"
-                    : "#6c757d",
-              }}
+            <StatusBadge
+              variant={getVariant(item.status) as any}
             >
               {item.status}
-            </span>
+            </StatusBadge>
           </div>
         ))}
       </div>
@@ -46,21 +52,6 @@ const styles: Record<string, CSSProperties> = {
     marginBottom: "60px",
   },
 
-  title: {
-    textAlign: "center",
-    color: "#f5c542",
-    fontSize: "32px",
-    marginBottom: "14px",
-  },
-
-  subtitle: {
-    textAlign: "center",
-    color: "#d6d6d6",
-    maxWidth: "760px",
-    margin: "0 auto 36px",
-    lineHeight: "1.8",
-  },
-
   timeline: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))",
@@ -68,26 +59,19 @@ const styles: Record<string, CSSProperties> = {
   },
 
   card: {
-    background:
-      "linear-gradient(145deg, rgba(18,18,18,.96), rgba(5,5,5,.96))",
-    border: "1px solid #333",
     borderRadius: "20px",
-    padding: "24px",
+    padding: "26px",
     textAlign: "center",
+    minHeight: "165px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
   },
 
   heading: {
-    color: "#ffffff",
-    marginBottom: "18px",
-    fontSize: "18px",
-  },
-
-  badge: {
-    display: "inline-block",
-    color: "#ffffff",
-    padding: "8px 16px",
-    borderRadius: "999px",
-    fontWeight: "bold",
-    fontSize: "12px",
+    marginBottom: "22px",
+    fontSize: "20px",
+    fontWeight: 900,
+    lineHeight: "1.4",
   },
 };
