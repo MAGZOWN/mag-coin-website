@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -9,15 +10,22 @@ export default function Roadmap() {
 
       <main style={styles.main}>
         <section style={styles.container}>
-          <h1 style={styles.title}>Roadmap</h1>
+          <h1 style={styles.title}>
+            Roadmap
+          </h1>
 
           <p style={styles.lead}>
             The MAG COIN roadmap is designed around responsible progress,
             public documentation, and long-term sustainability.
           </p>
 
-          <div style={styles.card}>
-            <h2 style={styles.heading}>Phase I — Foundation</h2>
+          <div
+            style={styles.card}
+            className="cardHover"
+          >
+            <h2 style={styles.heading}>
+              Phase I — Foundation
+            </h2>
 
             <ul style={styles.list}>
               <li>Official website launch</li>
@@ -27,8 +35,13 @@ export default function Roadmap() {
             </ul>
           </div>
 
-          <div style={styles.card}>
-            <h2 style={styles.heading}>Phase II — Documentation</h2>
+          <div
+            style={styles.card}
+            className="cardHover"
+          >
+            <h2 style={styles.heading}>
+              Phase II — Documentation
+            </h2>
 
             <ul style={styles.list}>
               <li>Founder Edition Whitepaper</li>
@@ -38,8 +51,13 @@ export default function Roadmap() {
             </ul>
           </div>
 
-          <div style={styles.card}>
-            <h2 style={styles.heading}>Phase III — Blockchain Review</h2>
+          <div
+            style={styles.card}
+            className="cardHover"
+          >
+            <h2 style={styles.heading}>
+              Phase III — Blockchain Review
+            </h2>
 
             <ul style={styles.list}>
               <li>Confirm official contract records</li>
@@ -49,8 +67,13 @@ export default function Roadmap() {
             </ul>
           </div>
 
-          <div style={styles.card}>
-            <h2 style={styles.heading}>Phase IV — Community</h2>
+          <div
+            style={styles.card}
+            className="cardHover"
+          >
+            <h2 style={styles.heading}>
+              Phase IV — Community
+            </h2>
 
             <ul style={styles.list}>
               <li>Official community channels</li>
@@ -60,8 +83,13 @@ export default function Roadmap() {
             </ul>
           </div>
 
-          <div style={styles.card}>
-            <h2 style={styles.heading}>Phase V — Long-Term Growth</h2>
+          <div
+            style={styles.card}
+            className="cardHover"
+          >
+            <h2 style={styles.heading}>
+              Phase V — Long-Term Growth
+            </h2>
 
             <ul style={styles.list}>
               <li>Governance development</li>
@@ -94,10 +122,17 @@ const styles: Record<string, CSSProperties> = {
   },
 
   title: {
-    color: "#f5c542",
     fontSize: "52px",
+    lineHeight: "1.2",
+    fontWeight: "800",
     textAlign: "center",
     marginBottom: "20px",
+
+    background:
+      "linear-gradient(180deg,#ffffff 0%,#f5c542 100%)",
+
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
   },
 
   lead: {
@@ -109,7 +144,8 @@ const styles: Record<string, CSSProperties> = {
   },
 
   card: {
-    background: "rgba(17,17,17,0.92)",
+    background:
+      "linear-gradient(145deg, rgba(18,18,18,.96), rgba(5,5,5,.96))",
     border: "1px solid #333",
     borderRadius: "18px",
     padding: "28px",
@@ -121,6 +157,7 @@ const styles: Record<string, CSSProperties> = {
   heading: {
     color: "#f5c542",
     marginBottom: "14px",
+    fontSize: "30px",
   },
 
   list: {
