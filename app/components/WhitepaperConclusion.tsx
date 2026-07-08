@@ -2,8 +2,13 @@ import type { CSSProperties } from "react";
 
 export default function WhitepaperConclusion() {
   return (
-    <section style={styles.section}>
-      <h2 style={styles.title}>Founder Commitment</h2>
+    <section
+      style={styles.section}
+      className="cardHover fadeIn"
+    >
+      <h2 className="goldGradient" style={styles.title}>
+        Founder Commitment
+      </h2>
 
       <p style={styles.text}>
         MAG COIN is being developed with a long-term vision rather than
@@ -38,10 +43,9 @@ const styles: Record<string, CSSProperties> = {
   },
 
   title: {
-    color: "#f5c542",
     fontSize: "32px",
     marginBottom: "24px",
-    fontWeight: "bold",
+    fontWeight: 900,
   },
 
   text: {
@@ -55,7 +59,7 @@ const styles: Record<string, CSSProperties> = {
   signature: {
     marginTop: "30px",
     color: "#f5c542",
-    fontWeight: "bold",
+    fontWeight: 700,
     letterSpacing: "1px",
     fontSize: "15px",
   },
