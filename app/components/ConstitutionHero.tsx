@@ -8,7 +8,7 @@ export default function ConstitutionHero() {
       <h1 style={styles.title}>
         Constitution of the
         <br />
-        MAG Foundation.
+        MAG Foundation
       </h1>
 
       <p style={styles.subtitle}>
@@ -36,14 +36,20 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "13px",
     fontWeight: "bold",
     marginBottom: "18px",
+    textTransform: "uppercase",
   },
 
   title: {
     fontSize: "52px",
     lineHeight: "1.2",
-    color: "#ffffff",
     marginBottom: "26px",
-    fontWeight: "800",
+    fontWeight: 800,
+
+    background:
+      "linear-gradient(180deg,#ffffff 0%,#f5c542 100%)",
+
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
   },
 
   subtitle: {
