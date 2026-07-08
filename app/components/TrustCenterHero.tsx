@@ -3,7 +3,6 @@ import type { CSSProperties } from "react";
 import { trustCenterHero } from "../data/trustCenterHero";
 
 import HeroTitle from "./ui/HeroTitle";
-import StatusBadge from "./ui/StatusBadge";
 
 export default function TrustCenterHero() {
   return (
@@ -17,8 +16,7 @@ export default function TrustCenterHero() {
           {trustCenterHero.title.split("\n").map((line, index) => (
             <span key={index}>
               {line}
-              {index <
-                trustCenterHero.title.split("\n").length - 1 && <br />}
+              {index < trustCenterHero.title.split("\n").length - 1 && <br />}
             </span>
           ))}
         </>
@@ -30,24 +28,30 @@ export default function TrustCenterHero() {
 
       <div style={styles.badges}>
         {trustCenterHero.badges.map((badge) => (
-          <StatusBadge
+          <a
             key={badge}
-            variant={
-              badge.toLowerCase().includes("verified")
-                ? "completed"
-                : badge.toLowerCase().includes("live")
-                ? "live"
-                : badge.toLowerCase().includes("progress")
-                ? "in-progress"
-                : "planned"
-            }
+            href={getBadgeLink(badge)}
+            style={styles.badge}
+            className="cardHover"
           >
             {badge}
-          </StatusBadge>
+          </a>
         ))}
       </div>
     </section>
   );
+}
+
+function getBadgeLink(badge: string) {
+  const value = badge.toLowerCase();
+
+  if (value.includes("constitution")) return "/constitution";
+  if (value.includes("whitepaper")) return "/whitepaper";
+  if (value.includes("transparency")) return "/transparency";
+  if (value.includes("governance")) return "/constitution";
+  if (value.includes("security")) return "/security";
+
+  return "/transparency";
 }
 
 const styles: Record<string, CSSProperties> = {
@@ -78,5 +82,17 @@ const styles: Record<string, CSSProperties> = {
     justifyContent: "center",
     flexWrap: "wrap",
     gap: "14px",
+  },
+
+  badge: {
+    background: "rgba(245,197,66,.10)",
+    border: "1px solid rgba(245,197,66,.45)",
+    color: "#f5c542",
+    padding: "12px 24px",
+    borderRadius: "999px",
+    fontWeight: 800,
+    fontSize: "14px",
+    textDecoration: "none",
+    boxShadow: "0 0 14px rgba(245,197,66,.08)",
   },
 };
