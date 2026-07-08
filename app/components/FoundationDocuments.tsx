@@ -1,16 +1,39 @@
 import type { CSSProperties } from "react";
 
 import { foundationDocuments } from "../data/foundationDocuments";
+import SectionTitle from "./ui/SectionTitle";
+import StatusBadge from "./ui/StatusBadge";
+
+function getBadgeVariant(status: string) {
+  const normalized = status.toLowerCase();
+
+  if (normalized.includes("complete") || normalized.includes("published")) {
+    return "completed" as const;
+  }
+
+  if (normalized.includes("live")) {
+    return "live" as const;
+  }
+
+  if (normalized.includes("progress")) {
+    return "in-progress" as const;
+  }
+
+  if (normalized.includes("pending") || normalized.includes("soon")) {
+    return "pending" as const;
+  }
+
+  return "planned" as const;
+}
 
 export default function FoundationDocuments() {
   return (
     <section style={styles.section}>
-      <h2 style={styles.title}>Foundation Documents</h2>
-
-      <p style={styles.subtitle}>
-        Every important aspect of the MAG Foundation is documented to promote
-        transparency, accountability, and long-term trust.
-      </p>
+      <SectionTitle
+        subtitle="Every major MAG COIN document should be easy to find, easy to verify, and connected to the relevant Trust Center page."
+      >
+        Foundation Documents
+      </SectionTitle>
 
       <div style={styles.grid}>
         {foundationDocuments.map((doc) => (
@@ -19,12 +42,19 @@ export default function FoundationDocuments() {
             href={doc.link}
             style={styles.card}
             className="cardHover"
+            aria-label={`Open ${doc.title}`}
           >
-            <h3 style={styles.heading}>{doc.title}</h3>
+            <h3 className="goldGradient" style={styles.heading}>
+              {doc.title}
+            </h3>
 
             <p style={styles.description}>{doc.description}</p>
 
-            <span style={styles.badge}>{doc.status}</span>
+            <StatusBadge variant={getBadgeVariant(doc.status)}>
+              {doc.status}
+            </StatusBadge>
+
+            <span style={styles.linkHint}>Open document page →</span>
           </a>
         ))}
       </div>
@@ -35,21 +65,6 @@ export default function FoundationDocuments() {
 const styles: Record<string, CSSProperties> = {
   section: {
     marginBottom: "60px",
-  },
-
-  title: {
-    color: "#f5c542",
-    textAlign: "center",
-    fontSize: "32px",
-    marginBottom: "14px",
-  },
-
-  subtitle: {
-    color: "#d6d6d6",
-    textAlign: "center",
-    lineHeight: "1.7",
-    maxWidth: "760px",
-    margin: "0 auto 34px",
   },
 
   grid: {
@@ -66,29 +81,29 @@ const styles: Record<string, CSSProperties> = {
     borderRadius: "20px",
     padding: "26px",
     color: "#ffffff",
-    display: "block",
+    display: "flex",
+    flexDirection: "column",
+    minHeight: "230px",
   },
 
   heading: {
-    color: "#f5c542",
     marginBottom: "12px",
     fontSize: "22px",
+    fontWeight: 900,
   },
 
   description: {
     color: "#d6d6d6",
     lineHeight: "1.7",
     marginBottom: "18px",
+    flexGrow: 1,
   },
 
-  badge: {
-    display: "inline-block",
-    background: "rgba(245,197,66,.10)",
-    border: "1px solid rgba(245,197,66,.35)",
+  linkHint: {
+    display: "block",
+    marginTop: "18px",
     color: "#f5c542",
-    padding: "8px 14px",
-    borderRadius: "999px",
-    fontSize: "12px",
-    fontWeight: "bold",
+    fontSize: "13px",
+    fontWeight: 800,
   },
 };
