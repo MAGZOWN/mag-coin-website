@@ -1,31 +1,32 @@
 import type { CSSProperties } from "react";
 
+import HeroTitle from "./ui/HeroTitle";
+
 export default function AboutHero() {
   return (
     <section style={styles.hero} className="fadeIn">
-
       <p style={styles.kicker}>
         ABOUT MAG COIN
       </p>
 
-      <h1 style={styles.title}>
-        Built with Integrity.
-        <br />
-        Developed for Generations.
-      </h1>
+      <HeroTitle>
+        <>
+          Built with Integrity.
+          <br />
+          Developed for Generations.
+        </>
+      </HeroTitle>
 
       <p style={styles.subtitle}>
         MAG COIN is a long-term blockchain project built on the Base Network,
         dedicated to transparency, responsible stewardship, continuous
         improvement, and sustainable growth for the global community.
       </p>
-
     </section>
   );
 }
 
 const styles: Record<string, CSSProperties> = {
-
   hero: {
     textAlign: "center",
     paddingTop: "20px",
@@ -40,19 +41,7 @@ const styles: Record<string, CSSProperties> = {
     letterSpacing: "3px",
     fontWeight: 700,
     marginBottom: "18px",
-  },
-
-  title: {
-    fontSize: "52px",
-    fontWeight: 800,
-    lineHeight: "1.2",
-    marginBottom: "24px",
-
-    background:
-      "linear-gradient(180deg,#ffffff 0%,#f5c542 100%)",
-
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
+    textTransform: "uppercase",
   },
 
   subtitle: {
@@ -62,5 +51,4 @@ const styles: Record<string, CSSProperties> = {
     maxWidth: "760px",
     margin: "0 auto",
   },
-
 };
