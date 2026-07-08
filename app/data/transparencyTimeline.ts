@@ -16,8 +16,8 @@ export const transparencyTimeline = [
     status: "Upcoming",
   },
   {
-    title: "MAG/USDC Pair",
-    status: "Planned",
+    title: "MAG/USDC Liquidity",
+    status: "Completed",
   },
   {
     title: "Security Audit",
