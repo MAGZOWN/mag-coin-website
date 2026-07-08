@@ -3,6 +3,9 @@
 import type { CSSProperties } from "react";
 import { useState } from "react";
 
+import PrimaryButton from "./ui/PrimaryButton";
+import SecondaryButton from "./ui/SecondaryButton";
+
 import { copyToClipboard } from "../lib/copy";
 import { blockchainService } from "../services/blockchainService";
 
@@ -10,15 +13,17 @@ export default function ContractActions() {
   const [copied, setCopied] = useState(false);
 
   async function handleCopy() {
-    const success = await copyToClipboard(blockchainService.getContract());
+    const success = await copyToClipboard(
+      blockchainService.getContract()
+    );
 
-    if (success) {
-      setCopied(true);
+    if (!success) return;
 
-      setTimeout(() => {
-        setCopied(false);
-      }, 2000);
-    }
+    setCopied(true);
+
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
   }
 
   return (
@@ -26,19 +31,19 @@ export default function ContractActions() {
       <button
         type="button"
         onClick={handleCopy}
-        style={styles.button}
+        style={styles.copyButton}
+        className="primaryButton"
       >
-        {copied ? "Copied ✓" : "Copy Contract"}
+        {copied ? "✓ Contract Copied" : "Copy Contract"}
       </button>
 
-      <a
+      <SecondaryButton
         href={blockchainService.getContractExplorer()}
         target="_blank"
         rel="noopener noreferrer"
-        style={styles.link}
       >
         View on BaseScan ↗
-      </a>
+      </SecondaryButton>
     </div>
   );
 }
@@ -47,30 +52,22 @@ const styles: Record<string, CSSProperties> = {
   actions: {
     display: "flex",
     justifyContent: "center",
-    gap: "10px",
+    gap: "12px",
     flexWrap: "wrap",
-    marginTop: "14px",
+    marginTop: "16px",
   },
 
-  button: {
+  copyButton: {
     background: "#f5c542",
     color: "#000",
-    border: "none",
+    border: "2px solid #f5c542",
     borderRadius: "999px",
-    padding: "9px 16px",
-    fontWeight: "bold",
+    padding: "15px 34px",
+    fontWeight: 700,
+    fontSize: "15px",
     cursor: "pointer",
-    fontSize: "12px",
-  },
-
-  link: {
-    background: "transparent",
-    color: "#f5c542",
-    border: "1px solid rgba(245,197,66,.55)",
-    borderRadius: "999px",
-    padding: "8px 16px",
-    fontWeight: "bold",
-    textDecoration: "none",
-    fontSize: "12px",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 };
