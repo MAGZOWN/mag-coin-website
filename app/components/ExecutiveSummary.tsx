@@ -3,7 +3,10 @@ import type { CSSProperties } from "react";
 export default function ExecutiveSummary() {
   return (
     <section style={styles.section}>
-      <div style={styles.card}>
+      <div
+        style={styles.card}
+        className="cardHover fadeIn"
+      >
         <p style={styles.label}>EXECUTIVE SUMMARY</p>
 
         <h2 style={styles.title}>
