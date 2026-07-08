@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 
 export default function WhitepaperHero() {
   return (
-    <section style={styles.hero}>
+    <section style={styles.hero} className="fadeIn">
       <p style={styles.kicker}>MAG COIN WHITEPAPER</p>
 
       <h1 style={styles.title}>
@@ -45,8 +45,13 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "52px",
     fontWeight: 800,
     lineHeight: "1.2",
-    color: "#ffffff",
     marginBottom: "24px",
+
+    background:
+      "linear-gradient(180deg,#ffffff 0%,#f5c542 100%)",
+
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
   },
 
   subtitle: {
