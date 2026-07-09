@@ -1,9 +1,52 @@
-import type { CSSProperties } from "react";
+"use client";
+
+import type { CSSProperties, FormEvent } from "react";
+import { useState } from "react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default function Contact() {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
+    "idle"
+  );
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("sending");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      name: String(formData.get("name") || ""),
+      email: String(formData.get("email") || ""),
+      subject: String(formData.get("subject") || ""),
+      message: String(formData.get("message") || ""),
+      website: String(formData.get("website") || ""),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        setStatus("error");
+        return;
+      }
+
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <>
       <Navbar />
@@ -21,14 +64,17 @@ export default function Contact() {
           </p>
 
           <form
-            action="https://formsubmit.co/coinbasemag@gmail.com"
-            method="POST"
+            onSubmit={handleSubmit}
             style={styles.form}
             className="cardHover fadeIn"
           >
-            <input type="hidden" name="_subject" value="MAG COIN Website Contact" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="text" name="_honey" style={{ display: "none" }} />
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              style={styles.hiddenField}
+            />
 
             <label style={styles.field}>
               Name
@@ -74,12 +120,34 @@ export default function Contact() {
               />
             </label>
 
-            <button type="submit" style={styles.button} className="primaryButton">
-              Send Message
+            <button
+              type="submit"
+              style={{
+                ...styles.button,
+                opacity: status === "sending" ? 0.7 : 1,
+              }}
+              className="primaryButton"
+              disabled={status === "sending"}
+            >
+              {status === "sending" ? "Sending..." : "Send Message"}
             </button>
 
+            {status === "success" && (
+              <p style={styles.success}>
+                Message sent successfully. MAG COIN will review it through the
+                official contact email.
+              </p>
+            )}
+
+            {status === "error" && (
+              <p style={styles.error}>
+                Message could not be sent. Please try again later.
+              </p>
+            )}
+
             <p style={styles.note}>
-              Messages are delivered to the official MAG COIN contact email.
+              Messages are delivered securely to the official MAG COIN contact
+              email.
             </p>
           </form>
         </section>
@@ -142,6 +210,10 @@ const styles: Record<string, CSSProperties> = {
     boxShadow: "0 10px 30px rgba(0,0,0,.35)",
   },
 
+  hiddenField: {
+    display: "none",
+  },
+
   field: {
     display: "block",
     color: "#f5c542",
@@ -184,6 +256,20 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: 800,
     fontSize: "15px",
     cursor: "pointer",
+  },
+
+  success: {
+    marginTop: "20px",
+    color: "#22c55e",
+    fontWeight: 700,
+    lineHeight: "1.7",
+  },
+
+  error: {
+    marginTop: "20px",
+    color: "#ef4444",
+    fontWeight: 700,
+    lineHeight: "1.7",
   },
 
   note: {
