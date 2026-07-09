@@ -14,12 +14,22 @@ export default function FoundationUpdates() {
 
       <div style={styles.grid}>
         {foundationUpdates.map((update) => (
-          <div key={update.title} style={styles.card} className="cardHover">
-            <span style={styles.version}>{update.version}</span>
+          <div
+            key={update.title}
+            style={styles.card}
+            className="cardHover fadeIn"
+          >
+            <span style={styles.version}>
+              {update.version}
+            </span>
 
-            <h3 style={styles.heading}>{update.title}</h3>
+            <h3 style={styles.heading}>
+              {update.title}
+            </h3>
 
-            <p style={styles.description}>{update.description}</p>
+            <p style={styles.description}>
+              {update.description}
+            </p>
           </div>
         ))}
       </div>
@@ -36,6 +46,7 @@ const styles: Record<string, CSSProperties> = {
     color: "#f5c542",
     textAlign: "center",
     fontSize: "32px",
+    fontWeight: 800,
     marginBottom: "14px",
   },
 
@@ -44,7 +55,8 @@ const styles: Record<string, CSSProperties> = {
     textAlign: "center",
     lineHeight: "1.8",
     maxWidth: "760px",
-    margin: "0 auto 34px",
+    margin: "0 auto 36px",
+    fontSize: "17px",
   },
 
   grid: {
@@ -56,26 +68,31 @@ const styles: Record<string, CSSProperties> = {
   card: {
     background:
       "linear-gradient(145deg, rgba(18,18,18,.96), rgba(5,5,5,.96))",
-    border: "1px solid #333",
-    borderRadius: "20px",
-    padding: "26px",
+    border: "1px solid rgba(255,255,255,.10)",
+    borderRadius: "22px",
+    padding: "28px",
+    boxShadow: "0 10px 30px rgba(0,0,0,.35)",
   },
 
   version: {
     color: "#f5c542",
     fontSize: "13px",
-    fontWeight: "bold",
+    fontWeight: 700,
+    letterSpacing: "1px",
+    textTransform: "uppercase",
   },
 
   heading: {
     color: "#ffffff",
-    marginTop: "12px",
+    marginTop: "14px",
     marginBottom: "14px",
-    fontSize: "20px",
+    fontSize: "22px",
+    fontWeight: 700,
   },
 
   description: {
     color: "#d6d6d6",
-    lineHeight: "1.7",
+    lineHeight: "1.8",
+    fontSize: "16px",
   },
 };
