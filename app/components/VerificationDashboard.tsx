@@ -17,14 +17,23 @@ export default function VerificationDashboard() {
 
       <div style={styles.grid}>
         {verificationData.map((item) => (
-          <div key={item.label} style={styles.card} className="cardHover">
+          <div
+            key={item.label}
+            style={styles.card}
+            className="cardHover fadeIn"
+          >
             <p style={styles.label}>{item.label}</p>
+
             <h3 style={styles.value}>{item.value}</h3>
+
             <span style={styles.badge}>{item.status}</span>
           </div>
         ))}
 
-        <div style={styles.card} className="cardHover">
+        <div
+          style={styles.card}
+          className="cardHover fadeIn"
+        >
           <p style={styles.label}>Live Verification</p>
 
           <h3 style={styles.value}>
@@ -43,7 +52,7 @@ export default function VerificationDashboard() {
 const styles: Record<string, CSSProperties> = {
   section: {
     marginTop: "40px",
-    marginBottom: "50px",
+    marginBottom: "60px",
   },
 
   title: {
@@ -51,14 +60,16 @@ const styles: Record<string, CSSProperties> = {
     textAlign: "center",
     fontSize: "32px",
     marginBottom: "14px",
+    fontWeight: 800,
   },
 
   subtitle: {
     color: "#d6d6d6",
     textAlign: "center",
-    lineHeight: "1.7",
+    lineHeight: "1.8",
     maxWidth: "760px",
-    margin: "0 auto 34px",
+    margin: "0 auto 40px",
+    fontSize: "17px",
   },
 
   grid: {
@@ -70,23 +81,29 @@ const styles: Record<string, CSSProperties> = {
   card: {
     background:
       "linear-gradient(145deg, rgba(18,18,18,.96), rgba(5,5,5,.96))",
-    border: "1px solid #333",
-    borderRadius: "20px",
-    padding: "26px",
+    border: "1px solid rgba(255,255,255,.10)",
+    borderRadius: "22px",
+    padding: "28px",
     textAlign: "center",
     color: "#e5e5e5",
+    transition: "all .35s ease",
+    boxShadow: "0 10px 30px rgba(0,0,0,.35)",
   },
 
   label: {
-    color: "#999",
+    color: "#9ca3af",
     fontSize: "13px",
-    marginBottom: "10px",
+    marginBottom: "12px",
+    textTransform: "uppercase",
+    letterSpacing: "1px",
   },
 
   value: {
     color: "#ffffff",
-    fontSize: "18px",
-    marginBottom: "16px",
+    fontSize: "22px",
+    fontWeight: 700,
+    marginBottom: "18px",
+    wordBreak: "break-word",
   },
 
   badge: {
@@ -94,9 +111,9 @@ const styles: Record<string, CSSProperties> = {
     background: "rgba(245,197,66,.10)",
     border: "1px solid rgba(245,197,66,.35)",
     color: "#f5c542",
-    padding: "7px 14px",
+    padding: "8px 16px",
     borderRadius: "999px",
     fontSize: "12px",
-    fontWeight: "bold",
+    fontWeight: 700,
   },
 };
