@@ -11,6 +11,7 @@ const links = [
   ["Audit", "/audit"],
   ["Security", "/security"],
   ["FAQ", "/faq"],
+  ["Contact", "/contact"],
 ];
 
 export default function Navbar() {
