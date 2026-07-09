@@ -19,7 +19,7 @@ const links = [
   {
     title: "Constitution",
     url: "/constitution",
-    label: "Coming Soon",
+    label: "Read Constitution",
   },
 ];
 
@@ -39,11 +39,16 @@ export default function OfficialLinks() {
             key={item.title}
             href={item.url}
             target={item.url.startsWith("http") ? "_blank" : undefined}
-            rel={item.url.startsWith("http") ? "noopener noreferrer" : undefined}
+            rel={
+              item.url.startsWith("http")
+                ? "noopener noreferrer"
+                : undefined
+            }
             style={styles.card}
-            className="cardHover"
+            className="cardHover fadeIn"
           >
             <h3 style={styles.heading}>{item.title}</h3>
+
             <p style={styles.linkText}>{item.label}</p>
           </a>
         ))}
@@ -61,6 +66,7 @@ const styles: Record<string, CSSProperties> = {
     textAlign: "center",
     color: "#f5c542",
     fontSize: "32px",
+    fontWeight: 800,
     marginBottom: "14px",
   },
 
@@ -68,8 +74,9 @@ const styles: Record<string, CSSProperties> = {
     textAlign: "center",
     color: "#d6d6d6",
     maxWidth: "760px",
-    margin: "0 auto 34px",
-    lineHeight: "1.7",
+    margin: "0 auto 36px",
+    lineHeight: "1.8",
+    fontSize: "17px",
   },
 
   grid: {
@@ -81,21 +88,25 @@ const styles: Record<string, CSSProperties> = {
   card: {
     background:
       "linear-gradient(145deg, rgba(18,18,18,.96), rgba(5,5,5,.96))",
-    border: "1px solid #333",
-    borderRadius: "20px",
-    padding: "26px",
+    border: "1px solid rgba(255,255,255,.10)",
+    borderRadius: "22px",
+    padding: "28px",
     textAlign: "center",
     color: "#ffffff",
     textDecoration: "none",
+    transition: "all .35s ease",
+    boxShadow: "0 10px 30px rgba(0,0,0,.35)",
   },
 
   heading: {
     color: "#f5c542",
-    marginBottom: "12px",
+    fontSize: "22px",
+    marginBottom: "14px",
   },
 
   linkText: {
     color: "#d6d6d6",
     margin: 0,
+    lineHeight: "1.7",
   },
 };
