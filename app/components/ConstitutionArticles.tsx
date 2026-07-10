@@ -2,91 +2,181 @@ import type { CSSProperties } from "react";
 
 const articles = [
   {
-    title: "Preamble",
+    number: "Preamble",
+    title: "Purpose of the Constitution",
     text:
-      "The MAG Foundation is established to steward the MAG ecosystem with integrity, transparency, accountability, and long-term responsibility.",
+      "This Constitution establishes the enduring principles, governance framework, and stewardship responsibilities of the MAG Foundation. It is intended to provide long-term continuity, preserve institutional knowledge, and guide responsible development of the MAG ecosystem.",
   },
   {
-    title: "Article I — Purpose",
+    number: "Article I",
+    title: "Mission and Purpose",
     text:
-      "The purpose of the MAG Foundation is to support, maintain, document, and responsibly develop the MAG ecosystem.",
+      "The Foundation exists to support, maintain, document, and responsibly develop the MAG ecosystem. Every major decision should strengthen long-term sustainability, transparency, and public confidence.",
   },
   {
-    title: "Article II — Foundational Principles",
+    number: "Article II",
+    title: "Foundational Principles",
     text:
-      "The Foundation shall operate according to integrity, transparency, documentation, stewardship, sustainability, accountability, continuous improvement, and community respect.",
+      "Integrity, transparency, accountability, stewardship, sustainability, responsible communication, continuous improvement, and respect for the community shall remain the permanent guiding principles of the Foundation.",
   },
   {
-    title: "Article III — Governance",
+    number: "Article III",
+    title: "Governance",
     text:
-      "The MAG Foundation shall be governed with honesty, accountability, transparency, and long-term responsibility.",
+      "Governance decisions should be documented, evidence-based, and made with the long-term interests of the ecosystem in mind. Short-term popularity shall never outweigh responsible stewardship.",
   },
   {
-    title: "Article IV — Transparency",
+    number: "Article IV",
+    title: "Transparency",
     text:
-      "Transparency is a permanent responsibility of the MAG Foundation and shall never be sacrificed for short-term marketing advantage.",
+      "Material project information should be communicated accurately through official channels. Public records, blockchain verification, and documentation shall be maintained whenever reasonably possible.",
   },
   {
-    title: "Article V — Treasury Stewardship",
+    number: "Article V",
+    title: "Treasury Stewardship",
     text:
-      "Foundation-controlled assets shall be managed responsibly for the long-term strength of the MAG ecosystem.",
+      "Foundation-controlled assets shall be managed prudently and only in ways that support the project's stability, security, and long-term objectives. Decisions affecting treasury resources should be documented.",
   },
   {
-    title: "Article VI — Documentation",
+    number: "Article VI",
+    title: "Documentation",
     text:
-      "Documentation shall preserve institutional memory and support continuity for future contributors.",
+      "Documentation shall preserve institutional memory, provide continuity for future contributors, and ensure that important project knowledge remains accessible over time.",
   },
   {
-    title: "Article VII — Community",
+    number: "Article VII",
+    title: "Community",
     text:
-      "The Foundation shall communicate respectfully, honestly, and responsibly with the community.",
+      "The Foundation shall communicate honestly, respectfully, and responsibly. Community members should receive accurate information rather than unrealistic expectations or promotional exaggeration.",
   },
   {
-    title: "Article VIII — Amendments",
+    number: "Article VIII",
+    title: "Amendments",
     text:
-      "This Constitution may evolve responsibly through documented decisions while preserving historical versions.",
+      "This Constitution may evolve through documented revisions when necessary. Historical versions should be preserved to maintain transparency and accountability.",
   },
 ];
 
 export default function ConstitutionArticles() {
   return (
-    <section style={styles.section}>
-      {articles.map((article) => (
-        <div key={article.title} style={styles.card} className="cardHover">
-          <h2 style={styles.heading}>{article.title}</h2>
-          <p style={styles.text}>{article.text}</p>
-        </div>
-      ))}
+    <section
+      id="constitution-articles"
+      style={styles.section}
+      className="fadeIn"
+    >
+      <div style={styles.header}>
+        <p style={styles.label}>FOUNDATIONAL ARTICLES</p>
+
+        <h2 style={styles.title}>
+          Constitutional Framework
+        </h2>
+
+        <p style={styles.intro}>
+          The following articles establish the enduring governance principles of
+          the MAG Foundation. They are intended to guide decision-making,
+          preserve transparency, and protect the long-term interests of the MAG
+          ecosystem.
+        </p>
+      </div>
+
+      <div style={styles.grid}>
+        {articles.map((article) => (
+          <article
+            key={article.title}
+            style={styles.card}
+            className="cardHover"
+          >
+            <span style={styles.badge}>
+              {article.number}
+            </span>
+
+            <h3 style={styles.heading}>
+              {article.title}
+            </h3>
+
+            <p style={styles.text}>
+              {article.text}
+            </p>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }
 
 const styles: Record<string, CSSProperties> = {
   section: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
-    gap: "24px",
     marginBottom: "60px",
+  },
+
+  header: {
+    textAlign: "center",
+    marginBottom: "40px",
+  },
+
+  label: {
+    color: "#f5c542",
+    letterSpacing: "3px",
+    fontWeight: 800,
+    fontSize: "13px",
+    marginBottom: "14px",
+  },
+
+  title: {
+    color: "#ffffff",
+    fontSize: "38px",
+    fontWeight: 900,
+    marginBottom: "20px",
+  },
+
+  intro: {
+    color: "#d6d6d6",
+    maxWidth: "820px",
+    margin: "0 auto",
+    lineHeight: "1.8",
+    fontSize: "17px",
+  },
+
+  grid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))",
+    gap: "24px",
   },
 
   card: {
     background:
       "linear-gradient(145deg, rgba(18,18,18,.96), rgba(5,5,5,.96))",
-    border: "1px solid #333",
+    border: "1px solid rgba(255,255,255,.12)",
     borderRadius: "22px",
     padding: "30px",
     color: "#e5e5e5",
+    boxShadow: "0 12px 30px rgba(0,0,0,.25)",
+  },
+
+  badge: {
+    display: "inline-block",
+    color: "#f5c542",
+    background: "rgba(245,197,66,.10)",
+    border: "1px solid rgba(245,197,66,.25)",
+    borderRadius: "999px",
+    padding: "7px 14px",
+    fontSize: "12px",
+    fontWeight: 800,
+    marginBottom: "18px",
   },
 
   heading: {
     color: "#f5c542",
     marginBottom: "14px",
     fontSize: "22px",
+    lineHeight: "1.4",
+    fontWeight: 850,
   },
 
   text: {
     color: "#d6d6d6",
-    lineHeight: "1.8",
+    lineHeight: "1.9",
+    fontSize: "16px",
     margin: 0,
   },
 };
