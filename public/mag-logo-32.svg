@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-labelledby="title desc">
+  <title id="title">MAG COIN Official Vector Logo</title>
+  <desc id="desc">True vector black and gold MAG COIN token icon for BaseScan.</desc>
+
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#242424"/>
+      <stop offset="72%" stop-color="#0f0f0f"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff2a8"/>
+      <stop offset="22%" stop-color="#f6c84b"/>
+      <stop offset="55%" stop-color="#b77a10"/>
+      <stop offset="78%" stop-color="#f8d56a"/>
+      <stop offset="100%" stop-color="#8a5b08"/>
+    </linearGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0.45" stdDeviation="0.35" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <!-- Coin body -->
+  <circle cx="16" cy="16" r="15.5" fill="url(#bg)"/>
+  <circle cx="16" cy="16" r="15.1" fill="none" stroke="url(#gold)" stroke-width="0.8"/>
+  <circle cx="16" cy="16" r="13.7" fill="none" stroke="#d7a52b" stroke-width="0.35"/>
+  <circle cx="16" cy="16" r="12.8" fill="none" stroke="#6e4c0c" stroke-width="0.25"/>
+
+  <!-- Circuit-style decorative lines -->
+  <g fill="none" stroke="#b98719" stroke-width="0.23" opacity="0.9">
+    <path d="M5.2 11.2 H9.1 L10.4 9.9"/>
+    <path d="M5.2 13.0 H8.4 L9.8 11.6"/>
+    <path d="M26.8 11.2 H22.9 L21.6 9.9"/>
+    <path d="M26.8 13.0 H23.6 L22.2 11.6"/>
+    <path d="M5.2 20.8 H9.1 L10.4 22.1"/>
+    <path d="M26.8 20.8 H22.9 L21.6 22.1"/>
+  </g>
+  <g fill="#d6a52b">
+    <circle cx="5.2" cy="11.2" r="0.35"/><circle cx="5.2" cy="13.0" r="0.35"/>
+    <circle cx="26.8" cy="11.2" r="0.35"/><circle cx="26.8" cy="13.0" r="0.35"/>
+    <circle cx="5.2" cy="20.8" r="0.35"/><circle cx="26.8" cy="20.8" r="0.35"/>
+  </g>
+
+  <!-- Stylized M monogram -->
+  <path d="M10.1 10.0 L10.1 5.8 L12.2 5.8 L16 9.0 L19.8 5.8 L21.9 5.8 L21.9 10.0
+           L19.9 10.0 L19.9 8.2 L16 11.5 L12.1 8.2 L12.1 10.0 Z"
+        fill="url(#gold)" filter="url(#softShadow)"/>
+  <path d="M12.5 8.3 L16 11.1 L19.5 8.3 L19.5 9.7 L16 12.6 L12.5 9.7 Z"
+        fill="#f6c84b"/>
+
+  <!-- MAG wordmark as vector outlines -->
+  <path d="M 5.000 18.437 L 7.171 18.437 L 8.677 21.978 L 10.193 18.437 L 12.359 18.437 L 12.359 25.053 L 10.747 25.053 L 10.747 20.214 L 9.223 23.781 L 8.141 23.781 L 6.617 20.214 L 6.617 25.053 L 5.000 25.053 L 5.000 18.437 Z M 18.045 23.848 L 15.378 23.848 L 14.957 25.053 L 13.241 25.053 L 15.691 18.437 L 17.726 18.437 L 20.176 25.053 L 18.462 25.053 L 18.045 23.848 Z M 15.803 22.620 L 17.616 22.620 L 16.711 19.988 L 15.803 22.620 Z M 27.000 24.561 L 26.350 24.833 L 25.676 25.028 L 24.978 25.144 L 24.258 25.182 L 23.474 25.124 L 22.164 24.662 L 21.639 24.258 L 21.216 23.754 L 20.733 22.502 L 20.673 21.752 L 20.734 20.995 L 21.226 19.737 L 21.656 19.235 L 22.193 18.834 L 23.541 18.375 L 24.351 18.318 L 24.997 18.349 L 25.615 18.443 L 26.203 18.596 L 26.756 18.810 L 26.756 20.178 L 26.205 19.904 L 25.656 19.710 L 25.108 19.593 L 24.558 19.554 L 23.657 19.697 L 22.988 20.124 L 22.575 20.816 L 22.437 21.752 L 22.570 22.682 L 22.969 23.374 L 23.612 23.803 L 24.479 23.946 L 24.736 23.938 L 24.974 23.913 L 25.190 23.870 L 25.383 23.808 L 25.383 22.524 L 24.341 22.524 L 24.341 21.379 L 27.000 21.379 L 27.000 24.561 Z" fill="url(#gold)" fill-rule="evenodd" filter="url(#softShadow)"/>
+
+  <!-- Divider -->
+  <path d="M7.5 23.2 H11.1 M20.9 23.2 H24.5" stroke="#d8a52a" stroke-width="0.5" stroke-linecap="round"/>
+
+  <!-- COIN as vector outlines -->
+  <path d="M 13.466 26.693 L 13.466 27.133 L 13.248 26.962 L 13.016 26.840 L 12.770 26.767 L 12.509 26.743 L 12.042 26.824 L 11.699 27.066 L 11.489 27.462 L 11.419 28.001 L 11.489 28.539 L 11.699 28.934 L 12.042 29.176 L 12.509 29.257 L 12.770 29.233 L 13.016 29.160 L 13.248 29.038 L 13.466 28.866 L 13.466 29.303 L 13.240 29.433 L 13.002 29.526 L 12.750 29.581 L 12.485 29.600 L 11.858 29.493 L 11.381 29.172 L 11.079 28.664 L 10.978 28.001 L 11.079 27.336 L 11.381 26.829 L 11.858 26.507 L 12.485 26.400 L 12.753 26.418 L 13.006 26.473 L 13.243 26.565 L 13.466 26.693 Z M 15.362 26.738 L 14.954 26.823 L 14.640 27.078 L 14.439 27.478 L 14.372 28.001 L 14.439 28.523 L 14.640 28.922 L 14.954 29.176 L 15.362 29.261 L 15.769 29.176 L 16.082 28.922 L 16.281 28.523 L 16.348 28.001 L 16.281 27.478 L 16.082 27.078 L 15.769 26.823 L 15.362 26.738 Z M 15.362 26.400 L 15.945 26.509 L 16.399 26.835 L 16.690 27.344 L 16.787 28.001 L 16.690 28.657 L 16.399 29.165 L 15.945 29.491 L 15.362 29.600 L 14.777 29.492 L 14.322 29.166 L 14.030 28.658 L 13.932 28.001 L 14.030 27.344 L 14.322 26.835 L 14.777 26.509 L 15.362 26.400 Z M 17.440 26.456 L 17.857 26.456 L 17.857 29.540 L 17.440 29.540 L 17.440 26.456 Z M 18.688 26.456 L 19.249 26.456 L 20.617 29.035 L 20.617 26.456 L 21.022 26.456 L 21.022 29.540 L 20.460 29.540 L 19.093 26.960 L 19.093 29.540 L 18.688 29.540 L 18.688 26.456 Z" fill="#e8bb42" fill-rule="evenodd"/>
+
+  <!-- Small highlights -->
+  <circle cx="16" cy="16" r="14.6" fill="none" stroke="#fff0a6" stroke-width="0.18" opacity="0.65"/>
+</svg>
