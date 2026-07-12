@@ -10,6 +10,7 @@ const links = [
   ["Transparency", "/transparency"],
   ["Audit", "/audit"],
   ["Security", "/security"],
+  ["Verify", "/verify"],
   ["FAQ", "/faq"],
   ["Contact", "/contact"],
 ];
@@ -28,7 +29,12 @@ export default function Navbar() {
 
         <nav style={styles.nav} aria-label="Main navigation">
           {links.map(([label, href]) => (
-            <a key={label} href={href} className="navLink" style={styles.link}>
+            <a
+              key={label}
+              href={href}
+              className="navLink"
+              style={styles.link}
+            >
               {label}
             </a>
           ))}
@@ -86,7 +92,7 @@ const styles: Record<string, CSSProperties> = {
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-end",
-    gap: "24px",
+    gap: "22px",
     flexWrap: "wrap",
   },
 
@@ -96,5 +102,6 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "14px",
     fontWeight: 600,
     letterSpacing: ".2px",
+    whiteSpace: "nowrap",
   },
 };
