@@ -10,7 +10,6 @@ const links = [
   ["Transparency", "/transparency"],
   ["Audit", "/audit"],
   ["Security", "/security"],
-  ["Verify", "/verify"],
   ["FAQ", "/faq"],
   ["Contact", "/contact"],
 ];
