@@ -8,6 +8,7 @@ const links = [
   ["Tokenomics", "/tokenomics"],
   ["Roadmap", "/roadmap"],
   ["Transparency", "/transparency"],
+  ["Ecosystem", "/ecosystem"],
   ["Audit", "/audit"],
   ["Security", "/security"],
   ["FAQ", "/faq"],
