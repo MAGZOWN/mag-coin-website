@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import LiveTokenData from "./components/LiveTokenData";
+import LiveBlockchainStats from "./components/LiveBlockchainStats";
 
 const CONTRACT_ADDRESS = "0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94";
 
@@ -191,6 +192,8 @@ export default function EcosystemPage() {
         </section>
 
         <LiveTokenData />
+
+        <LiveBlockchainStats />
 
         <section style={styles.section}>
           <div style={styles.sectionHeading}>
