@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import LiveTokenData from "./components/LiveTokenData";
 
 const CONTRACT_ADDRESS = "0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94";
 
@@ -189,6 +190,8 @@ export default function EcosystemPage() {
           </div>
         </section>
 
+        <LiveTokenData />
+
         <section style={styles.section}>
           <div style={styles.sectionHeading}>
             <span style={styles.sectionKicker}>AVAILABLE NOW</span>
@@ -201,7 +204,11 @@ export default function EcosystemPage() {
 
           <div style={styles.cardGrid}>
             {liveModules.map((module) => (
-              <article key={module.title} className="ecosystemCard" style={styles.card}>
+              <article
+                key={module.title}
+                className="ecosystemCard"
+                style={styles.card}
+              >
                 <div style={styles.cardTop}>
                   <span style={styles.liveBadge}>{module.status}</span>
                 </div>
