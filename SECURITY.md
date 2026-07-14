@@ -1,38 +1,32 @@
-# MAG COIN Security Policy
+# Security Policy
 
-## Security Commitment
+## MAG COIN Security
 
-MAG COIN follows a safety-first development approach.
+Security is one of the core principles of the MAG COIN project.
 
-We take security reports seriously and appreciate responsible disclosure from developers, researchers, community members, and users who identify potential vulnerabilities affecting the official MAG COIN website or related public infrastructure.
-
-## Supported Scope
-
-This security policy currently applies to:
-
-- The official MAG COIN website
-- Website source code contained in this repository
-- Public website integrations
-- Official project links and public-facing configuration
-- Security issues that may affect users visiting the official website
-
-This repository does not contain wallet private keys, seed phrases, or custodial user funds.
+If you discover a security vulnerability, please do not disclose it publicly before contacting the project team.
 
 ## Reporting a Vulnerability
 
-Please do not disclose suspected vulnerabilities through:
+Please report all security-related issues to:
 
-- Public GitHub issues
-- Public social-media posts
-- Telegram groups or public chats
-- Comments on official posts
-- Unsolicited direct messages to community members
+Email:
+info@coinmagbase.com
 
-Report security concerns privately by email:
+Website:
+https://coinmagbase.com/contact
 
-**info@coinmagbase.com**
+Please include:
 
-Use the following subject line:
+- Description of the issue
+- Steps to reproduce
+- Affected component
+- Screenshots (if applicable)
+- Suggested mitigation (optional)
 
-```text
-MAG COIN Security Report
+We appreciate responsible disclosure and will investigate all legitimate reports.
+
+Thank you for helping keep MAG COIN secure.
+
+Built with Integrity.
+Trusted for Generations.
