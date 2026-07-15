@@ -1,4 +1,30 @@
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
+
+type SocialLinkProps = {
+  href: string;
+  label: string;
+  icon: ReactNode;
+};
+
+function SocialLink({ href, label, icon }: SocialLinkProps) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Open MAG COIN on ${label}`}
+      title={`MAG COIN on ${label}`}
+      className="navLink"
+      style={styles.socialLink}
+    >
+      <span style={styles.socialIcon} aria-hidden="true">
+        {icon}
+      </span>
+
+      <span>{label}</span>
+    </a>
+  );
+}
 
 export default function Footer() {
   return (
@@ -15,13 +41,71 @@ export default function Footer() {
         </p>
 
         <div style={styles.links}>
-          <a href="/" className="navLink" style={styles.link}>Home</a>
-          <a href="/about" className="navLink" style={styles.link}>About</a>
-          <a href="/whitepaper" className="navLink" style={styles.link}>Whitepaper</a>
-          <a href="/transparency" className="navLink" style={styles.link}>Transparency</a>
-          <a href="/audit" className="navLink" style={styles.link}>Audit</a>
-          <a href="/security" className="navLink" style={styles.link}>Security</a>
+          <a href="/" className="navLink" style={styles.link}>
+            Home
+          </a>
+
+          <a href="/about" className="navLink" style={styles.link}>
+            About
+          </a>
+
+          <a href="/whitepaper" className="navLink" style={styles.link}>
+            Whitepaper
+          </a>
+
+          <a href="/transparency" className="navLink" style={styles.link}>
+            Transparency
+          </a>
+
+          <a href="/audit" className="navLink" style={styles.link}>
+            Audit
+          </a>
+
+          <a href="/security" className="navLink" style={styles.link}>
+            Security
+          </a>
         </div>
+
+        <section style={styles.socialSection}>
+          <h4 style={styles.socialTitle}>Official Communication Channels</h4>
+
+          <p style={styles.socialNotice}>
+            Only trust announcements published through the official channels
+            listed below.
+          </p>
+
+          <div style={styles.socialLinks}>
+            <SocialLink
+              href="https://x.com/MAGCOINBASE"
+              label="X"
+              icon={<XIcon />}
+            />
+
+            <SocialLink
+              href="https://t.me/MAGCOINBASE"
+              label="Telegram"
+              icon={<TelegramIcon />}
+            />
+
+            <SocialLink
+              href="https://web.facebook.com/profile.php?id=61592146070481"
+              label="Facebook"
+              icon={<FacebookIcon />}
+            />
+
+            <SocialLink
+              href="https://www.instagram.com/coinbasemag/"
+              label="Instagram"
+              icon={<InstagramIcon />}
+            />
+
+            <SocialLink
+              href="https://github.com/MAGZOWN/mag-coin-website"
+              label="GitHub"
+              icon={<GitHubIcon />}
+            />
+          </div>
+        </section>
 
         <p style={styles.disclaimer}>
           MAG COIN does not promise guaranteed returns, future prices, or
@@ -41,11 +125,85 @@ export default function Footer() {
           © 2026 MAG COIN Foundation. All rights reserved.
         </p>
 
-        <p style={styles.version}>
-          Foundation Release v1.0
-        </p>
+        <p style={styles.version}>Foundation Release v1.0</p>
       </div>
     </footer>
+  );
+}
+
+function XIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width="20"
+      height="20"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.546l-5.126-6.702L5.22 22H1.96l7.606-8.694L1.55 2h6.712l4.633 6.125L18.244 2Zm-1.143 17.91h1.804L7.282 3.986H5.346L17.101 19.91Z" />
+    </svg>
+  );
+}
+
+function TelegramIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width="20"
+      height="20"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M21.8 3.2 18.6 20c-.24 1.19-.88 1.48-1.79.92l-4.87-3.59-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.96 9.03-8.16c.39-.35-.09-.55-.61-.2L6.22 13.78 1.41 12.28c-1.05-.33-1.07-1.05.22-1.55L20.44 3.48c.87-.32 1.63.2 1.36-.28Z" />
+    </svg>
+  );
+}
+
+function FacebookIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width="20"
+      height="20"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M14 8.5V6.8c0-.76.5-.94.86-.94H17V2.1L14.04 2C10.75 2 10 4.47 10 6.05V8.5H8v4h2V22h4v-9.5h2.64l.36-4H14Z" />
+    </svg>
+  );
+}
+
+function InstagramIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width="20"
+      height="20"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function GitHubIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width="20"
+      height="20"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49v-1.9c-2.78.62-3.37-1.2-3.37-1.2-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.56 2.35 1.11 2.92.85.09-.66.35-1.11.64-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.35 9.35 0 0 1 12 6.93c.85 0 1.7.12 2.5.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.04.36.32.68.94.68 1.9v2.8c0 .27.18.59.69.49A10.23 10.23 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z" />
+    </svg>
   );
 }
 
@@ -57,7 +215,7 @@ const styles: Record<string, CSSProperties> = {
   },
 
   inner: {
-    maxWidth: "900px",
+    maxWidth: "1000px",
     margin: "0 auto",
     textAlign: "center",
   },
@@ -89,7 +247,7 @@ const styles: Record<string, CSSProperties> = {
     justifyContent: "center",
     flexWrap: "wrap",
     gap: "20px",
-    marginBottom: "30px",
+    marginBottom: "32px",
   },
 
   link: {
@@ -99,10 +257,68 @@ const styles: Record<string, CSSProperties> = {
     textDecoration: "none",
   },
 
+  socialSection: {
+    padding: "24px 20px",
+    marginBottom: "30px",
+    border: "1px solid rgba(245,197,66,0.18)",
+    borderRadius: "18px",
+    background:
+      "linear-gradient(180deg, rgba(245,197,66,0.05), rgba(255,255,255,0.015))",
+  },
+
+  socialTitle: {
+    color: "#f5c542",
+    fontSize: "17px",
+    fontWeight: 800,
+    margin: "0 0 8px",
+  },
+
+  socialNotice: {
+    color: "#a9a9a9",
+    fontSize: "13px",
+    lineHeight: 1.7,
+    margin: "0 0 20px",
+  },
+
+  socialLinks: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: "12px",
+  },
+
+  socialLink: {
+    display: "inline-flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "8px",
+    minHeight: "42px",
+    padding: "8px 15px",
+    color: "#ffffff",
+    background: "rgba(255,255,255,0.035)",
+    border: "1px solid rgba(245,197,66,0.35)",
+    borderRadius: "999px",
+    fontSize: "13px",
+    fontWeight: 700,
+    textDecoration: "none",
+    boxShadow: "0 6px 18px rgba(0,0,0,0.22)",
+  },
+
+  socialIcon: {
+    width: "20px",
+    height: "20px",
+    display: "inline-flex",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "#f5c542",
+    flexShrink: 0,
+  },
+
   disclaimer: {
     color: "#a9a9a9",
     fontSize: "13px",
-    lineHeight: "1.8",
+    lineHeight: 1.8,
     marginBottom: "18px",
   },
 
