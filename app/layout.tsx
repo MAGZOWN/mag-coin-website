@@ -13,6 +13,52 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const organizationStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://coinmagbase.com/#organization",
+  name: "MAG COIN Foundation",
+  alternateName: "MAG COIN",
+  url: "https://coinmagbase.com",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://coinmagbase.com/mag-logo.png",
+  },
+  image: "https://coinmagbase.com/mag-social-banner.png",
+  description:
+    "MAG COIN is an ERC-20 token on Base focused on transparency, responsible development, long-term sustainability, and community trust through public documentation and verifiable on-chain information.",
+  email: "info@coinmagbase.com",
+  sameAs: [
+    "https://x.com/MAGCOINBASE",
+    "https://t.me/MAGCOINBASE",
+    "https://web.facebook.com/profile.php?id=61592146070481",
+    "https://www.instagram.com/coinbasemag/",
+    "https://github.com/MAGZOWN",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "Project enquiries",
+    email: "info@coinmagbase.com",
+    url: "https://coinmagbase.com/contact",
+    availableLanguage: ["English"],
+  },
+};
+
+const websiteStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://coinmagbase.com/#website",
+  url: "https://coinmagbase.com",
+  name: "MAG COIN",
+  alternateName: "MAG COIN Foundation",
+  description:
+    "The official website of MAG COIN, a long-term blockchain project built on Base Mainnet.",
+  publisher: {
+    "@id": "https://coinmagbase.com/#organization",
+  },
+  inLanguage: "en",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://coinmagbase.com"),
 
@@ -120,6 +166,28 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        <script
+          id="mag-coin-organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationStructuredData).replace(
+              /</g,
+              "\\u003c",
+            ),
+          }}
+        />
+
+        <script
+          id="mag-coin-website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteStructuredData).replace(
+              /</g,
+              "\\u003c",
+            ),
+          }}
+        />
+
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-7GFJ914612"
@@ -139,9 +207,7 @@ export default function RootLayout({
         </Script>
       </head>
 
-      <body className="min-h-full flex flex-col">
-        {children}
-      </body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }
