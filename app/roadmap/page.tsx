@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 
 import Navbar from "../components/Navbar";
@@ -7,6 +8,45 @@ import RoadmapHero from "../components/RoadmapHero";
 import RoadmapTimeline from "../components/RoadmapTimeline";
 import CurrentProgress from "../components/CurrentProgress";
 import RoadmapCommitment from "../components/RoadmapCommitment";
+
+export const metadata: Metadata = {
+  title: "Roadmap",
+
+  description:
+    "Follow the official MAG COIN Roadmap detailing completed milestones, current development progress, and the long-term vision for responsible ecosystem growth on Base Mainnet.",
+
+  alternates: {
+    canonical: "/roadmap",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/roadmap",
+    siteName: "MAG COIN",
+    title: "Roadmap | MAG COIN",
+    description:
+      "Explore the MAG COIN development roadmap, completed milestones, ongoing progress, and future plans for sustainable ecosystem growth.",
+    images: [
+      {
+        url: "/mag-social-banner.png",
+        width: 1360,
+        height: 430,
+        alt: "MAG COIN Roadmap — Built with Integrity. Trusted for Generations.",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Roadmap | MAG COIN",
+    description:
+      "Explore the MAG COIN development roadmap, completed milestones, ongoing progress, and future plans for sustainable ecosystem growth.",
+    images: ["/mag-social-banner.png"],
+    creator: "@MAGCOINBASE",
+    site: "@MAGCOINBASE",
+  },
+};
 
 export default function Roadmap() {
   return (
