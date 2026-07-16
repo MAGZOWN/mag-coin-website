@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import type { Metadata } from "next";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -9,6 +10,47 @@ import CoreValues from "./components/CoreValues";
 import ProjectStatus from "./components/ProjectStatus";
 import LatestProjectUpdates from "./components/LatestProjectUpdates";
 import DevelopmentTimeline from "./components/DevelopmentTimeline";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "MAG COIN | Built with Integrity. Trusted for Generations.",
+  },
+
+  description:
+    "MAG COIN is a long-term blockchain project built on Base Mainnet with transparency, responsible stewardship, continuous improvement, and sustainable growth at its foundation.",
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "MAG COIN",
+    title: "MAG COIN | Built with Integrity. Trusted for Generations.",
+    description:
+      "A long-term blockchain project built on Base Mainnet with transparency, responsible stewardship, continuous improvement, and sustainable growth.",
+    images: [
+      {
+        url: "/mag-social-banner.png",
+        width: 1360,
+        height: 430,
+        alt: "MAG COIN — Built with Integrity. Trusted for Generations.",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "MAG COIN | Built with Integrity. Trusted for Generations.",
+    description:
+      "A long-term blockchain project built on Base Mainnet with transparency, responsible stewardship, continuous improvement, and sustainable growth.",
+    images: ["/mag-social-banner.png"],
+    creator: "@MAGCOINBASE",
+    site: "@MAGCOINBASE",
+  },
+};
 
 export default function Home() {
   return (
