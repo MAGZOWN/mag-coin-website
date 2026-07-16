@@ -93,14 +93,9 @@ export const metadata: Metadata = {
 
   applicationName: "MAG COIN",
 
-  alternates: {
-    canonical: "/",
-  },
-
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://coinmagbase.com",
     siteName: "MAG COIN",
     title: "MAG COIN | Built with Integrity. Trusted for Generations.",
     description:
