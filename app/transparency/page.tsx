@@ -13,9 +13,42 @@ import OfficialLinks from "../components/OfficialLinks";
 import FoundationUpdates from "../components/FoundationUpdates";
 
 export const metadata: Metadata = {
-  title: "Transparency | MAG COIN",
+  title: "Transparency",
+
   description:
-    "MAG COIN transparency center with verified contract, liquidity, audit, documentation, and project milestone records.",
+    "Explore the official MAG COIN Transparency Centre with verified contract information, liquidity references, security records, foundation documents, official links, and public project milestones.",
+
+  alternates: {
+    canonical: "/transparency",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/transparency",
+    siteName: "MAG COIN",
+    title: "Transparency Centre | MAG COIN",
+    description:
+      "Review verified MAG COIN contract information, liquidity references, foundation documents, security records, official links, and publicly documented project milestones.",
+    images: [
+      {
+        url: "/mag-social-banner.png",
+        width: 1360,
+        height: 430,
+        alt: "MAG COIN Transparency Centre — Built with Integrity. Trusted for Generations.",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Transparency Centre | MAG COIN",
+    description:
+      "Review verified MAG COIN contract information, liquidity references, foundation documents, security records, official links, and publicly documented project milestones.",
+    images: ["/mag-social-banner.png"],
+    creator: "@MAGCOINBASE",
+    site: "@MAGCOINBASE",
+  },
 };
 
 export default function Transparency() {
@@ -27,6 +60,7 @@ export default function Transparency() {
         <section style={styles.container}>
           <div style={styles.statusBanner} className="cardHover">
             <span style={styles.statusLabel}>Foundation Release v1.0</span>
+
             <span style={styles.statusText}>
               Contract verified • MAG/USDC liquidity live • DEXTools indexed •
               DEXScreener indexed
@@ -37,11 +71,12 @@ export default function Transparency() {
 
           <section style={styles.noticeBox} className="cardHover">
             <h2 style={styles.noticeTitle}>Transparency First</h2>
+
             <p style={styles.noticeText}>
               MAG COIN is being built as a long-term blockchain project on Base
               Mainnet. Every major technical, liquidity, treasury, and
-              governance milestone should be documented, verified, and preserved
-              for public review.
+              governance milestone should be documented, verified, and
+              preserved for public review.
             </p>
           </section>
 
