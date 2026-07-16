@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 
 import Navbar from "../components/Navbar";
@@ -8,6 +9,45 @@ import TokenOverview from "../components/TokenOverview";
 import SupplyDistribution from "../components/SupplyDistribution";
 import TokenUtility from "../components/TokenUtility";
 import TokenGovernance from "../components/TokenGovernance";
+
+export const metadata: Metadata = {
+  title: "Tokenomics",
+
+  description:
+    "Explore the official MAG COIN Tokenomics including total supply, token distribution, governance model, utility, and the long-term economic framework built on Base Mainnet.",
+
+  alternates: {
+    canonical: "/tokenomics",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/tokenomics",
+    siteName: "MAG COIN",
+    title: "Tokenomics | MAG COIN",
+    description:
+      "Explore the official MAG COIN Tokenomics including total supply, governance, utility, token distribution, and long-term sustainability.",
+    images: [
+      {
+        url: "/mag-social-banner.png",
+        width: 1360,
+        height: 430,
+        alt: "MAG COIN Tokenomics — Built with Integrity. Trusted for Generations.",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Tokenomics | MAG COIN",
+    description:
+      "Explore the official MAG COIN Tokenomics including total supply, governance, utility, token distribution, and long-term sustainability.",
+    images: ["/mag-social-banner.png"],
+    creator: "@MAGCOINBASE",
+    site: "@MAGCOINBASE",
+  },
+};
 
 export default function Tokenomics() {
   return (
