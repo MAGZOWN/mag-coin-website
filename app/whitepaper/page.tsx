@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 
 import Navbar from "../components/Navbar";
@@ -13,6 +14,45 @@ import TransparencyCommitment from "../components/TransparencyCommitment";
 import FutureRoadmap from "../components/FutureRoadmap";
 import RiskDisclosure from "../components/RiskDisclosure";
 import WhitepaperConclusion from "../components/WhitepaperConclusion";
+
+export const metadata: Metadata = {
+  title: "Whitepaper",
+
+  description:
+    "Read the official MAG COIN Whitepaper outlining the project's vision, governance, transparency, token foundation, development strategy, roadmap, and long-term commitment to responsible blockchain innovation.",
+
+  alternates: {
+    canonical: "/whitepaper",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/whitepaper",
+    siteName: "MAG COIN",
+    title: "Whitepaper | MAG COIN",
+    description:
+      "Read the official MAG COIN Whitepaper covering the project's vision, governance framework, token foundation, transparency commitments, development strategy, risk disclosures, and future roadmap.",
+    images: [
+      {
+        url: "/mag-social-banner.png",
+        width: 1360,
+        height: 430,
+        alt: "MAG COIN Whitepaper — Built with Integrity. Trusted for Generations.",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Whitepaper | MAG COIN",
+    description:
+      "Read the official MAG COIN Whitepaper covering the project's vision, governance framework, token foundation, transparency commitments, development strategy, risk disclosures, and future roadmap.",
+    images: ["/mag-social-banner.png"],
+    creator: "@MAGCOINBASE",
+    site: "@MAGCOINBASE",
+  },
+};
 
 export default function Whitepaper() {
   return (
