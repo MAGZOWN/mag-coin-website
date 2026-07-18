@@ -12,12 +12,12 @@ export const developmentTimeline = [
   {
     phase: "Phase 3",
     title: "Community Growth",
-    status: "Planned",
+    status: "In Progress",
   },
   {
     phase: "Phase 4",
     title: "Ecosystem Expansion",
-    status: "Planned",
+    status: "In Progress",
   },
   {
     phase: "Phase 5",
