@@ -46,43 +46,48 @@ export async function getWalletPortfolio(
 ): Promise<WalletPortfolio> {
   const address = normalizeWalletAddress(walletAddress);
 
-  const [ethBalanceRaw, magBalanceRaw, magDecimals, usdcBalanceRaw, usdcDecimals] =
-    await Promise.all([
-      publicClient.getBalance({
-        address,
-      }),
+  const [
+    ethBalanceRaw,
+    magBalanceRaw,
+    magDecimals,
+    usdcBalanceRaw,
+    usdcDecimals,
+  ] = await Promise.all([
+    publicClient.getBalance({
+      address,
+    }),
 
-      publicClient.readContract({
-        ...MAG_CONTRACT,
-        functionName: "balanceOf",
-        args: [address],
-      }),
+    publicClient.readContract({
+      ...MAG_CONTRACT,
+      functionName: "balanceOf",
+      args: [address],
+    }),
 
-      publicClient.readContract({
-        ...MAG_CONTRACT,
-        functionName: "decimals",
-      }),
+    publicClient.readContract({
+      ...MAG_CONTRACT,
+      functionName: "decimals",
+    }),
 
-      publicClient.readContract({
-        address: BASE_USDC_ADDRESS,
-        abi: ERC20_BALANCE_ABI,
-        functionName: "balanceOf",
-        args: [address],
-      }),
+    publicClient.readContract({
+      address: BASE_USDC_ADDRESS,
+      abi: ERC20_BALANCE_ABI,
+      functionName: "balanceOf",
+      args: [address],
+    }),
 
-      publicClient.readContract({
-        address: BASE_USDC_ADDRESS,
-        abi: ERC20_BALANCE_ABI,
-        functionName: "decimals",
-      }),
-    ]);
+    publicClient.readContract({
+      address: BASE_USDC_ADDRESS,
+      abi: ERC20_BALANCE_ABI,
+      functionName: "decimals",
+    }),
+  ]);
 
   return {
     address,
     ethBalance: formatEther(ethBalanceRaw),
     magBalance: formatUnits(magBalanceRaw, magDecimals),
     usdcBalance: formatUnits(usdcBalanceRaw, usdcDecimals),
-    holdsMag: magBalanceRaw > 0n,
+    holdsMag: magBalanceRaw > BigInt(0),
     basescanAddressUrl: `https://basescan.org/address/${address}`,
   };
 }
