@@ -9,6 +9,7 @@ const links = [
   ["Roadmap", "/roadmap"],
   ["Transparency", "/transparency"],
   ["Ecosystem", "/ecosystem"],
+  ["Portfolio", "/portfolio"],
   ["Audit", "/audit"],
   ["Security", "/security"],
   ["FAQ", "/faq"],
@@ -92,7 +93,7 @@ const styles: Record<string, CSSProperties> = {
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-end",
-    gap: "22px",
+    gap: "20px",
     flexWrap: "wrap",
   },
 
