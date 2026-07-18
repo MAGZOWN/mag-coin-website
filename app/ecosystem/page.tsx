@@ -32,6 +32,15 @@ const liveModules = [
     external: true,
   },
   {
+    title: "MAG Portfolio",
+    description:
+      "A read-only Base wallet tool for viewing ETH, MAG and USDC balances, checking MAG holder status and verifying addresses on BaseScan.",
+    status: "LIVE",
+    href: "/portfolio",
+    action: "Open Portfolio",
+    external: false,
+  },
+  {
     title: "Transparency Centre",
     description:
       "Project status, official references, development records and verification resources are available publicly.",
@@ -52,12 +61,6 @@ const liveModules = [
 ];
 
 const developmentModules = [
-  {
-    title: "Wallet Portfolio",
-    phase: "Phase 1",
-    description:
-      "A read-only wallet dashboard for viewing MAG balances, holder status, transaction history and official links.",
-  },
   {
     title: "Treasury Dashboard",
     phase: "Phase 1",
@@ -198,10 +201,12 @@ export default function EcosystemPage() {
         <section style={styles.section}>
           <div style={styles.sectionHeading}>
             <span style={styles.sectionKicker}>AVAILABLE NOW</span>
+
             <h2 style={styles.sectionTitle}>Live Ecosystem Foundation</h2>
+
             <p style={styles.sectionDescription}>
-              These services and resources are currently available and can be
-              independently checked.
+              These services, tools and resources are currently available and
+              can be independently checked.
             </p>
           </div>
 
@@ -236,7 +241,9 @@ export default function EcosystemPage() {
         <section style={styles.sectionAlt}>
           <div style={styles.sectionHeading}>
             <span style={styles.sectionKicker}>DEVELOPMENT ROADMAP</span>
+
             <h2 style={styles.sectionTitle}>Planned Ecosystem Modules</h2>
+
             <p style={styles.sectionDescription}>
               Modules will be introduced gradually, tested carefully and
               documented before they are presented as operational.
@@ -267,13 +274,15 @@ export default function EcosystemPage() {
         <section style={styles.section}>
           <div style={styles.sectionHeading}>
             <span style={styles.sectionKicker}>SUSTAINABILITY</span>
+
             <h2 style={styles.sectionTitle}>
               How MAG COIN May Earn Over Time
             </h2>
+
             <p style={styles.sectionDescription}>
-              MAG COIN will not depend on guaranteed-return promises. Sustainable
-              income must come from real services, integrations, utility or
-              transparently documented ecosystem activity.
+              MAG COIN will not depend on guaranteed-return promises.
+              Sustainable income must come from real services, integrations,
+              utility or transparently documented ecosystem activity.
             </p>
           </div>
 
@@ -285,7 +294,9 @@ export default function EcosystemPage() {
                 style={styles.revenueCard}
               >
                 <div style={styles.revenueNumber}>{item.number}</div>
+
                 <h3 style={styles.cardTitle}>{item.title}</h3>
+
                 <p style={styles.cardDescription}>{item.description}</p>
               </article>
             ))}
@@ -302,7 +313,9 @@ export default function EcosystemPage() {
         <section style={styles.sectionAlt}>
           <div style={styles.sectionHeading}>
             <span style={styles.sectionKicker}>INTELLIGENCE LAYER</span>
+
             <h2 style={styles.sectionTitle}>MAG Intelligence Centre</h2>
+
             <p style={styles.sectionDescription}>
               A future evidence-based intelligence layer will explain ecosystem
               conditions without giving uncontrolled authority to automated
@@ -370,6 +383,7 @@ export default function EcosystemPage() {
         <section style={styles.section}>
           <div style={styles.sectionHeading}>
             <span style={styles.sectionKicker}>NON-NEGOTIABLE PRINCIPLES</span>
+
             <h2 style={styles.sectionTitle}>Safety Before Speed</h2>
           </div>
 
