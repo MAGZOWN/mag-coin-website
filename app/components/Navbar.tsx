@@ -9,7 +9,6 @@ const links = [
   ["Roadmap", "/roadmap"],
   ["Transparency", "/transparency"],
   ["Ecosystem", "/ecosystem"],
-  ["Portfolio", "/portfolio"],
   ["Audit", "/audit"],
   ["Security", "/security"],
   ["FAQ", "/faq"],
@@ -36,6 +35,8 @@ export default function Navbar() {
             </a>
           ))}
         </nav>
+
+        <div style={styles.balanceSpacer} aria-hidden="true" />
       </div>
     </header>
   );
@@ -53,21 +54,22 @@ const styles: Record<string, CSSProperties> = {
   },
 
   container: {
-    maxWidth: "1500px",
+    width: "100%",
+    maxWidth: "1600px",
     margin: "0 auto",
     padding: "12px 28px",
-    display: "flex",
-    justifyContent: "space-between",
+    display: "grid",
+    gridTemplateColumns: "52px minmax(0, 1fr) 52px",
     alignItems: "center",
-    gap: "24px",
+    columnGap: "24px",
   },
 
   brand: {
     display: "flex",
     alignItems: "center",
+    justifyContent: "flex-start",
     color: "#f5c542",
     textDecoration: "none",
-    flexShrink: 0,
   },
 
   logo: {
@@ -80,8 +82,8 @@ const styles: Record<string, CSSProperties> = {
   nav: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "flex-end",
-    gap: "16px",
+    justifyContent: "center",
+    gap: "22px",
     flexWrap: "wrap",
   },
 
@@ -92,5 +94,10 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: 600,
     letterSpacing: ".1px",
     whiteSpace: "nowrap",
+  },
+
+  balanceSpacer: {
+    width: "52px",
+    height: "1px",
   },
 };
