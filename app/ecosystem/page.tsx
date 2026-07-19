@@ -143,6 +143,15 @@ const principles = [
   "Every important transaction must remain independently verifiable",
 ];
 
+const plannedAnalytics = [
+  "Liquidity Health",
+  "Holder Concentration",
+  "Treasury Runway",
+  "Market Activity",
+  "Governance Participation",
+  "Security and Risk Alerts",
+];
+
 export default function EcosystemPage() {
   return (
     <>
@@ -169,7 +178,7 @@ export default function EcosystemPage() {
               <a
                 href={BASESCAN_TOKEN_URL}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="primaryButton"
                 style={styles.primaryButton}
               >
@@ -179,7 +188,7 @@ export default function EcosystemPage() {
               <a
                 href={UNISWAP_POOL_URL}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="secondaryButton"
                 style={styles.secondaryButton}
               >
@@ -187,8 +196,9 @@ export default function EcosystemPage() {
               </a>
             </div>
 
-            <div style={styles.contractBox}>
+            <div style={styles.contractBox} className="cardHover">
               <span style={styles.contractLabel}>Official Contract</span>
+
               <code style={styles.contractAddress}>{CONTRACT_ADDRESS}</code>
             </div>
           </div>
@@ -214,7 +224,7 @@ export default function EcosystemPage() {
             {liveModules.map((module) => (
               <article
                 key={module.title}
-                className="ecosystemCard"
+                className="ecosystemCard cardHover"
                 style={styles.card}
               >
                 <div style={styles.cardTop}>
@@ -228,8 +238,11 @@ export default function EcosystemPage() {
                 <a
                   href={module.href}
                   target={module.external ? "_blank" : undefined}
-                  rel={module.external ? "noreferrer" : undefined}
+                  rel={
+                    module.external ? "noopener noreferrer" : undefined
+                  }
                   style={styles.cardLink}
+                  className="navLink"
                 >
                   {module.action} {module.external ? "↗" : "→"}
                 </a>
@@ -254,7 +267,7 @@ export default function EcosystemPage() {
             {developmentModules.map((module) => (
               <article
                 key={module.title}
-                className="ecosystemCard"
+                className="ecosystemCard cardHover"
                 style={styles.developmentCard}
               >
                 <span style={styles.phaseBadge}>{module.phase}</span>
@@ -290,7 +303,7 @@ export default function EcosystemPage() {
             {revenuePaths.map((item) => (
               <article
                 key={item.number}
-                className="ecosystemCard"
+                className="ecosystemCard cardHover"
                 style={styles.revenueCard}
               >
                 <div style={styles.revenueNumber}>{item.number}</div>
@@ -302,7 +315,7 @@ export default function EcosystemPage() {
             ))}
           </div>
 
-          <div style={styles.revenueNotice}>
+          <div style={styles.revenueNotice} className="cardHover">
             <strong style={styles.noticeStrong}>Important:</strong> These are
             possible long-term business models, not current income guarantees.
             Each model requires proper development, demand, disclosure, legal
@@ -324,43 +337,31 @@ export default function EcosystemPage() {
           </div>
 
           <div style={styles.intelligenceLayout}>
-            <div style={styles.intelligencePanel}>
+            <div
+              style={styles.intelligencePanel}
+              className="ecosystemCard cardHover"
+            >
               <h3 style={styles.panelTitle}>Planned Analytics</h3>
 
               <div style={styles.metricList}>
-                <div style={styles.metricItem}>
-                  <span>Liquidity Health</span>
-                  <span style={styles.plannedLabel}>Planned</span>
-                </div>
+                {plannedAnalytics.map((metric) => (
+                  <div
+                    key={metric}
+                    style={styles.metricItem}
+                    className="cardHover"
+                  >
+                    <span>{metric}</span>
 
-                <div style={styles.metricItem}>
-                  <span>Holder Concentration</span>
-                  <span style={styles.plannedLabel}>Planned</span>
-                </div>
-
-                <div style={styles.metricItem}>
-                  <span>Treasury Runway</span>
-                  <span style={styles.plannedLabel}>Planned</span>
-                </div>
-
-                <div style={styles.metricItem}>
-                  <span>Market Activity</span>
-                  <span style={styles.plannedLabel}>Planned</span>
-                </div>
-
-                <div style={styles.metricItem}>
-                  <span>Governance Participation</span>
-                  <span style={styles.plannedLabel}>Planned</span>
-                </div>
-
-                <div style={styles.metricItem}>
-                  <span>Security and Risk Alerts</span>
-                  <span style={styles.plannedLabel}>Planned</span>
-                </div>
+                    <span style={styles.plannedLabel}>Planned</span>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div style={styles.intelligencePanel}>
+            <div
+              style={styles.intelligencePanel}
+              className="ecosystemCard cardHover"
+            >
               <h3 style={styles.panelTitle}>Responsible Automation</h3>
 
               <p style={styles.panelText}>
@@ -370,11 +371,21 @@ export default function EcosystemPage() {
               </p>
 
               <div style={styles.analysisFlow}>
-                <span style={styles.flowItem}>Public Data</span>
+                <span style={styles.flowItem} className="cardHover">
+                  Public Data
+                </span>
+
                 <span style={styles.flowArrow}>→</span>
-                <span style={styles.flowItem}>Risk Analysis</span>
+
+                <span style={styles.flowItem} className="cardHover">
+                  Risk Analysis
+                </span>
+
                 <span style={styles.flowArrow}>→</span>
-                <span style={styles.flowItem}>Human Review</span>
+
+                <span style={styles.flowItem} className="cardHover">
+                  Human Review
+                </span>
               </div>
             </div>
           </div>
@@ -391,10 +402,11 @@ export default function EcosystemPage() {
             {principles.map((principle) => (
               <div
                 key={principle}
-                className="ecosystemCard"
+                className="ecosystemCard cardHover"
                 style={styles.principleCard}
               >
                 <span style={styles.checkmark}>✓</span>
+
                 <span>{principle}</span>
               </div>
             ))}
@@ -402,7 +414,7 @@ export default function EcosystemPage() {
         </section>
 
         <section style={styles.finalSection}>
-          <div style={styles.finalCard}>
+          <div style={styles.finalCard} className="cardHover">
             <span style={styles.sectionKicker}>THE LONG-TERM DIRECTION</span>
 
             <h2 className="goldGradient" style={styles.finalTitle}>
@@ -564,6 +576,7 @@ const styles: Record<string, CSSProperties> = {
     border: "1px solid rgba(255,255,255,.10)",
     borderRadius: "16px",
     background: "rgba(255,255,255,.025)",
+    boxShadow: "0 18px 45px rgba(0,0,0,.20)",
   },
 
   contractLabel: {
@@ -674,6 +687,7 @@ const styles: Record<string, CSSProperties> = {
     borderRadius: "20px",
     background:
       "linear-gradient(145deg, rgba(245,197,66,.035), rgba(255,255,255,.015))",
+    boxShadow: "0 20px 55px rgba(0,0,0,.18)",
   },
 
   cardTitle: {
@@ -720,6 +734,7 @@ const styles: Record<string, CSSProperties> = {
     border: "1px solid rgba(255,255,255,.09)",
     borderRadius: "20px",
     background: "rgba(255,255,255,.025)",
+    boxShadow: "0 20px 55px rgba(0,0,0,.18)",
   },
 
   revenueNumber: {
@@ -738,6 +753,7 @@ const styles: Record<string, CSSProperties> = {
     color: "#bdbdbd",
     fontSize: "14px",
     lineHeight: 1.7,
+    boxShadow: "0 18px 45px rgba(0,0,0,.16)",
   },
 
   noticeStrong: {
@@ -756,6 +772,7 @@ const styles: Record<string, CSSProperties> = {
     borderRadius: "20px",
     background:
       "linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.015))",
+    boxShadow: "0 20px 55px rgba(0,0,0,.18)",
   },
 
   panelTitle: {
@@ -780,10 +797,13 @@ const styles: Record<string, CSSProperties> = {
     alignItems: "center",
     justifyContent: "space-between",
     gap: "15px",
-    padding: "14px 0",
-    borderBottom: "1px solid rgba(255,255,255,.07)",
+    padding: "14px",
+    border: "1px solid rgba(255,255,255,.07)",
+    borderRadius: "12px",
+    background: "rgba(255,255,255,.018)",
     color: "#dedede",
     fontSize: "14px",
+    boxShadow: "0 10px 28px rgba(0,0,0,.12)",
   },
 
   plannedLabel: {
@@ -808,6 +828,7 @@ const styles: Record<string, CSSProperties> = {
     color: "#f5c542",
     fontSize: "12px",
     fontWeight: 800,
+    boxShadow: "0 10px 26px rgba(0,0,0,.14)",
   },
 
   flowArrow: {
@@ -832,12 +853,14 @@ const styles: Record<string, CSSProperties> = {
     color: "#d4d4d4",
     fontSize: "14px",
     lineHeight: 1.5,
+    boxShadow: "0 16px 40px rgba(0,0,0,.15)",
   },
 
   checkmark: {
     color: "#f5c542",
     fontSize: "19px",
     fontWeight: 900,
+    flexShrink: 0,
   },
 
   finalSection: {
