@@ -142,7 +142,11 @@ export default function LiveBlockchainStats() {
 
       <div style={styles.grid}>
         {statistics.map((item) => (
-          <article key={item.label} style={styles.card}>
+          <article
+            key={item.label}
+            className="magCard cardHover"
+            style={styles.card}
+          >
             <span style={styles.label}>{item.label}</span>
 
             <strong style={styles.value}>{item.value}</strong>
@@ -158,14 +162,15 @@ export default function LiveBlockchainStats() {
         <a
           href={MAG_BASESCAN_URL}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
+          className="navLink externalLink"
           style={styles.explorerLink}
         >
-          Verify MAG on BaseScan ↗
+          Verify MAG on BaseScan
         </a>
       </div>
 
-      <div style={styles.notice}>
+      <div className="cardHover" style={styles.notice}>
         Holder and transfer statistics will be added only after connecting a
         reliable explorer or indexing service. MAG COIN will not publish
         estimated or unverified figures.
@@ -323,5 +328,6 @@ const styles: Record<string, CSSProperties> = {
     color: "#969696",
     fontSize: "13px",
     lineHeight: 1.65,
+    boxShadow: "0 14px 38px rgba(0,0,0,.16)",
   },
 };
