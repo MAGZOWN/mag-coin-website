@@ -61,7 +61,7 @@ export default function ProjectStatus() {
             <RocketIcon />
           </div>
           <h3 style={styles.heading}>Current Phase</h3>
-          <p style={styles.value}>Engineering & Launch Execution</p>
+          <p style={styles.value}>Public Launch & Ecosystem Development</p>
         </div>
 
         <div style={styles.item} className="cardHover">
@@ -69,7 +69,7 @@ export default function ProjectStatus() {
             <MonitorIcon />
           </div>
           <h3 style={styles.heading}>Website Version</h3>
-          <p style={styles.value}>v1.0.0</p>
+          <p style={styles.value}>v1.7.0</p>
         </div>
 
         <div style={styles.item} className="cardHover">
@@ -77,7 +77,7 @@ export default function ProjectStatus() {
             <CalendarIcon />
           </div>
           <h3 style={styles.heading}>Last Updated</h3>
-          <p style={styles.value}>July 2026</p>
+          <p style={styles.value}>18 July 2026</p>
         </div>
 
         <div style={styles.item} className="cardHover">
