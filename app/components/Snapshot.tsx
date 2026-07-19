@@ -34,7 +34,7 @@ function SnapshotLinkCard({
     <a
       href={href}
       style={styles.snapshotItem}
-      className="cardHover"
+      className="magCard cardHover"
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
     >
@@ -194,7 +194,10 @@ export default function Snapshot() {
   const token = blockchainService.getTokenSummary();
 
   return (
-    <section style={styles.snapshot} className="magCard">
+    <section
+      style={styles.snapshot}
+      className="magCard cardHover"
+    >
       <h2 className="goldGradient" style={styles.snapshotTitle}>
         MAG COIN at a Glance
       </h2>
@@ -232,7 +235,10 @@ export default function Snapshot() {
             hint="View official tokenomics"
           />
 
-          <div style={styles.snapshotItem} className="cardHover">
+          <div
+            style={styles.snapshotItem}
+            className="magCard cardHover"
+          >
             <DocumentIcon />
 
             <strong style={styles.cardTitle}>Official Contract</strong>
@@ -298,6 +304,8 @@ const styles: Record<string, CSSProperties> = {
     padding: "38px",
     color: "#e5e5e5",
     textAlign: "center",
+    border: "1px solid rgba(255,255,255,.12)",
+    boxShadow: "0 26px 75px rgba(0,0,0,.28)",
   },
 
   snapshotTitle: {
@@ -334,7 +342,8 @@ const styles: Record<string, CSSProperties> = {
   },
 
   snapshotItem: {
-    background: "rgba(255,255,255,0.035)",
+    background:
+      "linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.018))",
     border: "1px solid #2f2f2f",
     borderRadius: "18px",
     padding: "24px 18px",
@@ -346,6 +355,7 @@ const styles: Record<string, CSSProperties> = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "flex-start",
+    boxShadow: "0 18px 48px rgba(0,0,0,.20)",
   },
 
   cardTitle: {
