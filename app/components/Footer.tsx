@@ -14,7 +14,7 @@ function SocialLink({ href, label, icon }: SocialLinkProps) {
       rel="noopener noreferrer"
       aria-label={`Open MAG COIN on ${label}`}
       title={`MAG COIN on ${label}`}
-      className="navLink"
+      className="navLink cardHover"
       style={styles.socialLink}
     >
       <span style={styles.socialIcon} aria-hidden="true">
@@ -66,7 +66,10 @@ export default function Footer() {
           </a>
         </div>
 
-        <section style={styles.socialSection}>
+        <section
+          style={styles.socialSection}
+          className="magCard cardHover"
+        >
           <h4 style={styles.socialTitle}>Official Communication Channels</h4>
 
           <p style={styles.socialNotice}>
@@ -260,10 +263,11 @@ const styles: Record<string, CSSProperties> = {
   socialSection: {
     padding: "24px 20px",
     marginBottom: "30px",
-    border: "1px solid rgba(245,197,66,0.18)",
+    border: "1px solid rgba(245,197,66,0.22)",
     borderRadius: "18px",
     background:
-      "linear-gradient(180deg, rgba(245,197,66,0.05), rgba(255,255,255,0.015))",
+      "linear-gradient(145deg, rgba(245,197,66,0.065), rgba(255,255,255,0.018))",
+    boxShadow: "0 22px 55px rgba(0,0,0,0.28)",
   },
 
   socialTitle: {
@@ -296,13 +300,14 @@ const styles: Record<string, CSSProperties> = {
     minHeight: "42px",
     padding: "8px 15px",
     color: "#ffffff",
-    background: "rgba(255,255,255,0.035)",
+    background:
+      "linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02))",
     border: "1px solid rgba(245,197,66,0.35)",
     borderRadius: "999px",
     fontSize: "13px",
     fontWeight: 700,
     textDecoration: "none",
-    boxShadow: "0 6px 18px rgba(0,0,0,0.22)",
+    boxShadow: "0 8px 22px rgba(0,0,0,0.24)",
   },
 
   socialIcon: {
