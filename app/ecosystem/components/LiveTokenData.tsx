@@ -59,14 +59,19 @@ export default async function LiveTokenData() {
 
         <div style={styles.grid}>
           {liveItems.map((item) => (
-            <article key={item.label} style={styles.card}>
+            <article
+              key={item.label}
+              className="magCard cardHover"
+              style={styles.card}
+            >
               <span style={styles.label}>{item.label}</span>
+
               <strong style={styles.value}>{item.value}</strong>
             </article>
           ))}
         </div>
 
-        <div style={styles.notice}>
+        <div className="cardHover" style={styles.notice}>
           Read-only blockchain verification. No wallet connection, signature,
           approval, transaction or gas fee is required.
         </div>
@@ -77,7 +82,7 @@ export default async function LiveTokenData() {
 
     return (
       <section style={styles.wrapper}>
-        <div style={styles.errorCard}>
+        <div className="magCard cardHover" style={styles.errorCard}>
           <span style={styles.kicker}>BASE BLOCKCHAIN STATUS</span>
 
           <h2 style={styles.errorTitle}>
@@ -92,10 +97,11 @@ export default async function LiveTokenData() {
           <a
             href="https://basescan.org/token/0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
+            className="navLink externalLink"
             style={styles.errorLink}
           >
-            Verify MAG on BaseScan ↗
+            Verify MAG on BaseScan
           </a>
         </div>
       </section>
@@ -208,6 +214,7 @@ const styles: Record<string, CSSProperties> = {
     color: "#8f8f8f",
     fontSize: "13px",
     lineHeight: 1.65,
+    boxShadow: "0 14px 38px rgba(0,0,0,.16)",
   },
 
   errorCard: {
@@ -215,6 +222,7 @@ const styles: Record<string, CSSProperties> = {
     border: "1px solid rgba(245,197,66,.18)",
     borderRadius: "20px",
     background: "rgba(245,197,66,.035)",
+    boxShadow: "0 20px 55px rgba(0,0,0,.22)",
   },
 
   errorTitle: {
