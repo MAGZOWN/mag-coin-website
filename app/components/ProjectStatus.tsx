@@ -79,11 +79,17 @@ function StatusIcon() {
 
 export default function ProjectStatus() {
   return (
-    <section style={styles.status}>
+    <section
+      style={styles.status}
+      className="magCard cardHover"
+    >
       <h2 style={styles.title}>Project Status</h2>
 
       <div style={styles.grid}>
-        <div style={styles.item} className="cardHover">
+        <div
+          style={styles.item}
+          className="magCard cardHover"
+        >
           <div style={styles.icon}>
             <RocketIcon />
           </div>
@@ -95,7 +101,10 @@ export default function ProjectStatus() {
           </p>
         </div>
 
-        <div style={styles.item} className="cardHover">
+        <div
+          style={styles.item}
+          className="magCard cardHover"
+        >
           <div style={styles.icon}>
             <MonitorIcon />
           </div>
@@ -105,7 +114,10 @@ export default function ProjectStatus() {
           <p style={styles.value}>v1.7.0</p>
         </div>
 
-        <div style={styles.item} className="cardHover">
+        <div
+          style={styles.item}
+          className="magCard cardHover"
+        >
           <div style={styles.icon}>
             <UpdateIcon />
           </div>
@@ -115,7 +127,10 @@ export default function ProjectStatus() {
           <p style={styles.value}>Updated Regularly</p>
         </div>
 
-        <div style={styles.item} className="cardHover">
+        <div
+          style={styles.item}
+          className="magCard cardHover"
+        >
           <div style={styles.icon}>
             <StatusIcon />
           </div>
@@ -152,6 +167,7 @@ const styles: Record<string, CSSProperties> = {
     padding: "38px",
     textAlign: "center",
     color: "#e5e5e5",
+    boxShadow: "0 28px 75px rgba(0,0,0,0.28)",
   },
 
   title: {
@@ -168,11 +184,13 @@ const styles: Record<string, CSSProperties> = {
   },
 
   item: {
-    background: "rgba(255,255,255,0.035)",
+    background:
+      "linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018))",
     border: "1px solid #2f2f2f",
     borderRadius: "18px",
     padding: "28px 22px",
     minHeight: "170px",
+    boxShadow: "0 16px 40px rgba(0,0,0,0.20)",
   },
 
   icon: {
@@ -185,6 +203,7 @@ const styles: Record<string, CSSProperties> = {
     alignItems: "center",
     justifyContent: "center",
     margin: "0 auto 18px",
+    boxShadow: "0 10px 28px rgba(0,0,0,0.16)",
   },
 
   heading: {
@@ -209,6 +228,7 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: "bold",
     letterSpacing: "1px",
     textTransform: "uppercase",
+    boxShadow: "0 10px 24px rgba(25,135,84,0.20)",
   },
 
   footer: {
