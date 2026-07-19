@@ -10,7 +10,14 @@ const iconStyle: CSSProperties = {
 
 function RocketIcon() {
   return (
-    <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+    <svg
+      style={iconStyle}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      aria-hidden="true"
+    >
       <path d="M14 4c3 1 6 4 7 7-2 4-6 8-10 10l-3-3c2-4 6-8 10-10z" />
       <path d="M7 17l-3 3" />
       <path d="M8 16l-4 1 1-4" />
@@ -21,7 +28,14 @@ function RocketIcon() {
 
 function MonitorIcon() {
   return (
-    <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+    <svg
+      style={iconStyle}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      aria-hidden="true"
+    >
       <rect x="3" y="4" width="18" height="12" rx="2" />
       <path d="M8 20h8" />
       <path d="M12 16v4" />
@@ -29,20 +43,34 @@ function MonitorIcon() {
   );
 }
 
-function CalendarIcon() {
+function UpdateIcon() {
   return (
-    <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-      <rect x="3" y="5" width="18" height="16" rx="2" />
-      <path d="M3 10h18" />
-      <path d="M8 3v4" />
-      <path d="M16 3v4" />
+    <svg
+      style={iconStyle}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      aria-hidden="true"
+    >
+      <path d="M20 7v5h-5" />
+      <path d="M4 17v-5h5" />
+      <path d="M6.1 8a7 7 0 0 1 11.6-2.1L20 8" />
+      <path d="M17.9 16a7 7 0 0 1-11.6 2.1L4 16" />
     </svg>
   );
 }
 
 function StatusIcon() {
   return (
-    <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+    <svg
+      style={iconStyle}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      aria-hidden="true"
+    >
       <circle cx="12" cy="12" r="9" />
       <path d="M8 12l2.5 2.5L16 9" />
     </svg>
@@ -55,39 +83,49 @@ export default function ProjectStatus() {
       <h2 style={styles.title}>Project Status</h2>
 
       <div style={styles.grid}>
-
         <div style={styles.item} className="cardHover">
           <div style={styles.icon}>
             <RocketIcon />
           </div>
+
           <h3 style={styles.heading}>Current Phase</h3>
-          <p style={styles.value}>Public Launch & Ecosystem Development</p>
+
+          <p style={styles.value}>
+            Public Launch &amp; Ecosystem Development
+          </p>
         </div>
 
         <div style={styles.item} className="cardHover">
           <div style={styles.icon}>
             <MonitorIcon />
           </div>
+
           <h3 style={styles.heading}>Website Version</h3>
+
           <p style={styles.value}>v1.7.0</p>
         </div>
 
         <div style={styles.item} className="cardHover">
           <div style={styles.icon}>
-            <CalendarIcon />
+            <UpdateIcon />
           </div>
+
           <h3 style={styles.heading}>Last Updated</h3>
-          <p style={styles.value}>18 July 2026</p>
+
+          <p style={styles.value}>Updated Regularly</p>
         </div>
 
         <div style={styles.item} className="cardHover">
           <div style={styles.icon}>
             <StatusIcon />
           </div>
-          <h3 style={styles.heading}>Project Status</h3>
-          <span style={styles.badge}>{foundationData.foundationStatus}</span>
-        </div>
 
+          <h3 style={styles.heading}>Project Status</h3>
+
+          <span style={styles.badge}>
+            {foundationData.foundationStatus}
+          </span>
+        </div>
       </div>
 
       <div style={styles.footer}>
@@ -125,7 +163,7 @@ const styles: Record<string, CSSProperties> = {
 
   grid: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit,minmax(210px,1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))",
     gap: "26px",
   },
 
