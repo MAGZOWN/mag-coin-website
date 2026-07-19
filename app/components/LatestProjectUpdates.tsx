@@ -4,7 +4,10 @@ import { projectUpdates } from "../data/projectUpdates";
 
 export default function LatestProjectUpdates() {
   return (
-    <section style={styles.section}>
+    <section
+      style={styles.section}
+      className="magCard cardHover"
+    >
       <h2 style={styles.title}>Latest Project Updates</h2>
 
       <p style={styles.subtitle}>
@@ -14,9 +17,14 @@ export default function LatestProjectUpdates() {
 
       <div style={styles.list}>
         {projectUpdates.map((update, index) => (
-          <div key={index} style={styles.item}>
+          <div
+            key={index}
+            style={styles.item}
+            className="magCard cardHover"
+          >
             <div style={styles.left}>
               <span style={styles.check}>✓</span>
+
               <span>{update.title}</span>
             </div>
 
@@ -46,6 +54,7 @@ const styles: Record<string, CSSProperties> = {
     border: "1px solid #333",
     borderRadius: "22px",
     padding: "36px",
+    boxShadow: "0 28px 75px rgba(0,0,0,.28)",
   },
 
   title: {
@@ -53,6 +62,7 @@ const styles: Record<string, CSSProperties> = {
     textAlign: "center",
     fontSize: "28px",
     marginBottom: "16px",
+    fontWeight: 900,
   },
 
   subtitle: {
@@ -72,11 +82,13 @@ const styles: Record<string, CSSProperties> = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    background: "rgba(255,255,255,0.03)",
+    background:
+      "linear-gradient(145deg, rgba(255,255,255,.04), rgba(255,255,255,.02))",
     border: "1px solid #2a2a2a",
     borderRadius: "14px",
     padding: "18px 20px",
     color: "#e5e5e5",
+    boxShadow: "0 14px 35px rgba(0,0,0,.18)",
   },
 
   left: {
