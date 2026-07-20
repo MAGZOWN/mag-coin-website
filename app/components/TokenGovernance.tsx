@@ -14,7 +14,7 @@ export default function TokenGovernance() {
     <section
       id="token-governance"
       style={styles.section}
-      className="cardHover fadeIn"
+      className="magCard cardHover fadeIn"
       aria-labelledby="token-governance-title"
     >
       <p style={styles.label}>GOVERNANCE &amp; STEWARDSHIP</p>
@@ -83,6 +83,7 @@ const styles: Record<string, CSSProperties> = {
     color: "#e5e5e5",
     textAlign: "center",
     scrollMarginTop: "110px",
+    boxShadow: "0 22px 50px rgba(0,0,0,.28)",
   },
 
   label: {
@@ -113,6 +114,7 @@ const styles: Record<string, CSSProperties> = {
     marginTop: "36px",
     background: "rgba(245,197,66,.08)",
     border: "1px solid rgba(245,197,66,.25)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
     borderRadius: "18px",
     padding: "28px",
     textAlign: "left",
@@ -144,8 +146,9 @@ const styles: Record<string, CSSProperties> = {
     marginTop: "32px",
     padding: "28px",
     borderRadius: "18px",
-    background: "rgba(255,255,255,.035)",
+    background: "linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.10)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.22)",
   },
 
   noticeTitle: {
