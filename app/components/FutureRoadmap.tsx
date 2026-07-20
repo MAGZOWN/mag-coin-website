@@ -92,7 +92,7 @@ export default function FutureRoadmap() {
     <section
       id="future-roadmap"
       style={styles.section}
-      className="cardHover fadeIn"
+      className="magCard cardHover fadeIn"
       aria-labelledby="future-roadmap-title"
     >
       <p style={styles.label}>FUTURE ROADMAP</p>
@@ -108,7 +108,7 @@ export default function FutureRoadmap() {
         become clearer.
       </p>
 
-      <div style={styles.noticeBox}>
+      <div style={styles.noticeBox} className="magCard cardHover">
         <p style={styles.noticeTitle}>Roadmap Principle</p>
 
         <p style={styles.noticeText}>
@@ -121,7 +121,11 @@ export default function FutureRoadmap() {
 
       <div style={styles.grid}>
         {roadmapItems.map((item) => (
-          <article key={item.phase} style={styles.card}>
+          <article
+            key={item.phase}
+            style={styles.card}
+            className="magCard cardHover"
+          >
             <div style={styles.cardHeader}>
               <div>
                 <p style={styles.phase}>{item.phase}</p>
@@ -143,7 +147,11 @@ export default function FutureRoadmap() {
 
             <div style={styles.milestoneList}>
               {item.milestones.map((milestone) => (
-                <div key={milestone} style={styles.milestoneItem}>
+                <div
+                  key={milestone}
+                  style={styles.milestoneItem}
+                  className="magCard cardHover"
+                >
                   <span style={styles.marker}>✓</span>
                   <span>{milestone}</span>
                 </div>
@@ -153,7 +161,7 @@ export default function FutureRoadmap() {
         ))}
       </div>
 
-      <div style={styles.closingBox}>
+      <div style={styles.closingBox} className="magCard cardHover">
         <h3 style={styles.closingTitle}>No Artificial Deadlines</h3>
 
         <p style={styles.closingText}>
@@ -224,9 +232,10 @@ const styles: Record<string, CSSProperties> = {
     padding: "24px",
     borderRadius: "18px",
     background:
-      "linear-gradient(135deg, rgba(245,197,66,.10), rgba(245,197,66,.03))",
+      "linear-gradient(145deg, rgba(245,197,66,.10), rgba(245,197,66,.035))",
     border: "1px solid rgba(245,197,66,.25)",
     textAlign: "center",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   noticeTitle: {
@@ -253,16 +262,17 @@ const styles: Record<string, CSSProperties> = {
 
   grid: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
     gap: "22px",
   },
 
   card: {
     background:
-      "linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.02))",
+      "linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.10)",
     borderRadius: "20px",
     padding: "26px",
+    boxShadow: "0 18px 44px rgba(0,0,0,.24)",
   },
 
   cardHeader: {
@@ -319,12 +329,14 @@ const styles: Record<string, CSSProperties> = {
     alignItems: "flex-start",
     gap: "10px",
     color: "#cfcfcf",
-    background: "rgba(0,0,0,.18)",
-    border: "1px solid rgba(255,255,255,.07)",
+    background:
+      "linear-gradient(145deg, rgba(0,0,0,.24), rgba(255,255,255,.018))",
+    border: "1px solid rgba(255,255,255,.08)",
     borderRadius: "12px",
     padding: "11px 13px",
     fontSize: "14px",
     lineHeight: "1.55",
+    boxShadow: "0 12px 28px rgba(0,0,0,.18)",
   },
 
   marker: {
@@ -337,8 +349,10 @@ const styles: Record<string, CSSProperties> = {
     marginTop: "34px",
     padding: "28px",
     borderRadius: "18px",
-    background: "rgba(255,255,255,.035)",
+    background:
+      "linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.10)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   closingTitle: {
@@ -384,3 +398,4 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "13px",
   },
 };
+
