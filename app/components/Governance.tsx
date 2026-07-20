@@ -41,7 +41,7 @@ export default function Governance() {
     <section
       id="governance"
       style={styles.section}
-      className="cardHover fadeIn"
+      className="magCard cardHover fadeIn"
       aria-labelledby="governance-title"
     >
       <p style={styles.label}>GOVERNANCE PHILOSOPHY</p>
@@ -77,7 +77,11 @@ export default function Governance() {
 
       <div style={styles.stageGrid}>
         {governanceStages.map((item) => (
-          <div key={item.stage} style={styles.stageCard}>
+          <div
+            key={item.stage}
+            style={styles.stageCard}
+            className="magCard cardHover"
+          >
             <span style={styles.stageBadge}>{item.stage}</span>
 
             <h4 style={styles.stageTitle}>{item.title}</h4>
@@ -87,7 +91,10 @@ export default function Governance() {
         ))}
       </div>
 
-      <div style={styles.principlesBox}>
+      <div
+        style={styles.principlesBox}
+        className="magCard cardHover"
+      >
         <p style={styles.principlesTitle}>Governance Principles</p>
 
         <ul style={styles.list}>
@@ -99,7 +106,10 @@ export default function Governance() {
         </ul>
       </div>
 
-      <div style={styles.noticeBox}>
+      <div
+        style={styles.noticeBox}
+        className="magCard cardHover"
+      >
         <p style={styles.noticeTitle}>Current Governance Position</p>
 
         <p style={styles.noticeText}>
@@ -183,8 +193,9 @@ const styles: Record<string, CSSProperties> = {
     padding: "24px",
     borderRadius: "18px",
     background:
-      "linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.02))",
+      "linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.10)",
+    boxShadow: "0 16px 38px rgba(0,0,0,.22)",
   },
 
   stageBadge: {
@@ -219,8 +230,9 @@ const styles: Record<string, CSSProperties> = {
     padding: "28px",
     borderRadius: "18px",
     background:
-      "linear-gradient(135deg, rgba(245,197,66,.09), rgba(245,197,66,.025))",
+      "linear-gradient(145deg, rgba(245,197,66,.10), rgba(245,197,66,.035))",
     border: "1px solid rgba(245,197,66,.23)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   principlesTitle: {
@@ -246,8 +258,10 @@ const styles: Record<string, CSSProperties> = {
     marginTop: "28px",
     padding: "26px",
     borderRadius: "18px",
-    background: "rgba(255,255,255,.035)",
+    background:
+      "linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.10)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   noticeTitle: {
