@@ -14,7 +14,7 @@ export default function AuditCommitment() {
     <section
       id="audit-commitment"
       style={styles.section}
-      className="cardHover fadeIn"
+      className="magCard cardHover fadeIn"
       aria-labelledby="audit-commitment-title"
     >
       <p style={styles.label}>AUDIT CONCLUSION</p>
@@ -113,6 +113,7 @@ export default function AuditCommitment() {
 
 const styles: Record<string, CSSProperties> = {
   section: {
+    boxShadow: "0 22px 50px rgba(0,0,0,.28)",
     marginTop: "40px",
     marginBottom: "70px",
     padding: "50px 44px",
@@ -159,6 +160,7 @@ const styles: Record<string, CSSProperties> = {
     borderRadius: "20px",
     background: "rgba(245,197,66,.08)",
     border: "1px solid rgba(245,197,66,.24)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   priorityTitle: {
@@ -184,8 +186,9 @@ const styles: Record<string, CSSProperties> = {
     marginTop: "28px",
     padding: "30px",
     borderRadius: "20px",
-    background: "rgba(255,255,255,.04)",
+    background: "linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.11)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.22)",
   },
 
   verdictTitle: {
@@ -208,6 +211,7 @@ const styles: Record<string, CSSProperties> = {
     borderRadius: "18px",
     background: "rgba(0,0,0,.24)",
     border: "1px solid rgba(245,197,66,.20)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   disclaimerTitle: {
