@@ -57,7 +57,7 @@ function badge(status: string): CSSProperties {
 
 export default function DocumentationAudit() {
   return (
-    <section style={styles.section} className="fadeIn">
+    <section style={styles.section} className="magCard cardHover fadeIn">
       <p style={styles.label}>DOCUMENTATION REVIEW</p>
 
       <h2 style={styles.title}>
@@ -75,7 +75,7 @@ export default function DocumentationAudit() {
           <article
             key={doc.name}
             style={styles.card}
-            className="cardHover"
+            className="magCard cardHover"
           >
             <div style={styles.header}>
               <h3 style={styles.heading}>{doc.name}</h3>
@@ -113,6 +113,7 @@ export default function DocumentationAudit() {
 
 const styles: Record<string, CSSProperties> = {
   section: {
+    boxShadow: "0 22px 50px rgba(0,0,0,.28)",
     marginBottom: "70px",
   },
 
@@ -191,6 +192,7 @@ const styles: Record<string, CSSProperties> = {
     background:
       "linear-gradient(135deg, rgba(245,197,66,.10), rgba(245,197,66,.03))",
     border: "1px solid rgba(245,197,66,.24)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   boxTitle: {
