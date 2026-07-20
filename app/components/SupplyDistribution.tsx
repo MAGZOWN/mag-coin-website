@@ -91,7 +91,7 @@ export default function SupplyDistribution() {
     <section
       id="supply-distribution"
       style={styles.section}
-      className="fadeIn"
+      className="magCard cardHover fadeIn"
       aria-labelledby="supply-distribution-title"
     >
       <p style={styles.label}>SUPPLY ACCOUNTABILITY</p>
@@ -112,7 +112,7 @@ export default function SupplyDistribution() {
           <article
             key={item.label}
             style={styles.factCard}
-            className="cardHover"
+            className="magCard cardHover"
           >
             <div style={styles.factHeader}>
               <h3 style={styles.factLabel}>{item.label}</h3>
@@ -145,7 +145,7 @@ export default function SupplyDistribution() {
           <article
             key={item.title}
             style={styles.distributionCard}
-            className="cardHover"
+            className="magCard cardHover"
           >
             <div style={styles.distributionHeader}>
               <h4 style={styles.distributionTitle}>{item.title}</h4>
@@ -242,7 +242,7 @@ const styles: Record<string, CSSProperties> = {
     border: "1px solid rgba(255,255,255,.12)",
     borderRadius: "20px",
     padding: "24px",
-    boxShadow: "0 12px 30px rgba(0,0,0,.24)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   factHeader: {
@@ -316,7 +316,7 @@ const styles: Record<string, CSSProperties> = {
     border: "1px solid rgba(255,255,255,.12)",
     borderRadius: "20px",
     padding: "26px",
-    boxShadow: "0 12px 30px rgba(0,0,0,.22)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   distributionHeader: {
@@ -350,6 +350,7 @@ const styles: Record<string, CSSProperties> = {
     background:
       "linear-gradient(135deg, rgba(245,197,66,.10), rgba(245,197,66,.03))",
     border: "1px solid rgba(245,197,66,.24)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   policyTitle: {
@@ -370,8 +371,9 @@ const styles: Record<string, CSSProperties> = {
     marginTop: "26px",
     padding: "28px",
     borderRadius: "18px",
-    background: "rgba(255,255,255,.035)",
+    background: "linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.10)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.22)",
   },
 
   riskTitle: {
