@@ -92,7 +92,7 @@ export default function DevelopmentStrategy() {
     <section
       id="development-strategy"
       style={styles.section}
-      className="cardHover fadeIn"
+      className="magCard cardHover fadeIn"
       aria-labelledby="development-strategy-title"
     >
       <p style={styles.label}>DEVELOPMENT STRATEGY</p>
@@ -114,7 +114,7 @@ export default function DevelopmentStrategy() {
         documentation requirements have been verified.
       </p>
 
-      <div style={styles.strategyNotice}>
+      <div style={styles.strategyNotice} className="magCard cardHover">
         <p style={styles.noticeTitle}>Development Rule</p>
 
         <p style={styles.noticeText}>
@@ -126,7 +126,11 @@ export default function DevelopmentStrategy() {
 
       <div style={styles.timeline}>
         {phases.map((phase) => (
-          <article key={phase.number} style={styles.item}>
+          <article
+            key={phase.number}
+            style={styles.item}
+            className="magCard cardHover"
+          >
             <div style={styles.number}>{phase.number}</div>
 
             <div style={styles.phaseContent}>
@@ -151,7 +155,11 @@ export default function DevelopmentStrategy() {
 
               <div style={styles.priorityGrid}>
                 {phase.priorities.map((priority) => (
-                  <div key={priority} style={styles.priorityItem}>
+                  <div
+                    key={priority}
+                    style={styles.priorityItem}
+                    className="magCard cardHover"
+                  >
                     <span style={styles.priorityMarker}>✓</span>
                     <span>{priority}</span>
                   </div>
@@ -162,7 +170,7 @@ export default function DevelopmentStrategy() {
         ))}
       </div>
 
-      <div style={styles.closingBox}>
+      <div style={styles.closingBox} className="magCard cardHover">
         <h3 style={styles.closingTitle}>Responsible Progress</h3>
 
         <p style={styles.closingText}>
@@ -217,9 +225,10 @@ const styles: Record<string, CSSProperties> = {
     padding: "24px",
     borderRadius: "18px",
     background:
-      "linear-gradient(135deg, rgba(245,197,66,.10), rgba(245,197,66,.03))",
+      "linear-gradient(145deg, rgba(245,197,66,.10), rgba(245,197,66,.035))",
     border: "1px solid rgba(245,197,66,.25)",
     textAlign: "center",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   noticeTitle: {
@@ -256,10 +265,11 @@ const styles: Record<string, CSSProperties> = {
     alignItems: "flex-start",
     gap: "22px",
     background:
-      "linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.02))",
+      "linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.10)",
     borderRadius: "20px",
     padding: "26px",
+    boxShadow: "0 18px 44px rgba(0,0,0,.24)",
   },
 
   number: {
@@ -275,6 +285,7 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: 850,
     fontSize: "15px",
     flexShrink: 0,
+    boxShadow: "0 10px 24px rgba(0,0,0,.20)",
   },
 
   phaseContent: {
@@ -336,12 +347,14 @@ const styles: Record<string, CSSProperties> = {
     alignItems: "flex-start",
     gap: "10px",
     color: "#cfcfcf",
-    background: "rgba(0,0,0,.18)",
-    border: "1px solid rgba(255,255,255,.07)",
+    background:
+      "linear-gradient(145deg, rgba(0,0,0,.24), rgba(255,255,255,.018))",
+    border: "1px solid rgba(255,255,255,.08)",
     borderRadius: "12px",
     padding: "11px 13px",
     fontSize: "14px",
     lineHeight: "1.55",
+    boxShadow: "0 12px 28px rgba(0,0,0,.18)",
   },
 
   priorityMarker: {
@@ -354,8 +367,10 @@ const styles: Record<string, CSSProperties> = {
     marginTop: "34px",
     padding: "28px",
     borderRadius: "18px",
-    background: "rgba(255,255,255,.035)",
+    background:
+      "linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.10)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   closingTitle: {
@@ -372,3 +387,4 @@ const styles: Record<string, CSSProperties> = {
     margin: 0,
   },
 };
+
