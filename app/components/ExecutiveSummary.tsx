@@ -127,14 +127,20 @@ export default function ExecutiveSummary() {
           independent reviewers.
         </p>
 
-        <div style={styles.commitmentBox}>
+        <div style={styles.commitmentBox} className="magCard cardHover">
           <p style={styles.commitmentTitle}>MAG COIN Commitment</p>
 
           <div style={styles.commitmentGrid}>
-            <span style={styles.commitmentItem}>Build carefully.</span>
-            <span style={styles.commitmentItem}>Document everything.</span>
-            <span style={styles.commitmentItem}>Improve continuously.</span>
-            <span style={styles.commitmentItem}>
+            <span style={styles.commitmentItem} className="magCard cardHover">
+              Build carefully.
+            </span>
+            <span style={styles.commitmentItem} className="magCard cardHover">
+              Document everything.
+            </span>
+            <span style={styles.commitmentItem} className="magCard cardHover">
+              Improve continuously.
+            </span>
+            <span style={styles.commitmentItem} className="magCard cardHover">
               Protect long-term trust.
             </span>
           </div>
@@ -154,7 +160,11 @@ export default function ExecutiveSummary() {
 
           <div style={styles.detailsGrid}>
             {documentDetails.map((item) => (
-              <div key={item.label} style={styles.detailCard}>
+              <div
+                key={item.label}
+                style={styles.detailCard}
+                className="magCard cardHover"
+              >
                 <span style={styles.detailLabel}>{item.label}</span>
                 <strong style={styles.detailValue}>{item.value}</strong>
               </div>
@@ -169,14 +179,18 @@ export default function ExecutiveSummary() {
 
           <div style={styles.detailsGrid}>
             {tokenDetails.map((item) => (
-              <div key={item.label} style={styles.detailCard}>
+              <div
+                key={item.label}
+                style={styles.detailCard}
+                className="magCard cardHover"
+              >
                 <span style={styles.detailLabel}>{item.label}</span>
                 <strong style={styles.detailValue}>{item.value}</strong>
               </div>
             ))}
           </div>
 
-          <div style={styles.contractBox}>
+          <div style={styles.contractBox} className="magCard cardHover">
             <div style={styles.contractContent}>
               <span style={styles.contractLabel}>
                 Official MAG COIN Contract
@@ -220,7 +234,7 @@ export default function ExecutiveSummary() {
                 key={item.number}
                 href={item.href}
                 style={styles.contentsLink}
-                className="navLink"
+                className="navLink magCard cardHover"
               >
                 <span style={styles.contentsNumber}>{item.number}</span>
 
@@ -234,7 +248,7 @@ export default function ExecutiveSummary() {
           </nav>
         </div>
 
-        <div style={styles.purposeBox}>
+        <div style={styles.purposeBox} className="magCard cardHover">
           <p style={styles.purposeTitle}>Purpose of This Whitepaper</p>
 
           <p style={styles.purposeText}>
@@ -306,6 +320,7 @@ const styles: Record<string, CSSProperties> = {
     border: "1px solid rgba(245,197,66,.30)",
     borderRadius: "18px",
     padding: "28px",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   commitmentTitle: {
@@ -330,6 +345,7 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: 750,
     fontSize: "15px",
     lineHeight: "1.5",
+    boxShadow: "0 10px 26px rgba(0,0,0,.20)",
   },
 
   divider: {
@@ -398,6 +414,7 @@ const styles: Record<string, CSSProperties> = {
       "linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.10)",
     borderRadius: "16px",
+    boxShadow: "0 14px 34px rgba(0,0,0,.22)",
   },
 
   detailLabel: {
@@ -426,6 +443,7 @@ const styles: Record<string, CSSProperties> = {
     background: "rgba(245,197,66,.07)",
     border: "1px solid rgba(245,197,66,.25)",
     borderRadius: "16px",
+    boxShadow: "0 16px 38px rgba(0,0,0,.23)",
   },
 
   contractContent: {
@@ -501,6 +519,7 @@ const styles: Record<string, CSSProperties> = {
     background: "rgba(255,255,255,.035)",
     border: "1px solid rgba(255,255,255,.10)",
     borderRadius: "15px",
+    boxShadow: "0 12px 30px rgba(0,0,0,.21)",
   },
 
   contentsNumber: {
@@ -530,6 +549,7 @@ const styles: Record<string, CSSProperties> = {
       "linear-gradient(145deg, rgba(245,197,66,.09), rgba(245,197,66,.025))",
     border: "1px solid rgba(245,197,66,.23)",
     borderRadius: "18px",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   purposeTitle: {
