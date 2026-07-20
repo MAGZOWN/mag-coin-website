@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 
 export default function AuditHero() {
   return (
-    <section style={styles.hero} className="fadeIn">
+    <section style={styles.hero} className="magCard cardHover fadeIn">
       <p style={styles.label}>
         MAG FOUNDATION
       </p>
@@ -30,6 +30,7 @@ const styles: Record<string, CSSProperties> = {
   hero: {
     textAlign: "center",
     padding: "70px 20px 60px",
+    boxShadow: "0 22px 50px rgba(0,0,0,.28)",
   },
 
   label: {
