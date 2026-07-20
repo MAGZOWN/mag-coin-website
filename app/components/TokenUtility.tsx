@@ -77,7 +77,7 @@ export default function TokenUtility() {
     <section
       id="token-utility"
       style={styles.section}
-      className="fadeIn"
+      className="magCard cardHover fadeIn"
       aria-labelledby="token-utility-title"
     >
       <p style={styles.label}>RESPONSIBLE UTILITY</p>
@@ -109,7 +109,7 @@ export default function TokenUtility() {
           <article
             key={item.title}
             style={styles.card}
-            className="cardHover"
+            className="magCard cardHover"
           >
             <div style={styles.cardHeader}>
               <h3 style={styles.heading}>{item.title}</h3>
@@ -194,6 +194,7 @@ const styles: Record<string, CSSProperties> = {
     background:
       "linear-gradient(135deg, rgba(245,197,66,.10), rgba(245,197,66,.03))",
     border: "1px solid rgba(245,197,66,.24)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
     textAlign: "center",
   },
 
@@ -232,7 +233,7 @@ const styles: Record<string, CSSProperties> = {
     borderRadius: "20px",
     padding: "26px",
     color: "#e5e5e5",
-    boxShadow: "0 12px 30px rgba(0,0,0,.24)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   cardHeader: {
@@ -277,6 +278,7 @@ const styles: Record<string, CSSProperties> = {
     background:
       "linear-gradient(135deg, rgba(245,197,66,.09), rgba(245,197,66,.025))",
     border: "1px solid rgba(245,197,66,.23)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   rulesTitle: {
@@ -302,8 +304,9 @@ const styles: Record<string, CSSProperties> = {
     marginTop: "28px",
     padding: "28px",
     borderRadius: "18px",
-    background: "rgba(255,255,255,.035)",
+    background: "linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.10)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.22)",
   },
 
   closingTitle: {
