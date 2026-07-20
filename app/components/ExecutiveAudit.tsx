@@ -72,7 +72,7 @@ export default function ExecutiveAudit() {
     <section
       id="executive-audit"
       style={styles.section}
-      className="fadeIn"
+      className="magCard cardHover fadeIn"
       aria-labelledby="executive-audit-title"
     >
       <p style={styles.label}>EXECUTIVE AUDIT SUMMARY</p>
@@ -93,7 +93,7 @@ export default function ExecutiveAudit() {
           <article
             key={item.area}
             style={styles.card}
-            className="cardHover"
+            className="magCard cardHover"
           >
             <div style={styles.cardHeader}>
               <h3 style={styles.heading}>{item.area}</h3>
@@ -156,6 +156,7 @@ export default function ExecutiveAudit() {
 
 const styles: Record<string, CSSProperties> = {
   section: {
+    boxShadow: "0 22px 50px rgba(0,0,0,.28)",
     marginBottom: "70px",
     scrollMarginTop: "110px",
   },
@@ -199,7 +200,7 @@ const styles: Record<string, CSSProperties> = {
     border: "1px solid rgba(255,255,255,.12)",
     borderRadius: "20px",
     padding: "26px",
-    boxShadow: "0 12px 30px rgba(0,0,0,.24)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   cardHeader: {
@@ -244,6 +245,7 @@ const styles: Record<string, CSSProperties> = {
     background:
       "linear-gradient(135deg, rgba(245,197,66,.10), rgba(245,197,66,.03))",
     border: "1px solid rgba(245,197,66,.24)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   scopeTitle: {
@@ -264,8 +266,9 @@ const styles: Record<string, CSSProperties> = {
     marginTop: "26px",
     padding: "28px",
     borderRadius: "18px",
-    background: "rgba(255,255,255,.035)",
+    background: "linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.10)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.22)",
   },
 
   methodTitle: {
