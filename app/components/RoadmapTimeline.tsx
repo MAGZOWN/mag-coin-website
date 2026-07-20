@@ -74,7 +74,7 @@ export default function RoadmapTimeline() {
           <div
             key={phase.phase}
             style={styles.card}
-            className="cardHover"
+            className="magCard cardHover"
           >
             <div style={styles.header}>
               <span style={styles.phase}>
@@ -106,6 +106,7 @@ export default function RoadmapTimeline() {
 
 const styles: Record<string, CSSProperties> = {
   section: {
+    boxShadow: "0 22px 50px rgba(0,0,0,.28)",
     marginBottom: "70px",
   },
 
