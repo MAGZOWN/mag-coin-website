@@ -24,7 +24,7 @@ export default function TokenomicsHero() {
     <section
       id="tokenomics-hero"
       style={styles.hero}
-      className="fadeIn"
+      className="magCard cardHover fadeIn"
       aria-labelledby="tokenomics-title"
     >
       <p style={styles.label}>MAG FOUNDATION</p>
@@ -49,7 +49,7 @@ export default function TokenomicsHero() {
 
       <div style={styles.grid}>
         {tokenInformation.map((item) => (
-          <div key={item.label} style={styles.card}>
+          <div key={item.label} style={styles.card} className="magCard cardHover">
             <span style={styles.cardLabel}>
               {item.label}
             </span>
@@ -61,7 +61,7 @@ export default function TokenomicsHero() {
         ))}
       </div>
 
-      <div style={styles.notice}>
+      <div style={styles.notice} className="magCard cardHover">
         <h3 style={styles.noticeTitle}>
           Tokenomics Philosophy
         </h3>
@@ -144,6 +144,7 @@ const styles: Record<string, CSSProperties> = {
     border: "1px solid rgba(255,255,255,.10)",
     borderRadius: "18px",
     padding: "22px",
+    boxShadow: "0 16px 38px rgba(0,0,0,.22)",
   },
 
   cardLabel: {
@@ -170,6 +171,7 @@ const styles: Record<string, CSSProperties> = {
     background:
       "linear-gradient(135deg, rgba(245,197,66,.10), rgba(245,197,66,.03))",
     border: "1px solid rgba(245,197,66,.24)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   noticeTitle: {
