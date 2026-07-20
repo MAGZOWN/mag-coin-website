@@ -44,7 +44,7 @@ export default function TokenOverview() {
     <section
       id="token-overview"
       style={styles.section}
-      className="fadeIn"
+      className="magCard cardHover fadeIn"
       aria-labelledby="token-overview-title"
     >
       <p style={styles.label}>VERIFIABLE TOKEN DATA</p>
@@ -65,7 +65,7 @@ export default function TokenOverview() {
           <article
             key={item.label}
             style={styles.card}
-            className="cardHover"
+            className="magCard cardHover"
           >
             <h3 style={styles.heading}>{item.label}</h3>
 
@@ -158,7 +158,7 @@ const styles: Record<string, CSSProperties> = {
     borderRadius: "20px",
     padding: "26px",
     textAlign: "center",
-    boxShadow: "0 12px 30px rgba(0,0,0,.24)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   heading: {
@@ -196,6 +196,7 @@ const styles: Record<string, CSSProperties> = {
     background:
       "linear-gradient(135deg, rgba(245,197,66,.10), rgba(245,197,66,.03))",
     border: "1px solid rgba(245,197,66,.24)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   contractContent: {
@@ -244,8 +245,9 @@ const styles: Record<string, CSSProperties> = {
     marginTop: "26px",
     padding: "28px",
     borderRadius: "18px",
-    background: "rgba(255,255,255,.035)",
+    background: "linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.10)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.22)",
   },
 
   disclosureTitle: {
