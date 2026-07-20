@@ -7,7 +7,7 @@ export default function FoundationPrinciples() {
     <section
       id="foundation-principles"
       style={styles.section}
-      className="fadeIn"
+      className="magCard cardHover fadeIn"
       aria-labelledby="foundation-principles-title"
     >
       <p style={styles.label}>ENDURING PRINCIPLES</p>
@@ -27,7 +27,7 @@ export default function FoundationPrinciples() {
           <article
             key={item.title}
             style={styles.card}
-            className="cardHover"
+            className="magCard cardHover"
           >
             <div style={styles.cardHeader}>
               <span style={styles.number}>
@@ -107,7 +107,7 @@ const styles: Record<string, CSSProperties> = {
     border: "1px solid rgba(255,255,255,.12)",
     borderRadius: "20px",
     padding: "26px",
-    boxShadow: "0 12px 30px rgba(0,0,0,.24)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   cardHeader: {
@@ -161,6 +161,7 @@ const styles: Record<string, CSSProperties> = {
       "linear-gradient(135deg, rgba(245,197,66,.10), rgba(245,197,66,.03))",
     border: "1px solid rgba(245,197,66,.24)",
     textAlign: "center",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   safeguardsTitle: {
