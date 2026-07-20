@@ -38,7 +38,7 @@ export default function RiskDisclosure() {
     <section
       id="risk-disclosure"
       style={styles.section}
-      className="cardHover fadeIn"
+      className="magCard cardHover fadeIn"
       aria-labelledby="risk-disclosure-title"
     >
       <p style={styles.kicker}>RISK DISCLOSURE</p>
@@ -61,7 +61,7 @@ export default function RiskDisclosure() {
 
       <div style={styles.grid}>
         {risks.map((risk) => (
-          <article key={risk.title} style={styles.card}>
+          <article key={risk.title} style={styles.card} className="magCard cardHover">
             <h3 style={styles.cardTitle}>{risk.title}</h3>
 
             <p style={styles.cardText}>
@@ -71,7 +71,7 @@ export default function RiskDisclosure() {
         ))}
       </div>
 
-      <div style={styles.notice}>
+      <div style={styles.notice} className="magCard cardHover">
         <h3 style={styles.noticeTitle}>
           Important Notice
         </h3>
@@ -156,10 +156,11 @@ const styles: Record<string, CSSProperties> = {
 
   card: {
     background:
-      "linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.02))",
+      "linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.10)",
     borderRadius: "18px",
     padding: "24px",
+    boxShadow: "0 16px 38px rgba(0,0,0,.22)",
   },
 
   cardTitle: {
@@ -180,8 +181,9 @@ const styles: Record<string, CSSProperties> = {
     marginTop: "34px",
     padding: "28px",
     borderRadius: "18px",
-    background: "rgba(0,0,0,.22)",
+    background: "linear-gradient(145deg, rgba(245,197,66,.10), rgba(245,197,66,.035))",
     border: "1px solid rgba(245,197,66,.22)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   noticeTitle: {
