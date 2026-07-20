@@ -62,7 +62,7 @@ export default function ConstitutionArticles() {
     <section
       id="constitution-articles"
       style={styles.section}
-      className="fadeIn"
+      className="magCard cardHover fadeIn"
     >
       <div style={styles.header}>
         <p style={styles.label}>FOUNDATIONAL ARTICLES</p>
@@ -84,7 +84,7 @@ export default function ConstitutionArticles() {
           <article
             key={article.title}
             style={styles.card}
-            className="cardHover"
+            className="magCard cardHover"
           >
             <span style={styles.badge}>
               {article.number}
@@ -150,7 +150,7 @@ const styles: Record<string, CSSProperties> = {
     borderRadius: "22px",
     padding: "30px",
     color: "#e5e5e5",
-    boxShadow: "0 12px 30px rgba(0,0,0,.25)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   badge: {
