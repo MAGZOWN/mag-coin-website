@@ -43,70 +43,65 @@ export default function TokenFoundation() {
     <section
       id="token-foundation"
       style={styles.section}
-      className="cardHover fadeIn"
+      className="magCard cardHover fadeIn"
       aria-labelledby="token-foundation-title"
     >
       <p style={styles.label}>TOKEN FOUNDATION</p>
 
-      <h2
-        id="token-foundation-title"
-        style={styles.title}
-      >
+      <h2 id="token-foundation-title" style={styles.title}>
         A transparent foundation built on verifiable blockchain records.
       </h2>
 
       <p style={styles.text}>
-        MAG COIN has been designed with simplicity,
-        transparency, and verifiable blockchain data as
-        core principles. The project intentionally avoids
-        unnecessary contract complexity while making key
-        token information publicly available.
+        MAG COIN has been designed with simplicity, transparency, and verifiable
+        blockchain data as core principles. The project intentionally avoids
+        unnecessary contract complexity while making key token information
+        publicly available.
       </p>
 
       <div style={styles.grid}>
         {tokenFacts.map((item) => (
-          <div key={item.title} style={styles.card}>
-            <h3 style={styles.heading}>
-              {item.title}
-            </h3>
+          <div
+            key={item.title}
+            style={styles.card}
+            className="magCard cardHover"
+          >
+            <h3 style={styles.heading}>{item.title}</h3>
 
-            <p style={styles.value}>
-              {item.value}
-            </p>
+            <p style={styles.value}>{item.value}</p>
           </div>
         ))}
       </div>
 
-      <div style={styles.contractBox}>
-        <p style={styles.contractLabel}>
-          Official Smart Contract
-        </p>
+      <div
+        style={styles.contractBox}
+        className="magCard cardHover"
+      >
+        <p style={styles.contractLabel}>Official Smart Contract</p>
 
-        <code style={styles.contract}>
-          {contractAddress}
-        </code>
+        <code style={styles.contract}>{contractAddress}</code>
 
         <a
           href={`https://basescan.org/token/${contractAddress}`}
           target="_blank"
           rel="noopener noreferrer"
           style={styles.button}
+          className="buttonHover"
         >
           Verify on BaseScan ↗
         </a>
       </div>
 
-      <div style={styles.notice}>
-        <h3 style={styles.noticeTitle}>
-          Verification Reminder
-        </h3>
+      <div
+        style={styles.notice}
+        className="magCard cardHover"
+      >
+        <h3 style={styles.noticeTitle}>Verification Reminder</h3>
 
         <p style={styles.noticeText}>
-          Always verify the complete smart contract
-          address through the official MAG COIN website
-          and BaseScan before interacting with the
-          token. Never rely solely on social media,
-          screenshots, or unofficial sources when
+          Always verify the complete smart contract address through the official
+          MAG COIN website and BaseScan before interacting with the token. Never
+          rely solely on social media, screenshots, or unofficial sources when
           confirming blockchain information.
         </p>
       </div>
@@ -152,19 +147,19 @@ const styles: Record<string, CSSProperties> = {
 
   grid: {
     display: "grid",
-    gridTemplateColumns:
-      "repeat(auto-fit,minmax(220px,1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
     gap: "18px",
     marginBottom: "34px",
   },
 
   card: {
     background:
-      "linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.02))",
+      "linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.10)",
     borderRadius: "18px",
     padding: "24px",
     textAlign: "center",
+    boxShadow: "0 16px 38px rgba(0,0,0,.22)",
   },
 
   heading: {
@@ -179,16 +174,17 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "17px",
     fontWeight: 700,
     lineHeight: "1.6",
+    margin: 0,
   },
 
   contractBox: {
     background:
-      "rgba(245,197,66,.08)",
-    border:
-      "1px solid rgba(245,197,66,.24)",
+      "linear-gradient(145deg, rgba(245,197,66,.10), rgba(245,197,66,.035))",
+    border: "1px solid rgba(245,197,66,.24)",
     borderRadius: "18px",
     padding: "26px",
     marginBottom: "30px",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   contractLabel: {
@@ -209,21 +205,24 @@ const styles: Record<string, CSSProperties> = {
   button: {
     display: "inline-block",
     background: "#f5c542",
-    color: "#000",
+    color: "#000000",
     padding: "12px 22px",
     borderRadius: "999px",
     textDecoration: "none",
     fontWeight: 800,
     border: "2px solid #f5c542",
+    boxShadow: "0 12px 28px rgba(245,197,66,.18)",
+    transition:
+      "transform .25s ease, box-shadow .25s ease, background .25s ease",
   },
 
   notice: {
     background:
-      "rgba(255,255,255,.03)",
-    border:
-      "1px solid rgba(255,255,255,.08)",
+      "linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.02))",
+    border: "1px solid rgba(255,255,255,.10)",
     borderRadius: "18px",
     padding: "28px",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   noticeTitle: {
