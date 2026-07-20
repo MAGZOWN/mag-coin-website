@@ -40,7 +40,7 @@ export default function WhitepaperConclusion() {
     <section
       id="founder-commitment"
       style={styles.section}
-      className="cardHover fadeIn"
+      className="magCard cardHover fadeIn"
       aria-labelledby="founder-commitment-title"
     >
       <h2
@@ -84,14 +84,14 @@ export default function WhitepaperConclusion() {
             key={item.title}
             href={item.href}
             style={styles.resource}
-            className="navLink"
+            className="magCard cardHover navLink"
           >
             {item.title}
           </a>
         ))}
       </div>
 
-      <div style={styles.quoteBox}>
+      <div style={styles.quoteBox} className="magCard cardHover">
         <p style={styles.quote}>
           "The objective is not simply to launch a token.
           <br />
@@ -168,11 +168,12 @@ const styles: Record<string, CSSProperties> = {
   resource: {
     textDecoration: "none",
     color: "#ffffff",
-    background: "rgba(255,255,255,.05)",
+    background: "linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.10)",
     borderRadius: "14px",
     padding: "16px",
     fontWeight: 700,
+    boxShadow: "0 14px 32px rgba(0,0,0,.20)",
   },
 
   quoteBox: {
@@ -183,6 +184,7 @@ const styles: Record<string, CSSProperties> = {
     background:
       "linear-gradient(135deg, rgba(245,197,66,.10), rgba(245,197,66,.03))",
     border: "1px solid rgba(245,197,66,.24)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   quote: {
