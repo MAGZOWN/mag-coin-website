@@ -38,7 +38,7 @@ export default function ProjectPhilosophy() {
     <section
       id="project-philosophy"
       style={styles.section}
-      className="cardHover fadeIn"
+      className="magCard cardHover fadeIn"
       aria-labelledby="project-philosophy-title"
     >
       <p style={styles.label}>PROJECT PHILOSOPHY</p>
@@ -60,10 +60,13 @@ export default function ProjectPhilosophy() {
         acknowledgement of both opportunities and risks.
       </p>
 
-      <div style={styles.quoteBox}>
+      <div
+        style={styles.quoteBox}
+        className="magCard cardHover"
+      >
         <p style={styles.quote}>
-          "The objective is not simply to launch a token. The objective is to
-          build something that can still earn trust years from now."
+          &quot;The objective is not simply to launch a token. The objective is
+          to build something that can still earn trust years from now.&quot;
         </p>
       </div>
 
@@ -73,7 +76,11 @@ export default function ProjectPhilosophy() {
 
       <div style={styles.grid}>
         {principles.map((item) => (
-          <div key={item.title} style={styles.card}>
+          <div
+            key={item.title}
+            style={styles.card}
+            className="magCard cardHover"
+          >
             <h3 style={styles.cardTitle}>{item.title}</h3>
 
             <p style={styles.cardText}>{item.description}</p>
@@ -125,8 +132,9 @@ const styles: Record<string, CSSProperties> = {
     padding: "28px",
     borderRadius: "18px",
     background:
-      "linear-gradient(135deg, rgba(245,197,66,.09), rgba(245,197,66,.03))",
-    border: "1px solid rgba(245,197,66,.22)",
+      "linear-gradient(145deg, rgba(245,197,66,.10), rgba(245,197,66,.035))",
+    border: "1px solid rgba(245,197,66,.24)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   quote: {
@@ -156,7 +164,7 @@ const styles: Record<string, CSSProperties> = {
 
   grid: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
     gap: "18px",
   },
 
@@ -164,8 +172,9 @@ const styles: Record<string, CSSProperties> = {
     padding: "24px",
     borderRadius: "18px",
     background:
-      "linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.02))",
+      "linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.10)",
+    boxShadow: "0 16px 38px rgba(0,0,0,.22)",
   },
 
   cardTitle: {
