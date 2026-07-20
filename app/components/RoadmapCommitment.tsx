@@ -4,7 +4,7 @@ export default function RoadmapCommitment() {
   return (
     <section
       style={styles.section}
-      className="cardHover fadeIn"
+      className="magCard cardHover fadeIn"
     >
       <p style={styles.label}>LONG-TERM COMMITMENT</p>
 
@@ -35,6 +35,7 @@ export default function RoadmapCommitment() {
 
 const styles: Record<string, CSSProperties> = {
   section: {
+    boxShadow: "0 22px 50px rgba(0,0,0,.28)",
     marginTop: "40px",
     marginBottom: "70px",
     padding: "48px 40px",
