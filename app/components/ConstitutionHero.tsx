@@ -43,7 +43,7 @@ export default function ConstitutionHero() {
     <section
       id="constitution-hero"
       style={styles.hero}
-      className="fadeIn"
+      className="magCard cardHover fadeIn"
       aria-labelledby="constitution-title"
     >
       <p style={styles.label}>MAG FOUNDATION</p>
@@ -78,7 +78,7 @@ export default function ConstitutionHero() {
 
       <div style={styles.grid}>
         {documentDetails.map((item) => (
-          <div key={item.label} style={styles.card}>
+          <div key={item.label} style={styles.card} className="magCard cardHover">
             <span style={styles.cardLabel}>
               {item.label}
             </span>
@@ -100,7 +100,7 @@ export default function ConstitutionHero() {
 
       <div style={styles.grid}>
         {foundationDetails.map((item) => (
-          <div key={item.label} style={styles.card}>
+          <div key={item.label} style={styles.card} className="magCard cardHover">
             <span style={styles.cardLabel}>
               {item.label}
             </span>
@@ -112,7 +112,7 @@ export default function ConstitutionHero() {
         ))}
       </div>
 
-      <div style={styles.notice}>
+      <div style={styles.notice} className="magCard cardHover">
         <h3 style={styles.noticeTitle}>
           Constitutional Purpose
         </h3>
@@ -211,10 +211,11 @@ const styles: Record<string, CSSProperties> = {
 
   card: {
     background:
-      "linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.02))",
+      "linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.025))",
     border: "1px solid rgba(255,255,255,.10)",
     borderRadius: "18px",
     padding: "22px",
+    boxShadow: "0 16px 38px rgba(0,0,0,.22)",
   },
 
   cardLabel: {
@@ -241,6 +242,7 @@ const styles: Record<string, CSSProperties> = {
     background:
       "linear-gradient(135deg, rgba(245,197,66,.10), rgba(245,197,66,.03))",
     border: "1px solid rgba(245,197,66,.24)",
+    boxShadow: "0 18px 42px rgba(0,0,0,.24)",
   },
 
   noticeTitle: {
