@@ -12,6 +12,11 @@ const links = [
     label: "View Contract",
   },
   {
+    title: "Official Email",
+    url: "mailto:info@coinmagbase.com",
+    label: "info@coinmagbase.com",
+  },
+  {
     title: "Whitepaper",
     url: "/whitepaper",
     label: "Read Whitepaper",
@@ -45,7 +50,7 @@ export default function OfficialLinks() {
                 : undefined
             }
             style={styles.card}
-            className="cardHover fadeIn"
+            className="magCard cardHover fadeIn"
           >
             <h3 style={styles.heading}>{item.title}</h3>
 
