@@ -63,10 +63,32 @@ export default function Contact() {
             Foundation through this form.
           </p>
 
+          <aside
+            style={styles.officialContact}
+            className="magCard cardHover fadeIn"
+            aria-label="Official MAG COIN contact email"
+          >
+            <p style={styles.officialContactLabel}>OFFICIAL PROJECT EMAIL</p>
+
+            <a
+              href="mailto:info@coinmagbase.com"
+              style={styles.emailLink}
+              aria-label="Email MAG COIN at info@coinmagbase.com"
+            >
+              info@coinmagbase.com
+            </a>
+
+            <p style={styles.officialContactText}>
+              Use this domain-based address for official project inquiries,
+              documentation requests, responsible disclosures, and platform
+              verification.
+            </p>
+          </aside>
+
           <form
             onSubmit={handleSubmit}
             style={styles.form}
-            className="cardHover fadeIn"
+            className="magCard cardHover fadeIn"
           >
             <input
               type="text"
@@ -197,6 +219,42 @@ const styles: Record<string, CSSProperties> = {
     lineHeight: "1.8",
     maxWidth: "760px",
     margin: "0 auto 42px",
+  },
+
+  officialContact: {
+    marginBottom: "28px",
+    padding: "26px",
+    borderRadius: "20px",
+    border: "1px solid rgba(245,197,66,.28)",
+    background:
+      "linear-gradient(145deg, rgba(245,197,66,.08), rgba(5,5,5,.96))",
+    boxShadow: "0 18px 42px rgba(0,0,0,.26)",
+  },
+
+  officialContactLabel: {
+    margin: "0 0 10px",
+    color: "#f5c542",
+    fontSize: "12px",
+    fontWeight: 800,
+    letterSpacing: "2px",
+  },
+
+  emailLink: {
+    display: "inline-block",
+    color: "#ffffff",
+    fontSize: "21px",
+    fontWeight: 800,
+    lineHeight: 1.5,
+    textDecoration: "none",
+    overflowWrap: "anywhere",
+  },
+
+  officialContactText: {
+    maxWidth: "650px",
+    margin: "12px auto 0",
+    color: "#bdbdbd",
+    fontSize: "14px",
+    lineHeight: 1.75,
   },
 
   form: {
