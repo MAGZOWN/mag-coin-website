@@ -77,6 +77,14 @@ export default function Footer() {
             listed below.
           </p>
 
+          <a
+            href="mailto:info@coinmagbase.com"
+            style={styles.officialEmail}
+            aria-label="Email MAG COIN at info@coinmagbase.com"
+          >
+            info@coinmagbase.com
+          </a>
+
           <div style={styles.socialLinks}>
             <SocialLink
               href="https://x.com/MAGCOINBASE"
@@ -282,6 +290,16 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "13px",
     lineHeight: 1.7,
     margin: "0 0 20px",
+  },
+
+  officialEmail: {
+    display: "inline-block",
+    margin: "0 0 20px",
+    color: "#f5c542",
+    fontSize: "14px",
+    fontWeight: 800,
+    textDecoration: "none",
+    overflowWrap: "anywhere",
   },
 
   socialLinks: {
