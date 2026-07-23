@@ -58,15 +58,18 @@ const liveModules = [
     action: "View Security",
     external: false,
   },
+  {
+    title: "Treasury Dashboard",
+    description:
+      "A read-only public view of the MAG COIN founder and project treasury wallet, including live ETH, MAG and USDC balances.",
+    status: "LIVE",
+    href: "/treasury",
+    action: "Open Treasury",
+    external: false,
+  },
 ];
 
 const developmentModules = [
-  {
-    title: "Treasury Dashboard",
-    phase: "Phase 1",
-    description:
-      "Public reporting of approved treasury wallets, liquidity positions, balances, expenses and on-chain evidence.",
-  },
   {
     title: "Liquidity Intelligence",
     phase: "Phase 2",
