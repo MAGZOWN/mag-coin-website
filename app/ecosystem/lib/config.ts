@@ -27,3 +27,11 @@ export const MAG_UNISWAP_POOL_URL =
 export const MAG_WEBSITE_URL = "https://coinmagbase.com";
 export const MAG_X_URL = "https://x.com/MAGCOINBASE";
 export const MAG_TELEGRAM_URL = "https://t.me/MAGCOINBASE";
+export const MAG_FACEBOOK_URL =
+  "https://web.facebook.com/profile.php?id=61592146070481";
+export const MAG_INSTAGRAM_URL =
+  "https://www.instagram.com/coinbasemag/";
+export const MAG_REDDIT_URL =
+  "https://www.reddit.com/user/MAG-COIN/";
+export const MAG_GITHUB_URL =
+  "https://github.com/MAGZOWN/mag-coin-website";
