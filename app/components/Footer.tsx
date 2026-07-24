@@ -1,5 +1,14 @@
 import type { CSSProperties, ReactNode } from "react";
 
+import {
+  MAG_FACEBOOK_URL,
+  MAG_GITHUB_URL,
+  MAG_INSTAGRAM_URL,
+  MAG_REDDIT_URL,
+  MAG_TELEGRAM_URL,
+  MAG_X_URL,
+} from "../ecosystem/lib/config";
+
 type SocialLinkProps = {
   href: string;
   label: string;
@@ -66,10 +75,7 @@ export default function Footer() {
           </a>
         </div>
 
-        <section
-          style={styles.socialSection}
-          className="magCard cardHover"
-        >
+        <section style={styles.socialSection} className="magCard cardHover">
           <h4 style={styles.socialTitle}>Official Communication Channels</h4>
 
           <p style={styles.socialNotice}>
@@ -86,32 +92,34 @@ export default function Footer() {
           </a>
 
           <div style={styles.socialLinks}>
-            <SocialLink
-              href="https://x.com/MAGCOINBASE"
-              label="X"
-              icon={<XIcon />}
-            />
+            <SocialLink href={MAG_X_URL} label="X" icon={<XIcon />} />
 
             <SocialLink
-              href="https://t.me/MAGCOINBASE"
+              href={MAG_TELEGRAM_URL}
               label="Telegram"
               icon={<TelegramIcon />}
             />
 
             <SocialLink
-              href="https://web.facebook.com/profile.php?id=61592146070481"
+              href={MAG_FACEBOOK_URL}
               label="Facebook"
               icon={<FacebookIcon />}
             />
 
             <SocialLink
-              href="https://www.instagram.com/coinbasemag/"
+              href={MAG_INSTAGRAM_URL}
               label="Instagram"
               icon={<InstagramIcon />}
             />
 
             <SocialLink
-              href="https://github.com/MAGZOWN/mag-coin-website"
+              href={MAG_REDDIT_URL}
+              label="Reddit"
+              icon={<RedditIcon />}
+            />
+
+            <SocialLink
+              href={MAG_GITHUB_URL}
               label="GitHub"
               icon={<GitHubIcon />}
             />
@@ -200,6 +208,20 @@ function InstagramIcon() {
       <rect x="3" y="3" width="18" height="18" rx="5" />
       <circle cx="12" cy="12" r="4" />
       <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function RedditIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width="20"
+      height="20"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M14.62 4.28 15.4 7.9c1.63.12 3.12.62 4.24 1.4a2.17 2.17 0 1 1 1.22 3.85c.03.22.04.44.04.67 0 3.29-3.98 5.96-8.9 5.96s-8.9-2.67-8.9-5.96c0-.23.02-.45.05-.67A2.17 2.17 0 1 1 4.36 9.3c1.15-.8 2.67-1.3 4.33-1.41l.93-4.38a.74.74 0 0 1 .88-.57l3.4.72a1.72 1.72 0 1 1 .72.62ZM8.47 12.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Zm7.06 0a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Zm-7.02 3.72a.65.65 0 0 0-.08.91c.86 1.03 2.16 1.53 3.57 1.53 1.4 0 2.7-.5 3.57-1.53a.65.65 0 0 0-.99-.84c-.6.71-1.55 1.07-2.58 1.07-1.04 0-1.98-.36-2.58-1.07a.65.65 0 0 0-.91-.07Z" />
     </svg>
   );
 }
@@ -374,3 +396,4 @@ const styles: Record<string, CSSProperties> = {
     textTransform: "uppercase",
   },
 };
+
