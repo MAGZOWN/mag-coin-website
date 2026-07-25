@@ -92,53 +92,192 @@ export default function DevelopmentStrategy() {
     <section
       id="development-strategy"
       style={styles.section}
-      className="magCard cardHover fadeIn"
+      className="developmentStrategy magCard cardHover fadeIn"
       aria-labelledby="development-strategy-title"
     >
+      <style>{`
+        .developmentStrategy {
+          width: 100%;
+          min-width: 0;
+        }
+
+        .developmentStrategy__item,
+        .developmentStrategy__content,
+        .developmentStrategy__priorityGrid,
+        .developmentStrategy__priorityItem {
+          min-width: 0;
+          max-width: 100%;
+        }
+
+        @media (max-width: 640px) {
+          .developmentStrategy {
+            padding: 24px 16px !important;
+            border-radius: 18px !important;
+            overflow: hidden;
+          }
+
+          .developmentStrategy__title {
+            font-size: 29px !important;
+            line-height: 1.28 !important;
+          }
+
+          .developmentStrategy__text {
+            font-size: 16px !important;
+            line-height: 1.75 !important;
+          }
+
+          .developmentStrategy__notice {
+            padding: 18px 14px !important;
+          }
+
+          .developmentStrategy__noticeText {
+            font-size: 14px !important;
+            overflow-wrap: anywhere;
+          }
+
+          .developmentStrategy__divider {
+            margin: 32px 0 !important;
+          }
+
+          .developmentStrategy__item {
+            display: block !important;
+            width: 100% !important;
+            padding: 20px 16px !important;
+            border-radius: 16px !important;
+            overflow: hidden;
+          }
+
+          .developmentStrategy__number {
+            width: 52px !important;
+            height: 52px !important;
+            margin-bottom: 18px;
+          }
+
+          .developmentStrategy__phaseHeader {
+            display: block !important;
+            margin-bottom: 16px !important;
+          }
+
+          .developmentStrategy__status {
+            margin-top: 14px;
+          }
+
+          .developmentStrategy__phaseTitle {
+            font-size: 22px !important;
+            overflow-wrap: anywhere;
+          }
+
+          .developmentStrategy__phaseText {
+            font-size: 15px !important;
+            line-height: 1.75 !important;
+            overflow-wrap: anywhere;
+          }
+
+          .developmentStrategy__priorityGrid {
+            display: grid !important;
+            grid-template-columns: minmax(0, 1fr) !important;
+            width: 100% !important;
+          }
+
+          .developmentStrategy__priorityItem {
+            width: 100% !important;
+            padding: 12px !important;
+            overflow-wrap: anywhere;
+          }
+
+          .developmentStrategy__closing {
+            padding: 21px 17px !important;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .developmentStrategy {
+            padding: 21px 13px !important;
+          }
+
+          .developmentStrategy__title {
+            font-size: 26px !important;
+          }
+
+          .developmentStrategy__item {
+            padding: 18px 13px !important;
+          }
+        }
+      `}</style>
+
       <p style={styles.label}>DEVELOPMENT STRATEGY</p>
 
-      <h2 id="development-strategy-title" style={styles.title}>
+      <h2
+        id="development-strategy-title"
+        style={styles.title}
+        className="developmentStrategy__title"
+      >
         Building steadily, documenting everything, improving continuously.
       </h2>
 
-      <p style={styles.text}>
+      <p style={styles.text} className="developmentStrategy__text">
         MAG COIN follows a structured development strategy rather than pursuing
         rapid or speculative expansion. Each phase is intended to strengthen
         security, improve transparency, preserve institutional memory, and
         establish a sustainable foundation for future development.
       </p>
 
-      <p style={styles.text}>
+      <p style={styles.text} className="developmentStrategy__text">
         The roadmap is directional rather than promotional. A phase should not
         be treated as complete until its important technical, operational, and
         documentation requirements have been verified.
       </p>
 
-      <div style={styles.strategyNotice} className="magCard cardHover">
+      <div
+        style={styles.strategyNotice}
+        className="developmentStrategy__notice magCard cardHover"
+      >
         <p style={styles.noticeTitle}>Development Rule</p>
 
-        <p style={styles.noticeText}>
+        <p
+          style={styles.noticeText}
+          className="developmentStrategy__noticeText"
+        >
           Plan → Verify → Document → Implement → Test → Review → Record
         </p>
       </div>
 
-      <div style={styles.divider} />
+      <div
+        style={styles.divider}
+        className="developmentStrategy__divider"
+      />
 
       <div style={styles.timeline}>
         {phases.map((phase) => (
           <article
             key={phase.number}
             style={styles.item}
-            className="magCard cardHover"
+            className="developmentStrategy__item magCard cardHover"
           >
-            <div style={styles.number}>{phase.number}</div>
+            <div
+              style={styles.number}
+              className="developmentStrategy__number"
+            >
+              {phase.number}
+            </div>
 
-            <div style={styles.phaseContent}>
-              <div style={styles.phaseHeader}>
+            <div
+              style={styles.phaseContent}
+              className="developmentStrategy__content"
+            >
+              <div
+                style={styles.phaseHeader}
+                className="developmentStrategy__phaseHeader"
+              >
                 <div>
                   <p style={styles.phaseLabel}>PHASE {phase.number}</p>
 
-                  <h3 style={styles.phaseTitle}>{phase.title}</h3>
+                  <h3
+                    style={styles.phaseTitle}
+                    className="developmentStrategy__phaseTitle"
+                  >
+                    {phase.title}
+                  </h3>
                 </div>
 
                 <span
@@ -146,19 +285,28 @@ export default function DevelopmentStrategy() {
                     ...styles.statusBadge,
                     ...getStatusStyle(phase.status),
                   }}
+                  className="developmentStrategy__status"
                 >
                   {phase.status}
                 </span>
               </div>
 
-              <p style={styles.phaseText}>{phase.description}</p>
+              <p
+                style={styles.phaseText}
+                className="developmentStrategy__phaseText"
+              >
+                {phase.description}
+              </p>
 
-              <div style={styles.priorityGrid}>
+              <div
+                style={styles.priorityGrid}
+                className="developmentStrategy__priorityGrid"
+              >
                 {phase.priorities.map((priority) => (
                   <div
                     key={priority}
                     style={styles.priorityItem}
-                    className="magCard cardHover"
+                    className="developmentStrategy__priorityItem magCard cardHover"
                   >
                     <span style={styles.priorityMarker}>✓</span>
                     <span>{priority}</span>
@@ -170,7 +318,10 @@ export default function DevelopmentStrategy() {
         ))}
       </div>
 
-      <div style={styles.closingBox} className="magCard cardHover">
+      <div
+        style={styles.closingBox}
+        className="developmentStrategy__closing magCard cardHover"
+      >
         <h3 style={styles.closingTitle}>Responsible Progress</h3>
 
         <p style={styles.closingText}>
@@ -186,6 +337,8 @@ export default function DevelopmentStrategy() {
 
 const styles: Record<string, CSSProperties> = {
   section: {
+    width: "100%",
+    minWidth: 0,
     marginBottom: "60px",
     scrollMarginTop: "110px",
     background:
@@ -211,6 +364,7 @@ const styles: Record<string, CSSProperties> = {
     lineHeight: "1.3",
     marginBottom: "24px",
     fontWeight: 850,
+    overflowWrap: "anywhere",
   },
 
   text: {
@@ -218,9 +372,12 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "18px",
     lineHeight: "1.9",
     marginBottom: "22px",
+    overflowWrap: "anywhere",
   },
 
   strategyNotice: {
+    width: "100%",
+    minWidth: 0,
     marginTop: "32px",
     padding: "24px",
     borderRadius: "18px",
@@ -245,6 +402,7 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: 800,
     letterSpacing: ".4px",
     margin: 0,
+    overflowWrap: "anywhere",
   },
 
   divider: {
@@ -258,9 +416,13 @@ const styles: Record<string, CSSProperties> = {
     display: "flex",
     flexDirection: "column",
     gap: "20px",
+    width: "100%",
+    minWidth: 0,
   },
 
   item: {
+    width: "100%",
+    minWidth: 0,
     display: "flex",
     alignItems: "flex-start",
     gap: "22px",
@@ -289,7 +451,8 @@ const styles: Record<string, CSSProperties> = {
   },
 
   phaseContent: {
-    flex: 1,
+    flex: "1 1 0%",
+    width: "100%",
     minWidth: 0,
   },
 
@@ -316,6 +479,7 @@ const styles: Record<string, CSSProperties> = {
     lineHeight: "1.35",
     fontWeight: 850,
     margin: 0,
+    overflowWrap: "anywhere",
   },
 
   statusBadge: {
@@ -334,15 +498,20 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "15px",
     lineHeight: "1.8",
     margin: "0 0 18px",
+    overflowWrap: "anywhere",
   },
 
   priorityGrid: {
+    width: "100%",
+    minWidth: 0,
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(min(210px, 100%), 1fr))",
     gap: "10px",
   },
 
   priorityItem: {
+    width: "100%",
+    minWidth: 0,
     display: "flex",
     alignItems: "flex-start",
     gap: "10px",
@@ -354,6 +523,7 @@ const styles: Record<string, CSSProperties> = {
     padding: "11px 13px",
     fontSize: "14px",
     lineHeight: "1.55",
+    overflowWrap: "anywhere",
     boxShadow: "0 12px 28px rgba(0,0,0,.18)",
   },
 
@@ -364,6 +534,8 @@ const styles: Record<string, CSSProperties> = {
   },
 
   closingBox: {
+    width: "100%",
+    minWidth: 0,
     marginTop: "34px",
     padding: "28px",
     borderRadius: "18px",
@@ -385,6 +557,6 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "15px",
     lineHeight: "1.85",
     margin: 0,
+    overflowWrap: "anywhere",
   },
 };
-
