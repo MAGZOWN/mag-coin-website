@@ -73,6 +73,14 @@ export default function Footer() {
           <a href="/security" className="navLink" style={styles.link}>
             Security
           </a>
+
+          <a href="/portfolio" className="navLink" style={styles.link}>
+            Portfolio
+          </a>
+
+          <a href="/treasury" className="navLink" style={styles.link}>
+            Treasury
+          </a>
         </div>
 
         <section style={styles.socialSection} className="magCard cardHover">
