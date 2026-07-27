@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import type { CSSProperties } from "react";
 
 const links = [
@@ -16,6 +19,8 @@ const links = [
 ];
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <header style={styles.header}>
       <div style={styles.container}>
@@ -23,7 +28,11 @@ export default function Navbar() {
           <img src="/mag-logo.png" alt="MAG COIN logo" style={styles.logo} />
         </a>
 
-        <nav style={styles.nav} aria-label="Main navigation">
+        <nav
+          style={styles.nav}
+          aria-label="Main navigation"
+          className="navDesktop"
+        >
           {links.map(([label, href]) => (
             <a
               key={label}
@@ -36,8 +45,61 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div style={styles.balanceSpacer} aria-hidden="true" />
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          className="navToggle"
+          style={styles.toggleBtn}
+        >
+          <span
+            style={{
+              ...styles.toggleBar,
+              ...(open ? styles.toggleBarOpenTop : {}),
+            }}
+          />
+          <span
+            style={{
+              ...styles.toggleBar,
+              ...(open ? styles.toggleBarOpenMid : {}),
+            }}
+          />
+          <span
+            style={{
+              ...styles.toggleBar,
+              ...(open ? styles.toggleBarOpenBottom : {}),
+            }}
+          />
+        </button>
       </div>
+
+      <nav
+        aria-label="Mobile navigation"
+        className={`navMobile${open ? " navMobileOpen" : ""}`}
+        style={styles.mobileNav}
+      >
+        {links.map(([label, href]) => (
+          <a
+            key={label}
+            href={href}
+            className="navLink"
+            style={styles.mobileLink}
+            onClick={() => setOpen(false)}
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
+
+      <style>{`
+        .navToggle { display: none; }
+        @media (max-width: 880px) {
+          .navDesktop { display: none !important; }
+          .navToggle { display: inline-flex !important; }
+          .navMobile.navMobileOpen { display: flex !important; }
+        }
+      `}</style>
     </header>
   );
 }
@@ -96,8 +158,54 @@ const styles: Record<string, CSSProperties> = {
     whiteSpace: "nowrap",
   },
 
-  balanceSpacer: {
-    width: "52px",
-    height: "1px",
+  toggleBtn: {
+    width: "40px",
+    height: "40px",
+    marginLeft: "auto",
+    display: "none",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "5px",
+    background: "transparent",
+    border: "1px solid rgba(245,197,66,.35)",
+    borderRadius: "10px",
+    cursor: "pointer",
+  },
+
+  toggleBar: {
+    width: "20px",
+    height: "2px",
+    background: "#f5c542",
+    borderRadius: "2px",
+    transition: "transform .2s ease, opacity .2s ease",
+  },
+
+  toggleBarOpenTop: {
+    transform: "translateY(7px) rotate(45deg)",
+  },
+  toggleBarOpenMid: {
+    opacity: 0,
+  },
+  toggleBarOpenBottom: {
+    transform: "translateY(-7px) rotate(-45deg)",
+  },
+
+  mobileNav: {
+    display: "none",
+    flexDirection: "column",
+    padding: "8px 28px 20px",
+    borderTop: "1px solid rgba(245,197,66,.14)",
+    background: "rgba(5,5,5,.98)",
+  },
+
+  mobileLink: {
+    color: "#ffffff",
+    textDecoration: "none",
+    fontSize: "15px",
+    fontWeight: 600,
+    padding: "12px 4px",
+    borderBottom: "1px solid rgba(255,255,255,.06)",
   },
 };
+
