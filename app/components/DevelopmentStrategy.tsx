@@ -15,8 +15,8 @@ const phases = [
   },
   {
     number: "02",
-    title: "Documentation and Trust",
-    status: "In Progress",
+    title: "Documentation & Trust",
+    status: "Completed",
     description:
       "Develop the Whitepaper, Constitution, Tokenomics, Transparency Center, Security guidance, Audit records, and supporting public documentation.",
     priorities: [
@@ -27,7 +27,7 @@ const phases = [
   },
   {
     number: "03",
-    title: "Security and Operational Readiness",
+    title: "Security & Infrastructure",
     status: "In Progress",
     description:
       "Review contract permissions, wallet practices, liquidity records, project infrastructure, and operational safeguards before wider public promotion.",
@@ -39,7 +39,7 @@ const phases = [
   },
   {
     number: "04",
-    title: "Community Education",
+    title: "Community Development",
     status: "Planned",
     description:
       "Introduce responsible public communication, educational resources, community support channels, and transparent progress reporting.",
@@ -51,7 +51,7 @@ const phases = [
   },
   {
     number: "05",
-    title: "Ecosystem Development",
+    title: "Ecosystem Growth",
     status: "Long-Term",
     description:
       "Explore sustainable utilities, partnerships, governance development, integrations, and ecosystem expansion only after the project foundation is sufficiently mature.",
@@ -560,3 +560,4 @@ const styles: Record<string, CSSProperties> = {
     overflowWrap: "anywhere",
   },
 };
+
