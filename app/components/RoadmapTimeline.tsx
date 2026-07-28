@@ -14,7 +14,7 @@ const phases = [
   },
   {
     phase: "Phase 2",
-    status: "In Progress",
+    status: "Completed",
     title: "Documentation & Trust",
     items: [
       "Whitepaper refinement",
@@ -25,7 +25,7 @@ const phases = [
   },
   {
     phase: "Phase 3",
-    status: "Planned",
+    status: "In Progress",
     title: "Security & Infrastructure",
     items: [
       "Security review",
@@ -176,3 +176,4 @@ const styles: Record<string, CSSProperties> = {
     margin: 0,
   },
 };
+
