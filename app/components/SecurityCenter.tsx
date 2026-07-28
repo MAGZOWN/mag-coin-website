@@ -19,6 +19,18 @@ export default function SecurityCenter() {
         and responsible blockchain practices.
       </p>
 
+      <div style={styles.auditNotice} className="cardHover">
+        <p style={styles.auditText}>
+          The MAG smart contract has been reviewed for owner, mint, pause,
+          blacklist, tax, and upgrade permissions. Full findings are published
+          in the{" "}
+          <a href="/audit" style={styles.auditLink}>
+            Master Audit Report
+          </a>
+          , alongside current liquidity and holder concentration disclosures.
+        </p>
+      </div>
+
       <div style={styles.card} className="cardHover">
 
         {items.map((item, index) => (
@@ -64,6 +76,42 @@ const styles: Record<string, CSSProperties> = {
     margin: "0 auto 34px",
 
     lineHeight: "1.7",
+
+  },
+
+  auditNotice: {
+
+    maxWidth: "760px",
+
+    margin: "0 auto 28px",
+
+    padding: "22px 26px",
+
+    borderRadius: "18px",
+
+    background:
+      "linear-gradient(145deg, rgba(245,197,66,.10), rgba(245,197,66,.035))",
+
+    border: "1px solid rgba(245,197,66,.28)",
+
+  },
+
+  auditText: {
+
+    color: "#e5e5e5",
+
+    lineHeight: "1.8",
+
+    margin: 0,
+    textAlign: "center",
+
+  },
+
+  auditLink: {
+
+    color: "#f5c542",
+    fontWeight: 700,
+    textDecoration: "underline",
 
   },
 
@@ -115,3 +163,4 @@ const styles: Record<string, CSSProperties> = {
   },
 
 };
+
