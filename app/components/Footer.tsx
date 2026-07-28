@@ -1,5 +1,6 @@
 import type { CSSProperties, ReactNode } from "react";
 
+import { foundationData } from "../data/foundationData";
 import {
   MAG_FACEBOOK_URL,
   MAG_GITHUB_URL,
@@ -152,7 +153,9 @@ export default function Footer() {
           © 2026 MAG COIN Foundation. All rights reserved.
         </p>
 
-        <p style={styles.version}>Foundation Release v1.0</p>
+        <p style={styles.version}>
+          Website Version {foundationData.websiteVersion}
+        </p>
       </div>
     </footer>
   );
