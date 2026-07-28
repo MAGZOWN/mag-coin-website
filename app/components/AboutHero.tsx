@@ -13,7 +13,7 @@ export default function AboutHero() {
         <>
           Built with Integrity.
           <br />
-          Developed for Generations.
+          Trusted for Generations.
         </>
       </HeroTitle>
 
@@ -52,3 +52,4 @@ const styles: Record<string, CSSProperties> = {
     margin: "0 auto",
   },
 };
+
