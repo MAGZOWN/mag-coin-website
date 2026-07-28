@@ -27,16 +27,17 @@ export const verificationData = [
   {
     label: "Constitution",
     value: "Version 1.0",
-    status: "In Progress",
+    status: "Available",
   },
   {
     label: "Audit",
     value: "Master Audit Report",
-    status: "In Progress",
+    status: "Available",
   },
   {
     label: "Security",
     value: "Security Center",
-    status: "Planned",
+    status: "Available",
   },
 ];
+
