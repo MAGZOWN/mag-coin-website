@@ -111,7 +111,7 @@ export default function ProjectStatus() {
 
           <h3 style={styles.heading}>Website Version</h3>
 
-          <p style={styles.value}>v1.7.0</p>
+          <p style={styles.value}>{foundationData.websiteVersion}</p>
         </div>
 
         <div
@@ -244,3 +244,4 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "16px",
   },
 };
+
