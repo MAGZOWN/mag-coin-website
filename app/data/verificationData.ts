@@ -30,6 +30,11 @@ export const verificationData = [
     status: "Available",
   },
   {
+    label: "Tokenomics",
+    value: "Full Disclosure",
+    status: "Available",
+  },
+  {
     label: "Audit",
     value: "Master Audit Report",
     status: "Available",
