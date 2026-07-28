@@ -28,4 +28,7 @@ export const foundationData = {
   },
 
   foundationStatus: "Operational",
+
+  websiteVersion: "v1.7.0",
 };
+
