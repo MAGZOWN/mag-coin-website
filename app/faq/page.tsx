@@ -61,6 +61,45 @@ export default function FAQ() {
 
           <div style={styles.card} className="cardHover">
             <h2 style={styles.heading}>
+              Why is liquidity currently limited?
+            </h2>
+
+            <p>
+              MAG COIN follows a safety-before-speed approach: liquidity is
+              added gradually using project funds, never through paid volume
+              or artificial activity. Current liquidity and holder figures are
+              published openly on the Tokenomics and Audit pages.
+            </p>
+          </div>
+
+          <div style={styles.card} className="cardHover">
+            <h2 style={styles.heading}>
+              Why does one wallet hold most of the supply?
+            </h2>
+
+            <p>
+              The project wallet currently holds the majority of total
+              supply, consistent with an early-stage, founder-funded project.
+              This concentration is disclosed openly rather than hidden, and
+              is expected to change gradually as liquidity and organic holder
+              growth increase over time.
+            </p>
+          </div>
+
+          <div style={styles.card} className="cardHover">
+            <h2 style={styles.heading}>
+              Is MAG COIN listed on CoinGecko or CoinMarketCap?
+            </h2>
+
+            <p>
+              Not yet. Listings will be pursued only after measurable organic
+              traction, using official channels and free application
+              processes. MAG COIN does not use paid listing shortcuts.
+            </p>
+          </div>
+
+          <div style={styles.card} className="cardHover">
+            <h2 style={styles.heading}>
               Will documentation be updated?
             </h2>
 
@@ -133,3 +172,4 @@ const styles: Record<string, CSSProperties> = {
     wordBreak: "break-all",
   },
 };
+
