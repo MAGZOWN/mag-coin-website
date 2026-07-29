@@ -36,7 +36,7 @@ const phases = [
   },
   {
     phase: "Phase 4",
-    status: "Future",
+    status: "Planned",
     title: "Community Development",
     items: [
       "Official community channels",
