@@ -15,8 +15,8 @@ const roadmapItems = [
   },
   {
     phase: "Phase 2",
-    title: "Documentation and Trust",
-    status: "In Progress",
+    title: "Documentation & Trust",
+    status: "Completed",
     text: "Strengthen the Whitepaper, Constitution, Tokenomics, Audit, Security, Transparency Center, and public reporting framework.",
     milestones: [
       "Whitepaper refinement",
@@ -27,7 +27,7 @@ const roadmapItems = [
   },
   {
     phase: "Phase 3",
-    title: "Operational Readiness",
+    title: "Security & Infrastructure",
     status: "In Progress",
     text: "Improve infrastructure security, wallet practices, liquidity clarity, contact systems, metadata consistency, and public verification resources.",
     milestones: [
