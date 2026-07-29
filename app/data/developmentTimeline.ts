@@ -6,22 +6,23 @@ export const developmentTimeline = [
   },
   {
     phase: "Phase 2",
-    title: "Documentation",
-    status: "In Progress",
+    title: "Documentation & Trust",
+    status: "Completed",
   },
   {
     phase: "Phase 3",
-    title: "Community Growth",
+    title: "Security & Infrastructure",
     status: "In Progress",
   },
   {
     phase: "Phase 4",
-    title: "Ecosystem Expansion",
-    status: "In Progress",
+    title: "Community Development",
+    status: "Planned",
   },
   {
     phase: "Phase 5",
-    title: "Long-Term Sustainability",
-    status: "Future",
+    title: "Ecosystem Growth",
+    status: "Long-Term",
   },
 ];
+
