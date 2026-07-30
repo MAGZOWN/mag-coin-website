@@ -10,21 +10,8 @@ export const foundationDocuments = [
     title: "Constitution",
     description:
       "The governance framework guiding the Foundation and its long-term stewardship.",
-    status: "In Progress",
+    status: "Available",
     link: "/constitution",
   },
-  {
-    title: "Foundation Charter",
-    description:
-      "Defines the mission, vision, values, and purpose of the MAG Foundation.",
-    status: "Internal",
-    link: "#",
-  },
-  {
-    title: "Manifesto",
-    description:
-      "The guiding philosophy and principles behind MAG COIN.",
-    status: "Internal",
-    link: "#",
-  },
 ];
+
