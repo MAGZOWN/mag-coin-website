@@ -9,17 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --void:#0B0E14;
-    --panel:#131822;
-    --panel-line:#1E2531;
-    --grid-line:#171D28;
-    --base-blue:#0052FF;
-    --base-blue-dim:#0052FF33;
+    --void:#050505;
+    --panel:#111111;
+    --panel-line:rgba(245,197,66,0.14);
+    --grid-line:rgba(245,197,66,0.05);
+    --gold:#f5c542;
+    --gold-dim:rgba(245,197,66,0.2);
     --amber:#FFB020;
     --green:#34D399;
     --red:#FF5C5C;
-    --fog:#8B93A7;
-    --paper:#EDEFF4;
+    --fog:#a9a9a9;
+    --paper:#ffffff;
     --radius:10px;
   }
   *{box-sizing:border-box;}
@@ -33,12 +33,80 @@
     overflow-x:hidden;
   }
 
+  /* ===== site header (matches main site nav) ===== */
+  .siteHeader{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(5,5,5,.92);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(245,197,66,.14);
+    box-shadow:0 12px 32px rgba(0,0,0,.35);
+  }
+  .siteHeaderInner{
+    width:100%;
+    max-width:1600px;
+    margin:0 auto;
+    padding:12px 28px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+  }
+  .siteBrand{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
+  .siteBrand img{width:40px;height:40px;border-radius:50%;box-shadow:0 0 18px rgba(245,197,66,.20);}
+  .siteNav{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .siteNav a{
+    color:#ffffff;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:600;
+    white-space:nowrap;
+  }
+  .siteNav a:hover{color:var(--gold);}
+  .siteNav a.active{color:var(--gold);}
+  .navToggleBtn{
+    display:none;
+    width:40px;height:40px;
+    flex-shrink:0;
+    background:transparent;
+    border:1px solid rgba(245,197,66,.35);
+    border-radius:10px;
+    cursor:pointer;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+  }
+  .navToggleBtn span{width:20px;height:2px;background:var(--gold);border-radius:2px;}
+  @media (max-width:880px){
+    .siteNav{
+      display:none;
+      width:100%;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:14px;
+      padding:14px 28px 20px;
+      border-top:1px solid rgba(245,197,66,.14);
+      background:rgba(5,5,5,.98);
+    }
+    .siteNav.open{display:flex;}
+    .siteHeaderInner{padding:12px 16px;}
+    .navToggleBtn{display:inline-flex;}
+  }
+
   /* circuit grid backdrop */
   .circuit-bg{
     position:fixed;
     inset:0;
     z-index:0;
-    opacity:0.35;
+    opacity:0.5;
     pointer-events:none;
     background-image:
       linear-gradient(var(--grid-line) 1px, transparent 1px),
@@ -47,9 +115,9 @@
     mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
   }
 
-  .wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 20px 80px;}
+  .wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 20px 60px;}
 
-  header{
+  .toolHeader{
     padding:36px 0 8px;
     display:flex;
     align-items:center;
@@ -67,8 +135,8 @@
   }
   .brand-dot{
     width:8px;height:8px;border-radius:50%;
-    background:var(--base-blue);
-    box-shadow:0 0 0 3px var(--base-blue-dim);
+    background:var(--gold);
+    box-shadow:0 0 0 3px var(--gold-dim);
   }
   .chain-tag{
     font-size:11px;
@@ -83,7 +151,7 @@
   .eyebrow{
     font-size:11px;
     letter-spacing:0.16em;
-    color:var(--base-blue);
+    color:var(--gold);
     text-transform:uppercase;
     margin:0 0 14px;
   }
@@ -116,7 +184,7 @@
     gap:8px;
     align-items:center;
   }
-  .scan-slot.scanning{border-color:var(--base-blue);}
+  .scan-slot.scanning{border-color:var(--gold);}
   .scan-slot input{
     flex:1;
     background:transparent;
@@ -128,14 +196,14 @@
     padding:14px 12px;
     min-width:0;
   }
-  .scan-slot input::placeholder{color:#4B5468;}
+  .scan-slot input::placeholder{color:#5a5a5a;}
   .scan-btn{
     font-family:'Space Grotesk',sans-serif;
-    font-weight:600;
+    font-weight:700;
     font-size:13px;
     letter-spacing:0.02em;
-    background:var(--base-blue);
-    color:white;
+    background:var(--gold);
+    color:#050505;
     border:none;
     padding:14px 20px;
     border-radius:6px;
@@ -147,7 +215,7 @@
   .scan-btn:active{transform:scale(0.98);}
   .scan-btn:disabled{opacity:0.5;cursor:not-allowed;}
   .scan-btn:focus-visible, .scan-slot input:focus-visible, input[type=text]:focus-visible{
-    outline:2px solid var(--base-blue);
+    outline:2px solid var(--gold);
     outline-offset:2px;
   }
 
@@ -155,7 +223,7 @@
     position:absolute;
     left:0;right:0;top:0;
     height:2px;
-    background:linear-gradient(90deg, transparent, var(--base-blue), transparent);
+    background:linear-gradient(90deg, transparent, var(--gold), transparent);
     opacity:0;
   }
   .scanning .scan-line{
@@ -170,7 +238,7 @@
     .scanning .scan-line{animation:none;opacity:0.6;top:50%;}
   }
 
-  .hint{font-size:11px;color:#4B5468;margin-top:10px;letter-spacing:0.01em;}
+  .hint{font-size:11px;color:#5a5a5a;margin-top:10px;letter-spacing:0.01em;}
 
   /* status message */
   .msg{
@@ -260,19 +328,19 @@
 
   .full-width{grid-column:1/-1;}
 
-  footer{
+  .toolFooter{
     margin-top:56px;
     padding-top:20px;
     border-top:1px solid var(--panel-line);
     font-size:11px;
-    color:#4B5468;
+    color:#5a5a5a;
     display:flex;
     justify-content:space-between;
     flex-wrap:wrap;
     gap:10px;
   }
-  footer a{color:var(--fog);text-decoration:none;}
-  footer a:hover{color:var(--paper);}
+  .toolFooter a{color:var(--fog);text-decoration:none;}
+  .toolFooter a:hover{color:var(--gold);}
 
   .loader{
     display:inline-flex;
@@ -281,23 +349,93 @@
   }
   .loader span{
     width:4px;height:4px;border-radius:50%;
-    background:var(--base-blue);
+    background:#050505;
     animation:blink 1.2s infinite ease-in-out;
   }
   .loader span:nth-child(2){animation-delay:0.15s;}
   .loader span:nth-child(3){animation-delay:0.3s;}
   @keyframes blink{0%,80%,100%{opacity:0.25;}40%{opacity:1;}}
+
+  /* ===== site footer (matches main site footer) ===== */
+  .siteFooter{
+    background:#050505;
+    padding:40px 24px 30px;
+    margin-top:60px;
+    border-top:1px solid rgba(245,197,66,.14);
+    position:relative;
+    z-index:1;
+    font-family:'Space Grotesk',sans-serif;
+  }
+  .siteFooterInner{max-width:1000px;margin:0 auto;text-align:center;}
+  .siteFooterTopBorder{width:120px;height:3px;background:var(--gold);margin:0 auto 28px;border-radius:999px;}
+  .siteFooterTitle{font-size:30px;font-weight:900;margin:0;background:linear-gradient(90deg,#f5c542,#fff2c2);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .siteFooterMotto{color:#d9d9d9;margin:12px 0 28px;font-size:14px;line-height:1.7;}
+  .siteFooterLinks{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;margin-bottom:30px;font-family:'IBM Plex Mono',monospace;}
+  .siteFooterLinks a{color:#ffffff;font-size:13px;font-weight:600;text-decoration:none;}
+  .siteFooterLinks a:hover{color:var(--gold);}
+  .siteFooterSocial{
+    padding:22px 18px;
+    margin-bottom:28px;
+    border:1px solid rgba(245,197,66,0.22);
+    border-radius:18px;
+    background:linear-gradient(145deg, rgba(245,197,66,0.065), rgba(255,255,255,0.018));
+  }
+  .siteFooterSocialTitle{color:var(--gold);font-size:15px;font-weight:800;margin:0 0 8px;}
+  .siteFooterSocialNotice{color:#a9a9a9;font-size:12px;line-height:1.7;margin:0 0 16px;font-family:'IBM Plex Mono',monospace;}
+  .siteFooterEmail{display:inline-block;margin:0 0 16px;color:var(--gold);font-size:13px;font-weight:800;text-decoration:none;overflow-wrap:anywhere;}
+  .siteFooterSocialLinks{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;}
+  .siteFooterSocialLinks a{
+    display:inline-flex;justify-content:center;align-items:center;gap:7px;
+    min-height:38px;padding:7px 13px;color:#fff;
+    background:linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
+    border:1px solid rgba(245,197,66,0.35);border-radius:999px;
+    font-size:12px;font-weight:700;text-decoration:none;
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .siteFooterSocialLinks a:hover{border-color:var(--gold);}
+  .siteFooterSocialLinks svg{color:var(--gold);flex-shrink:0;}
+  .siteFooterDisclaimer{color:#a9a9a9;font-size:12px;line-height:1.8;margin-bottom:16px;font-family:'IBM Plex Mono',monospace;}
+  .siteFooterDivider{width:100%;height:1px;background:rgba(255,255,255,.08);margin:22px 0;}
+  .siteFooterCopyright{color:#7a7a7a;font-size:12px;margin-bottom:6px;font-family:'IBM Plex Mono',monospace;}
 </style>
 </head>
 <body>
 
+<header class="siteHeader">
+  <div class="siteHeaderInner">
+    <a href="https://coinmagbase.com" class="siteBrand" aria-label="MAG COIN Home">
+      <img src="/mag-logo.png" alt="MAG COIN logo">
+    </a>
+
+    <nav class="siteNav" id="siteNav" aria-label="Main navigation">
+      <a href="https://coinmagbase.com/">Home</a>
+      <a href="https://coinmagbase.com/about">About</a>
+      <a href="https://coinmagbase.com/whitepaper">Whitepaper</a>
+      <a href="https://coinmagbase.com/constitution">Constitution</a>
+      <a href="https://coinmagbase.com/tokenomics">Tokenomics</a>
+      <a href="https://coinmagbase.com/roadmap">Roadmap</a>
+      <a href="https://coinmagbase.com/transparency">Transparency</a>
+      <a href="https://coinmagbase.com/ecosystem">Ecosystem</a>
+      <a href="/trust-checker.html" class="active">Tools</a>
+      <a href="https://coinmagbase.com/audit">Audit</a>
+      <a href="https://coinmagbase.com/security">Security</a>
+      <a href="https://coinmagbase.com/faq">FAQ</a>
+      <a href="https://coinmagbase.com/contact">Contact</a>
+    </nav>
+
+    <button type="button" class="navToggleBtn" id="navToggleBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
 <div class="circuit-bg"></div>
 
 <div class="wrap">
-  <header>
+  <div class="toolHeader">
     <div class="brand"><span class="brand-dot"></span> Base Trust Checker</div>
     <div class="chain-tag">BASE MAINNET · CHAIN 8453</div>
-  </header>
+  </div>
 
   <div class="hero">
     <p class="eyebrow">Free · Open · No wallet required</p>
@@ -359,11 +497,71 @@
     </div>
   </div>
 
-  <footer>
+  <div class="toolFooter">
     <span>Data via GoPlus Security · Independent, automated, informational only — not financial advice.</span>
     <span>Built as a free public good by <a href="https://coinmagbase.com" target="_blank" rel="noopener">MAG COIN</a></span>
-  </footer>
+  </div>
 </div>
+
+<footer class="siteFooter">
+  <div class="siteFooterInner">
+    <div class="siteFooterTopBorder"></div>
+
+    <h3 class="siteFooterTitle">MAG COIN</h3>
+
+    <p class="siteFooterMotto">Built with Integrity. Trusted for Generations.</p>
+
+    <div class="siteFooterLinks">
+      <a href="https://coinmagbase.com/">Home</a>
+      <a href="https://coinmagbase.com/about">About</a>
+      <a href="https://coinmagbase.com/whitepaper">Whitepaper</a>
+      <a href="https://coinmagbase.com/transparency">Transparency</a>
+      <a href="https://coinmagbase.com/audit">Audit</a>
+      <a href="https://coinmagbase.com/security">Security</a>
+      <a href="https://coinmagbase.com/portfolio">Portfolio</a>
+      <a href="https://coinmagbase.com/treasury">Treasury</a>
+    </div>
+
+    <section class="siteFooterSocial">
+      <h4 class="siteFooterSocialTitle">Official Communication Channels</h4>
+      <p class="siteFooterSocialNotice">Only trust announcements published through the official channels listed below.</p>
+      <a href="mailto:info@coinmagbase.com" class="siteFooterEmail">info@coinmagbase.com</a>
+
+      <div class="siteFooterSocialLinks">
+        <a href="https://x.com/MAGCOINBASE" target="_blank" rel="noopener noreferrer" aria-label="MAG COIN on X">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.546l-5.126-6.702L5.22 22H1.96l7.606-8.694L1.55 2h6.712l4.633 6.125L18.244 2Zm-1.143 17.91h1.804L7.282 3.986H5.346L17.101 19.91Z"/></svg>
+          <span>X</span>
+        </a>
+        <a href="https://t.me/MAGCOINBASE" target="_blank" rel="noopener noreferrer" aria-label="MAG COIN on Telegram">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M21.8 3.2 18.6 20c-.24 1.19-.88 1.48-1.79.92l-4.87-3.59-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.96 9.03-8.16c.39-.35-.09-.55-.61-.2L6.22 13.78 1.41 12.28c-1.05-.33-1.07-1.05.22-1.55L20.44 3.48c.87-.32 1.63.2 1.36-.28Z"/></svg>
+          <span>Telegram</span>
+        </a>
+        <a href="https://web.facebook.com/profile.php?id=61592146070481" target="_blank" rel="noopener noreferrer" aria-label="MAG COIN on Facebook">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.76.5-.94.86-.94H17V2.1L14.04 2C10.75 2 10 4.47 10 6.05V8.5H8v4h2V22h4v-9.5h2.64l.36-4H14Z"/></svg>
+          <span>Facebook</span>
+        </a>
+        <a href="https://www.instagram.com/coinbasemag/" target="_blank" rel="noopener noreferrer" aria-label="MAG COIN on Instagram">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.reddit.com/user/MAG-COIN/" target="_blank" rel="noopener noreferrer" aria-label="MAG COIN on Reddit">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M14.62 4.28 15.4 7.9c1.63.12 3.12.62 4.24 1.4a2.17 2.17 0 1 1 1.22 3.85c.03.22.04.44.04.67 0 3.29-3.98 5.96-8.9 5.96s-8.9-2.67-8.9-5.96c0-.23.02-.45.05-.67A2.17 2.17 0 1 1 4.36 9.3c1.15-.8 2.67-1.3 4.33-1.41l.93-4.38a.74.74 0 0 1 .88-.57l3.4.72a1.72 1.72 0 1 1 .72.62ZM8.47 12.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Zm7.06 0a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Zm-7.02 3.72a.65.65 0 0 0-.08.91c.86 1.03 2.16 1.53 3.57 1.53 1.4 0 2.7-.5 3.57-1.53a.65.65 0 0 0-.99-.84c-.6.71-1.55 1.07-2.58 1.07-1.04 0-1.98-.36-2.58-1.07a.65.65 0 0 0-.91-.07Z"/></svg>
+          <span>Reddit</span>
+        </a>
+        <a href="https://github.com/MAGZOWN/mag-coin-website" target="_blank" rel="noopener noreferrer" aria-label="MAG COIN on GitHub">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49v-1.9c-2.78.62-3.37-1.2-3.37-1.2-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.56 2.35 1.11 2.92.85.09-.66.35-1.11.64-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.35 9.35 0 0 1 12 6.93c.85 0 1.7.12 2.5.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.04.36.32.68.94.68 1.9v2.8c0 .27.18.59.69.49A10.23 10.23 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="siteFooterDisclaimer">MAG COIN does not promise guaranteed returns, future prices, or investment outcomes. Cryptocurrency and blockchain projects involve risk. Always conduct your own independent research before making any financial decisions.</p>
+
+    <div class="siteFooterDivider"></div>
+
+    <p class="siteFooterCopyright">© 2026 MAG COIN Foundation. All rights reserved.</p>
+  </div>
+</footer>
 
 <script>
 const slot = document.getElementById('scanSlot');
@@ -489,6 +687,15 @@ function renderReport(address, info){
 
 btn.addEventListener('click', scan);
 input.addEventListener('keydown', (e) => { if(e.key === 'Enter') scan(); });
+
+// mobile nav toggle
+const navToggleBtn = document.getElementById('navToggleBtn');
+const siteNav = document.getElementById('siteNav');
+navToggleBtn.addEventListener('click', () => {
+  const isOpen = siteNav.classList.toggle('open');
+  navToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  navToggleBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+});
 </script>
 
 </body>
