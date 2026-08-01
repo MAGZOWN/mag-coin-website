@@ -42,35 +42,50 @@
     backdrop-filter:blur(14px);
     border-bottom:1px solid rgba(245,197,66,.14);
     box-shadow:0 12px 32px rgba(0,0,0,.35);
+    font-family:Arial,Helvetica,sans-serif;
   }
   .siteHeaderInner{
     width:100%;
     max-width:1600px;
     margin:0 auto;
     padding:12px 28px;
-    display:flex;
+    display:grid;
+    grid-template-columns:52px minmax(0,1fr) 52px;
     align-items:center;
-    justify-content:space-between;
-    gap:20px;
+    column-gap:24px;
   }
   .siteBrand{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
   .siteBrand img{width:40px;height:40px;border-radius:50%;box-shadow:0 0 18px rgba(245,197,66,.20);}
   .siteNav{
     display:flex;
     align-items:center;
+    justify-content:center;
     gap:20px;
     flex-wrap:wrap;
-    font-family:'IBM Plex Mono',monospace;
   }
   .siteNav a{
+    position:relative;
     color:#ffffff;
     text-decoration:none;
     font-size:13px;
     font-weight:600;
     white-space:nowrap;
+    transition:color .25s ease;
   }
+  .siteNav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:2px;
+    background:#f5c542;
+    transition:width .25s ease;
+  }
+  .siteNav a:hover::after{width:100%;}
   .siteNav a:hover{color:var(--gold);}
   .siteNav a.active{color:var(--gold);}
+  .siteNav a.active::after{width:100%;}
   .navToggleBtn{
     display:none;
     width:40px;height:40px;
@@ -364,14 +379,16 @@
     border-top:1px solid rgba(245,197,66,.14);
     position:relative;
     z-index:1;
-    font-family:'Space Grotesk',sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
   }
   .siteFooterInner{max-width:1000px;margin:0 auto;text-align:center;}
   .siteFooterTopBorder{width:120px;height:3px;background:var(--gold);margin:0 auto 28px;border-radius:999px;}
   .siteFooterTitle{font-size:30px;font-weight:900;margin:0;background:linear-gradient(90deg,#f5c542,#fff2c2);-webkit-background-clip:text;background-clip:text;color:transparent;}
   .siteFooterMotto{color:#d9d9d9;margin:12px 0 28px;font-size:14px;line-height:1.7;}
-  .siteFooterLinks{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;margin-bottom:30px;font-family:'IBM Plex Mono',monospace;}
-  .siteFooterLinks a{color:#ffffff;font-size:13px;font-weight:600;text-decoration:none;}
+  .siteFooterLinks{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;margin-bottom:30px;}
+  .siteFooterLinks a{position:relative;color:#ffffff;font-size:13px;font-weight:600;text-decoration:none;transition:color .25s ease;}
+  .siteFooterLinks a::after{content:"";position:absolute;left:0;bottom:-6px;width:0%;height:2px;background:#f5c542;transition:width .25s ease;}
+  .siteFooterLinks a:hover::after{width:100%;}
   .siteFooterLinks a:hover{color:var(--gold);}
   .siteFooterSocial{
     padding:22px 18px;
@@ -381,7 +398,7 @@
     background:linear-gradient(145deg, rgba(245,197,66,0.065), rgba(255,255,255,0.018));
   }
   .siteFooterSocialTitle{color:var(--gold);font-size:15px;font-weight:800;margin:0 0 8px;}
-  .siteFooterSocialNotice{color:#a9a9a9;font-size:12px;line-height:1.7;margin:0 0 16px;font-family:'IBM Plex Mono',monospace;}
+  .siteFooterSocialNotice{color:#a9a9a9;font-size:12px;line-height:1.7;margin:0 0 16px;}
   .siteFooterEmail{display:inline-block;margin:0 0 16px;color:var(--gold);font-size:13px;font-weight:800;text-decoration:none;overflow-wrap:anywhere;}
   .siteFooterSocialLinks{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;}
   .siteFooterSocialLinks a{
@@ -390,13 +407,12 @@
     background:linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
     border:1px solid rgba(245,197,66,0.35);border-radius:999px;
     font-size:12px;font-weight:700;text-decoration:none;
-    font-family:'IBM Plex Mono',monospace;
   }
   .siteFooterSocialLinks a:hover{border-color:var(--gold);}
   .siteFooterSocialLinks svg{color:var(--gold);flex-shrink:0;}
-  .siteFooterDisclaimer{color:#a9a9a9;font-size:12px;line-height:1.8;margin-bottom:16px;font-family:'IBM Plex Mono',monospace;}
+  .siteFooterDisclaimer{color:#a9a9a9;font-size:12px;line-height:1.8;margin-bottom:16px;}
   .siteFooterDivider{width:100%;height:1px;background:rgba(255,255,255,.08);margin:22px 0;}
-  .siteFooterCopyright{color:#7a7a7a;font-size:12px;margin-bottom:6px;font-family:'IBM Plex Mono',monospace;}
+  .siteFooterCopyright{color:#7a7a7a;font-size:12px;margin-bottom:6px;}
 </style>
 </head>
 <body>
