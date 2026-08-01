@@ -12,6 +12,7 @@ const links = [
   ["Roadmap", "/roadmap"],
   ["Transparency", "/transparency"],
   ["Ecosystem", "/ecosystem"],
+  ["Tools", "/trust-checker.html"],
   ["Audit", "/audit"],
   ["Security", "/security"],
   ["FAQ", "/faq"],
