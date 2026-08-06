@@ -150,7 +150,7 @@ export default function Footer() {
         <div style={styles.divider} />
 
         <p style={styles.copyright}>
-          © 2026 MAG COIN Foundation. All rights reserved.
+          © 2026 MAG COIN. All rights reserved.
         </p>
 
         <p style={styles.version}>
@@ -407,4 +407,3 @@ const styles: Record<string, CSSProperties> = {
     textTransform: "uppercase",
   },
 };
-
