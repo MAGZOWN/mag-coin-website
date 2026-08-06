@@ -586,8 +586,14 @@ const btn = document.getElementById('scanBtn');
 const report = document.getElementById('report');
 const errMsg = document.getElementById('errMsg');
 
-const FLOKIFI_FACTORY = '0xb8d8701589ce9cecbcedc8dbdadff30e987ee0e8';
-const BASESCAN_API_KEY = 'GXQ75KPFSKG4MI3355J42T4487X5W59GG3';
+// Known FlokiFi Locker vault addresses on Base, verified manually via BaseScan.
+// GoPlus doesn't recognize FlokiFi locks automatically, so any liquidity holder
+// address matching one of these is treated as locked regardless of what GoPlus reports.
+// Add more addresses here as new locks are verified.
+const KNOWN_FLOKIFI_VAULTS = new Set([
+  '0x816cb25ba9f26386c6b30f4dd1414115cd605135', // WETH/MAG vault
+  '0xa2f7a64c1b438dad64cbb3dd0fd02c148c0f70b9'  // MAG/USDC vault
+]);
 
 function isValidAddress(a){ return /^0x[a-fA-F0-9]{40}$/.test(a.trim()); }
 
@@ -597,31 +603,6 @@ function setPill(id, state, text){
   const el = document.getElementById(id);
   el.className = 'pill ' + state;
   el.textContent = text;
-}
-
-// Ask BaseScan (via Etherscan's unified API) who deployed each address.
-// Returns a map of lowercase address -> lowercase creator address.
-async function getContractCreators(addresses){
-  const result = {};
-  for(let i = 0; i < addresses.length; i += 5){
-    const batch = addresses.slice(i, i + 5);
-    const url = `https://api.etherscan.io/v2/api?chainid=8453&module=contract&action=getcontractcreation&contractaddresses=${batch.join(',')}&apikey=${BASESCAN_API_KEY}`;
-    try{
-      const res = await fetch(url);
-      if(!res.ok) continue;
-      const data = await res.json();
-      if(data.status === '1' && Array.isArray(data.result)){
-        data.result.forEach(r => {
-          if(r.contractAddress && r.contractCreator){
-            result[r.contractAddress.toLowerCase()] = r.contractCreator.toLowerCase();
-          }
-        });
-      }
-    }catch(e){
-      // Skip this batch on failure; GoPlus's own result still stands for these holders.
-    }
-  }
-  return result;
 }
 
 async function scan(){
@@ -702,7 +683,7 @@ async function renderReport(address, info){
   document.getElementById('noteHolder').textContent = topHolderPct > 0.3 ? 'A single wallet controls a large share of supply — price can be highly sensitive to their actions.' : 'Ownership looks reasonably distributed based on available data.';
   if(topHolderPct > 0.3) riskPoints += 2; else if(topHolderPct > 0.15) riskPoints += 1;
 
-  // LP lock (GoPlus + Flokifi fallback check)
+  // LP lock (GoPlus + FlokiFi known-vaults fallback check)
   let lpLockedPct = 0;
   let flokifiDetected = false;
   const hasLpData = info.lp_holders && info.lp_holders.length > 0;
@@ -710,17 +691,13 @@ async function renderReport(address, info){
   if(hasLpData){
     lpLockedPct = info.lp_holders.reduce((sum,h) => sum + (h.is_locked === 1 || h.is_locked === '1' ? parseFloat(h.percent) : 0), 0);
 
-    const unlockedHolders = info.lp_holders.filter(h => !(h.is_locked === 1 || h.is_locked === '1') && h.address);
-    if(unlockedHolders.length){
-      const creators = await getContractCreators(unlockedHolders.map(h => h.address));
-      unlockedHolders.forEach(h => {
-        const creator = creators[h.address.toLowerCase()];
-        if(creator === FLOKIFI_FACTORY){
-          lpLockedPct += parseFloat(h.percent);
-          flokifiDetected = true;
-        }
-      });
-    }
+    info.lp_holders.forEach(h => {
+      const alreadyCounted = h.is_locked === 1 || h.is_locked === '1';
+      if(!alreadyCounted && h.address && KNOWN_FLOKIFI_VAULTS.has(h.address.toLowerCase())){
+        lpLockedPct += parseFloat(h.percent);
+        flokifiDetected = true;
+      }
+    });
   }
 
   setPill('pillLp', !hasLpData ? 'warn' : lpLockedPct > 0.5 ? 'ok' : lpLockedPct > 0 ? 'warn' : 'bad',
