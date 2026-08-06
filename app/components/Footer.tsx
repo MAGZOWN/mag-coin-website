@@ -407,3 +407,4 @@ const styles: Record<string, CSSProperties> = {
     textTransform: "uppercase",
   },
 };
+
