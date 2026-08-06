@@ -17,8 +17,7 @@ const organizationStructuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "https://coinmagbase.com/#organization",
-  name: "MAG COIN Foundation",
-  alternateName: "MAG COIN",
+  name: "MAG COIN",
   url: "https://coinmagbase.com",
   logo: {
     "@type": "ImageObject",
@@ -50,7 +49,6 @@ const websiteStructuredData = {
   "@id": "https://coinmagbase.com/#website",
   url: "https://coinmagbase.com",
   name: "MAG COIN",
-  alternateName: "MAG COIN Foundation",
   description:
     "The official website of MAG COIN, a long-term blockchain project built on Base Mainnet.",
   publisher: {
@@ -83,13 +81,13 @@ export const metadata: Metadata = {
 
   authors: [
     {
-      name: "MAG COIN Foundation",
+      name: "MAG COIN",
       url: "https://coinmagbase.com",
     },
   ],
 
-  creator: "MAG COIN Foundation",
-  publisher: "MAG COIN Foundation",
+  creator: "MAG COIN",
+  publisher: "MAG COIN",
 
   applicationName: "MAG COIN",
 
