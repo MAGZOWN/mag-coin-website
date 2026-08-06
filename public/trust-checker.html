@@ -1,590 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Base Trust Checker — Scan any token before you buy</title>
-<meta name="description" content="Free, open scanner for Base network tokens. Checks contract verification, honeypot risk, holder concentration and liquidity lock status in seconds.">
-<meta name="talentapp:project_verification" content="7cf9eeea168263b2220cd31ff138029857db258f3d7f964df24112cc14fa5822976aea8f23e17cd3959c8f84a431596fd7fb5c2ede3811541e04287eeebb76b6">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --void:#050505;
-    --panel:#111111;
-    --panel-line:rgba(245,197,66,0.14);
-    --grid-line:rgba(245,197,66,0.05);
-    --gold:#f5c542;
-    --gold-dim:rgba(245,197,66,0.2);
-    --amber:#FFB020;
-    --green:#34D399;
-    --red:#FF5C5C;
-    --fog:#a9a9a9;
-    --paper:#ffffff;
-    --radius:10px;
-  }
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body{
-    background:var(--void);
-    color:var(--paper);
-    font-family:'IBM Plex Mono',monospace;
-    min-height:100vh;
-    position:relative;
-    overflow-x:hidden;
-  }
-
-  /* ===== site header (matches main site nav) ===== */
-  .siteHeader{
-    position:sticky;
-    top:0;
-    z-index:999;
-    background:rgba(5,5,5,.92);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid rgba(245,197,66,.14);
-    box-shadow:0 12px 32px rgba(0,0,0,.35);
-    font-family:Arial,Helvetica,sans-serif;
-  }
-  .siteHeaderInner{
-    width:100%;
-    max-width:1600px;
-    margin:0 auto;
-    padding:12px 28px;
-    display:grid;
-    grid-template-columns:52px minmax(0,1fr) 52px;
-    align-items:center;
-    column-gap:24px;
-  }
-  .siteBrand{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
-  .siteBrand img{width:40px;height:40px;border-radius:50%;box-shadow:0 0 18px rgba(245,197,66,.20);}
-  .siteNav{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:22px;
-    flex-wrap:wrap;
-  }
-  .siteNav a{
-    position:relative;
-    color:#ffffff;
-    text-decoration:none;
-    font-size:14px;
-    font-weight:600;
-    white-space:nowrap;
-    transition:color .25s ease;
-  }
-  .siteNav a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-6px;
-    width:0%;
-    height:2px;
-    background:#f5c542;
-    transition:width .25s ease;
-  }
-  .siteNav a:hover::after{width:100%;}
-  .siteNav a:hover{color:var(--gold);}
-  .navToggleBtn{
-    display:none;
-    width:40px;height:40px;
-    flex-shrink:0;
-    background:transparent;
-    border:1px solid rgba(245,197,66,.35);
-    border-radius:10px;
-    cursor:pointer;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:5px;
-  }
-  .navToggleBtn span{width:20px;height:2px;background:var(--gold);border-radius:2px;}
-  @media (max-width:880px){
-    .siteNav{
-      display:none;
-      width:100%;
-      flex-direction:column;
-      align-items:flex-start;
-      gap:14px;
-      padding:14px 28px 20px;
-      border-top:1px solid rgba(245,197,66,.14);
-      background:rgba(5,5,5,.98);
-    }
-    .siteNav.open{display:flex;}
-    .siteHeaderInner{padding:12px 16px;}
-    .navToggleBtn{display:inline-flex;}
-  }
-
-  /* circuit grid backdrop */
-  .circuit-bg{
-    position:fixed;
-    inset:0;
-    z-index:0;
-    opacity:0.5;
-    pointer-events:none;
-    background-image:
-      linear-gradient(var(--grid-line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-    background-size: 42px 42px;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
-  }
-
-  .wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 20px 60px;}
-
-  .toolHeader{
-    padding:36px 0 8px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-    flex-wrap:wrap;
-  }
-  .brand{
-    display:flex;align-items:center;gap:10px;
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:600;
-    font-size:15px;
-    letter-spacing:0.02em;
-    color:var(--paper);
-  }
-  .brand-dot{
-    width:8px;height:8px;border-radius:50%;
-    background:var(--gold);
-    box-shadow:0 0 0 3px var(--gold-dim);
-  }
-  .chain-tag{
-    font-size:11px;
-    color:var(--fog);
-    border:1px solid var(--panel-line);
-    padding:5px 10px;
-    border-radius:100px;
-    letter-spacing:0.08em;
-  }
-
-  .hero{padding:44px 0 28px;}
-  .eyebrow{
-    font-size:11px;
-    letter-spacing:0.16em;
-    color:var(--gold);
-    text-transform:uppercase;
-    margin:0 0 14px;
-  }
-  h1{
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:700;
-    font-size:clamp(28px,5vw,42px);
-    line-height:1.08;
-    letter-spacing:-0.01em;
-    margin:0 0 14px;
-    color:var(--paper);
-  }
-  h1 span{color:var(--fog);font-weight:500;}
-  .sub{
-    color:var(--fog);
-    font-size:14px;
-    line-height:1.6;
-    max-width:52ch;
-    margin:0 0 32px;
-  }
-
-  /* scan input */
-  .scan-slot{
-    position:relative;
-    background:var(--panel);
-    border:1px solid var(--panel-line);
-    border-radius:var(--radius);
-    padding:6px;
-    display:flex;
-    gap:8px;
-    align-items:center;
-  }
-  .scan-slot.scanning{border-color:var(--gold);}
-  .scan-slot input{
-    flex:1;
-    background:transparent;
-    border:none;
-    outline:none;
-    color:var(--paper);
-    font-family:'IBM Plex Mono',monospace;
-    font-size:14px;
-    padding:14px 12px;
-    min-width:0;
-  }
-  .scan-slot input::placeholder{color:#5a5a5a;}
-  .scan-btn{
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:700;
-    font-size:13px;
-    letter-spacing:0.02em;
-    background:var(--gold);
-    color:#050505;
-    border:none;
-    padding:14px 20px;
-    border-radius:6px;
-    cursor:pointer;
-    white-space:nowrap;
-    transition:filter 0.15s ease, transform 0.1s ease;
-  }
-  .scan-btn:hover{filter:brightness(1.12);}
-  .scan-btn:active{transform:scale(0.98);}
-  .scan-btn:disabled{opacity:0.5;cursor:not-allowed;}
-  .scan-btn:focus-visible, .scan-slot input:focus-visible, input[type=text]:focus-visible{
-    outline:2px solid var(--gold);
-    outline-offset:2px;
-  }
-
-  .scan-line{
-    position:absolute;
-    left:0;right:0;top:0;
-    height:2px;
-    background:linear-gradient(90deg, transparent, var(--gold), transparent);
-    opacity:0;
-  }
-  .scanning .scan-line{
-    opacity:1;
-    animation:sweep 1.1s linear infinite;
-  }
-  @keyframes sweep{
-    0%{top:0;}
-    100%{top:100%;}
-  }
-  @media (prefers-reduced-motion: reduce){
-    .scanning .scan-line{animation:none;opacity:0.6;top:50%;}
-  }
-
-  .hint{font-size:11px;color:#5a5a5a;margin-top:10px;letter-spacing:0.01em;}
-
-  /* status message */
-  .msg{
-    margin-top:20px;
-    padding:14px 16px;
-    border-radius:8px;
-    font-size:13px;
-    line-height:1.5;
-    display:none;
-  }
-  .msg.show{display:block;}
-  .msg.error{background:#2A1418;border:1px solid #4A1F26;color:#FFB4B4;}
-
-  /* results */
-  .report{margin-top:36px;display:none;}
-  .report.show{display:block;animation:fadeup 0.4s ease both;}
-  @keyframes fadeup{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-
-  .report-head{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding-bottom:18px;
-    border-bottom:1px solid var(--panel-line);
-    margin-bottom:22px;
-    flex-wrap:wrap;
-    gap:12px;
-  }
-  .token-id{display:flex;flex-direction:column;gap:4px;}
-  .token-name{
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:700;
-    font-size:20px;
-  }
-  .token-addr{font-size:11px;color:var(--fog);word-break:break-all;}
-
-  .verdict{
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:700;
-    font-size:12px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    padding:8px 14px;
-    border-radius:100px;
-    white-space:nowrap;
-  }
-  .verdict.safe{background:#0F2B22;color:var(--green);border:1px solid #1C4A38;}
-  .verdict.warn{background:#332510;color:var(--amber);border:1px solid #5C4218;}
-  .verdict.danger{background:#341518;color:var(--red);border:1px solid #5C2228;}
-
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-  @media (max-width:560px){.grid{grid-template-columns:1fr;}}
-
-  .card{
-    background:var(--panel);
-    border:1px solid var(--panel-line);
-    border-radius:var(--radius);
-    padding:16px 18px;
-  }
-  .card-label{
-    font-size:10px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--fog);
-    margin-bottom:10px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-  }
-  .pill{
-    font-size:10px;
-    font-weight:600;
-    letter-spacing:0.04em;
-    padding:3px 8px;
-    border-radius:100px;
-  }
-  .pill.ok{background:#0F2B22;color:var(--green);}
-  .pill.warn{background:#332510;color:var(--amber);}
-  .pill.bad{background:#341518;color:var(--red);}
-  .card-value{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:18px;
-    font-weight:600;
-    color:var(--paper);
-  }
-  .card-note{font-size:11px;color:var(--fog);margin-top:6px;line-height:1.5;}
-
-  .full-width{grid-column:1/-1;}
-
-  .toolFooter{
-    margin-top:56px;
-    padding-top:20px;
-    border-top:1px solid var(--panel-line);
-    font-size:11px;
-    color:#5a5a5a;
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:10px;
-  }
-  .toolFooter a{color:var(--fog);text-decoration:none;}
-  .toolFooter a:hover{color:var(--gold);}
-
-  .loader{
-    display:inline-flex;
-    gap:4px;
-    align-items:center;
-  }
-  .loader span{
-    width:4px;height:4px;border-radius:50%;
-    background:#050505;
-    animation:blink 1.2s infinite ease-in-out;
-  }
-  .loader span:nth-child(2){animation-delay:0.15s;}
-  .loader span:nth-child(3){animation-delay:0.3s;}
-  @keyframes blink{0%,80%,100%{opacity:0.25;}40%{opacity:1;}}
-
-  /* ===== site footer (matches main site footer) ===== */
-  .siteFooter{
-    background:#050505;
-    padding:40px 24px 30px;
-    margin-top:60px;
-    border-top:1px solid rgba(245,197,66,.14);
-    position:relative;
-    z-index:1;
-    font-family:Arial,Helvetica,sans-serif;
-  }
-  .siteFooterInner{max-width:1000px;margin:0 auto;text-align:center;}
-  .siteFooterTopBorder{width:120px;height:3px;background:var(--gold);margin:0 auto 28px;border-radius:999px;}
-  .siteFooterTitle{font-size:30px;font-weight:900;margin:0;background:linear-gradient(90deg,#f5c542,#fff2c2);-webkit-background-clip:text;background-clip:text;color:transparent;}
-  .siteFooterMotto{color:#d9d9d9;margin:12px 0 28px;font-size:14px;line-height:1.7;}
-  .siteFooterLinks{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;margin-bottom:30px;}
-  .siteFooterLinks a{position:relative;color:#ffffff;font-size:13px;font-weight:600;text-decoration:none;transition:color .25s ease;}
-  .siteFooterLinks a::after{content:"";position:absolute;left:0;bottom:-6px;width:0%;height:2px;background:#f5c542;transition:width .25s ease;}
-  .siteFooterLinks a:hover::after{width:100%;}
-  .siteFooterLinks a:hover{color:var(--gold);}
-  .siteFooterSocial{
-    padding:22px 18px;
-    margin-bottom:28px;
-    border:1px solid rgba(245,197,66,0.22);
-    border-radius:18px;
-    background:linear-gradient(145deg, rgba(245,197,66,0.065), rgba(255,255,255,0.018));
-  }
-  .siteFooterSocialTitle{color:var(--gold);font-size:15px;font-weight:800;margin:0 0 8px;}
-  .siteFooterSocialNotice{color:#a9a9a9;font-size:12px;line-height:1.7;margin:0 0 16px;}
-  .siteFooterEmail{display:inline-block;margin:0 0 16px;color:var(--gold);font-size:13px;font-weight:800;text-decoration:none;overflow-wrap:anywhere;}
-  .siteFooterSocialLinks{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;}
-  .siteFooterSocialLinks a{
-    display:inline-flex;justify-content:center;align-items:center;gap:7px;
-    min-height:38px;padding:7px 13px;color:#fff;
-    background:linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
-    border:1px solid rgba(245,197,66,0.35);border-radius:999px;
-    font-size:12px;font-weight:700;text-decoration:none;
-  }
-  .siteFooterSocialLinks a:hover{border-color:var(--gold);}
-  .siteFooterSocialLinks svg{color:var(--gold);flex-shrink:0;}
-  .siteFooterDisclaimer{color:#a9a9a9;font-size:12px;line-height:1.8;margin-bottom:16px;}
-  .siteFooterDivider{width:100%;height:1px;background:rgba(255,255,255,.08);margin:22px 0;}
-  .siteFooterCopyright{color:#7a7a7a;font-size:12px;margin-bottom:6px;}
-</style>
-</head>
-<body>
-
-<header class="siteHeader">
-  <div class="siteHeaderInner">
-    <a href="https://coinmagbase.com" class="siteBrand" aria-label="MAG COIN Home">
-      <img src="/mag-logo.png" alt="MAG COIN logo">
-    </a>
-
-    <nav class="siteNav" id="siteNav" aria-label="Main navigation">
-      <a href="https://coinmagbase.com/">Home</a>
-      <a href="https://coinmagbase.com/about">About</a>
-      <a href="https://coinmagbase.com/whitepaper">Whitepaper</a>
-      <a href="https://coinmagbase.com/constitution">Constitution</a>
-      <a href="https://coinmagbase.com/tokenomics">Tokenomics</a>
-      <a href="https://coinmagbase.com/roadmap">Roadmap</a>
-      <a href="https://coinmagbase.com/transparency">Transparency</a>
-      <a href="https://coinmagbase.com/ecosystem">Ecosystem</a>
-      <a href="/trust-checker.html">Tools</a>
-      <a href="https://coinmagbase.com/audit">Audit</a>
-      <a href="https://coinmagbase.com/security">Security</a>
-      <a href="https://coinmagbase.com/faq">FAQ</a>
-      <a href="https://coinmagbase.com/contact">Contact</a>
-    </nav>
-
-    <button type="button" class="navToggleBtn" id="navToggleBtn" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<div class="circuit-bg"></div>
-
-<div class="wrap">
-  <div class="toolHeader">
-    <div class="brand"><span class="brand-dot"></span> Base Trust Checker</div>
-    <div class="chain-tag">BASE MAINNET · CHAIN 8453</div>
-  </div>
-
-  <div class="hero">
-    <p class="eyebrow">Free · Open · No wallet required</p>
-    <h1>Check a token<br><span>before you trust it.</span></h1>
-    <p class="sub">Paste any Base contract address. We check contract verification, honeypot risk, holder concentration and liquidity lock status — pulled live from on-chain security data, in seconds.</p>
-
-    <div class="scan-slot" id="scanSlot">
-      <div class="scan-line"></div>
-      <input type="text" id="addrInput" placeholder="0x..." autocomplete="off" spellcheck="false" aria-label="Base contract address">
-      <button class="scan-btn" id="scanBtn">Scan token</button>
-    </div>
-    <p class="hint">Example: try MAG Coin's own address — 0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94</p>
-    <p class="hint" style="margin-top:6px;">For extra peace of mind on any token, it's always worth cross-checking with another independent scanner too — <a href="https://honeypot.is/base" target="_blank" rel="noopener" style="color:var(--gold);">honeypot.is</a> and <a href="https://tokensniffer.com" target="_blank" rel="noopener" style="color:var(--gold);">TokenSniffer</a> are two good ones.</p>
-
-    <div class="msg error" id="errMsg"></div>
-  </div>
-
-  <div class="report" id="report">
-    <div class="report-head">
-      <div class="token-id">
-        <div class="token-name" id="tName">—</div>
-        <div class="token-addr" id="tAddr">—</div>
-      </div>
-      <div class="verdict" id="verdict">—</div>
-    </div>
-
-    <div class="grid">
-      <div class="card">
-        <div class="card-label">Contract verified <span class="pill" id="pillVerified">—</span></div>
-        <div class="card-value" id="valVerified">—</div>
-        <div class="card-note" id="noteVerified"></div>
-      </div>
-
-      <div class="card">
-        <div class="card-label">Honeypot check <span class="pill" id="pillHoneypot">—</span></div>
-        <div class="card-value" id="valHoneypot">—</div>
-        <div class="card-note" id="noteHoneypot"></div>
-      </div>
-
-      <div class="card">
-        <div class="card-label">Buy / Sell tax <span class="pill" id="pillTax">—</span></div>
-        <div class="card-value" id="valTax">—</div>
-        <div class="card-note">Tax taken on trades, if any.</div>
-      </div>
-
-      <div class="card">
-        <div class="card-label">Top holder concentration <span class="pill" id="pillHolder">—</span></div>
-        <div class="card-value" id="valHolder">—</div>
-        <div class="card-note" id="noteHolder"></div>
-      </div>
-
-      <div class="card full-width">
-        <div class="card-label">Liquidity lock status <span class="pill" id="pillLp">—</span></div>
-        <div class="card-value" id="valLp">—</div>
-        <div class="card-note" id="noteLp"></div>
-        <div class="card-note" style="margin-top:10px;padding-top:10px;border-top:1px solid var(--panel-line);">
-          Automated detection covers major locker platforms only. A result of "Unlocked" does not always rule out a lock on a smaller or newer locker — always verify manually before relying on this signal.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="toolFooter">
-    <span>Data via GoPlus Security · Independent, automated, informational only — not financial advice.</span>
-    <span>Built as a free public good by <a href="https://coinmagbase.com" target="_blank" rel="noopener">MAG COIN</a></span>
-  </div>
-</div>
-
-<footer class="siteFooter">
-  <div class="siteFooterInner">
-    <div class="siteFooterTopBorder"></div>
-
-    <h3 class="siteFooterTitle">MAG COIN</h3>
-
-    <p class="siteFooterMotto">Built with Integrity. Trusted for Generations.</p>
-
-    <div class="siteFooterLinks">
-      <a href="https://coinmagbase.com/">Home</a>
-      <a href="https://coinmagbase.com/about">About</a>
-      <a href="https://coinmagbase.com/whitepaper">Whitepaper</a>
-      <a href="https://coinmagbase.com/transparency">Transparency</a>
-      <a href="https://coinmagbase.com/audit">Audit</a>
-      <a href="https://coinmagbase.com/security">Security</a>
-      <a href="https://coinmagbase.com/portfolio">Portfolio</a>
-      <a href="https://coinmagbase.com/treasury">Treasury</a>
-    </div>
-
-    <section class="siteFooterSocial">
-      <h4 class="siteFooterSocialTitle">Official Communication Channels</h4>
-      <p class="siteFooterSocialNotice">Only trust announcements published through the official channels listed below.</p>
-      <a href="mailto:info@coinmagbase.com" class="siteFooterEmail">info@coinmagbase.com</a>
-
-      <div class="siteFooterSocialLinks">
-        <a href="https://x.com/MAGCOINBASE" target="_blank" rel="noopener noreferrer" aria-label="MAG COIN on X">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.546l-5.126-6.702L5.22 22H1.96l7.606-8.694L1.55 2h6.712l4.633 6.125L18.244 2Zm-1.143 17.91h1.804L7.282 3.986H5.346L17.101 19.91Z"/></svg>
-          <span>X</span>
-        </a>
-        <a href="https://t.me/MAGCOINBASE" target="_blank" rel="noopener noreferrer" aria-label="MAG COIN on Telegram">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M21.8 3.2 18.6 20c-.24 1.19-.88 1.48-1.79.92l-4.87-3.59-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.96 9.03-8.16c.39-.35-.09-.55-.61-.2L6.22 13.78 1.41 12.28c-1.05-.33-1.07-1.05.22-1.55L20.44 3.48c.87-.32 1.63.2 1.36-.28Z"/></svg>
-          <span>Telegram</span>
-        </a>
-        <a href="https://web.facebook.com/profile.php?id=61592146070481" target="_blank" rel="noopener noreferrer" aria-label="MAG COIN on Facebook">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.76.5-.94.86-.94H17V2.1L14.04 2C10.75 2 10 4.47 10 6.05V8.5H8v4h2V22h4v-9.5h2.64l.36-4H14Z"/></svg>
-          <span>Facebook</span>
-        </a>
-        <a href="https://www.instagram.com/coinbasemag/" target="_blank" rel="noopener noreferrer" aria-label="MAG COIN on Instagram">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-          <span>Instagram</span>
-        </a>
-        <a href="https://www.reddit.com/user/MAG-COIN/" target="_blank" rel="noopener noreferrer" aria-label="MAG COIN on Reddit">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M14.62 4.28 15.4 7.9c1.63.12 3.12.62 4.24 1.4a2.17 2.17 0 1 1 1.22 3.85c.03.22.04.44.04.67 0 3.29-3.98 5.96-8.9 5.96s-8.9-2.67-8.9-5.96c0-.23.02-.45.05-.67A2.17 2.17 0 1 1 4.36 9.3c1.15-.8 2.67-1.3 4.33-1.41l.93-4.38a.74.74 0 0 1 .88-.57l3.4.72a1.72 1.72 0 1 1 .72.62ZM8.47 12.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Zm7.06 0a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Zm-7.02 3.72a.65.65 0 0 0-.08.91c.86 1.03 2.16 1.53 3.57 1.53 1.4 0 2.7-.5 3.57-1.53a.65.65 0 0 0-.99-.84c-.6.71-1.55 1.07-2.58 1.07-1.04 0-1.98-.36-2.58-1.07a.65.65 0 0 0-.91-.07Z"/></svg>
-          <span>Reddit</span>
-        </a>
-        <a href="https://github.com/MAGZOWN/mag-coin-website" target="_blank" rel="noopener noreferrer" aria-label="MAG COIN on GitHub">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49v-1.9c-2.78.62-3.37-1.2-3.37-1.2-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.56 2.35 1.11 2.92.85.09-.66.35-1.11.64-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.35 9.35 0 0 1 12 6.93c.85 0 1.7.12 2.5.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.04.36.32.68.94.68 1.9v2.8c0 .27.18.59.69.49A10.23 10.23 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>
-          <span>GitHub</span>
-        </a>
-      </div>
-    </section>
-
-    <p class="siteFooterDisclaimer">MAG COIN does not promise guaranteed returns, future prices, or investment outcomes. Cryptocurrency and blockchain projects involve risk. Always conduct your own independent research before making any financial decisions.</p>
-
-    <div class="siteFooterDivider"></div>
-
-    <p class="siteFooterCopyright">© 2026 MAG COIN Foundation. All rights reserved.</p>
-  </div>
-</footer>
-
 <script>
 const slot = document.getElementById('scanSlot');
 const input = document.getElementById('addrInput');
 const btn = document.getElementById('scanBtn');
 const report = document.getElementById('report');
 const errMsg = document.getElementById('errMsg');
+
+const FLOKIFI_FACTORY = '0xb8d8701589ce9cecbcedc8dbdadff30e987ee0e8';
+const BASESCAN_API_KEY = 'GXQ75KPFSKG4MI3355J42T4487X5W59GG3';
 
 function isValidAddress(a){ return /^0x[a-fA-F0-9]{40}$/.test(a.trim()); }
 
@@ -594,6 +16,31 @@ function setPill(id, state, text){
   const el = document.getElementById(id);
   el.className = 'pill ' + state;
   el.textContent = text;
+}
+
+// Ask BaseScan (via Etherscan's unified API) who deployed each address.
+// Returns a map of lowercase address -> lowercase creator address.
+async function getContractCreators(addresses){
+  const result = {};
+  for(let i = 0; i < addresses.length; i += 5){
+    const batch = addresses.slice(i, i + 5);
+    const url = `https://api.etherscan.io/v2/api?chainid=8453&module=contract&action=getcontractcreation&contractaddresses=${batch.join(',')}&apikey=${BASESCAN_API_KEY}`;
+    try{
+      const res = await fetch(url);
+      if(!res.ok) continue;
+      const data = await res.json();
+      if(data.status === '1' && Array.isArray(data.result)){
+        data.result.forEach(r => {
+          if(r.contractAddress && r.contractCreator){
+            result[r.contractAddress.toLowerCase()] = r.contractCreator.toLowerCase();
+          }
+        });
+      }
+    }catch(e){
+      // Skip this batch on failure; GoPlus's own result still stands for these holders.
+    }
+  }
+  return result;
 }
 
 async function scan(){
@@ -623,7 +70,7 @@ async function scan(){
       return;
     }
 
-    renderReport(address, info);
+    await renderReport(address, info);
   }catch(e){
     errMsg.textContent = 'Could not complete the scan right now. The data source may be temporarily unavailable — try again in a moment.';
     errMsg.classList.add('show');
@@ -634,7 +81,7 @@ async function scan(){
   }
 }
 
-function renderReport(address, info){
+async function renderReport(address, info){
   document.getElementById('tName').textContent = (info.token_name || 'Unknown token') + (info.token_symbol ? ' (' + info.token_symbol + ')' : '');
   document.getElementById('tAddr').textContent = address;
 
@@ -674,17 +121,32 @@ function renderReport(address, info){
   document.getElementById('noteHolder').textContent = topHolderPct > 0.3 ? 'A single wallet controls a large share of supply — price can be highly sensitive to their actions.' : 'Ownership looks reasonably distributed based on available data.';
   if(topHolderPct > 0.3) riskPoints += 2; else if(topHolderPct > 0.15) riskPoints += 1;
 
-  // LP lock
+  // LP lock (GoPlus + Flokifi fallback check)
   let lpLockedPct = 0;
-  if(info.lp_holders && info.lp_holders.length){
-    lpLockedPct = info.lp_holders.reduce((sum,h) => sum + (h.is_locked === 1 || h.is_locked === '1' ? parseFloat(h.percent) : 0), 0);
-  }
+  let flokifiDetected = false;
   const hasLpData = info.lp_holders && info.lp_holders.length > 0;
+
+  if(hasLpData){
+    lpLockedPct = info.lp_holders.reduce((sum,h) => sum + (h.is_locked === 1 || h.is_locked === '1' ? parseFloat(h.percent) : 0), 0);
+
+    const unlockedHolders = info.lp_holders.filter(h => !(h.is_locked === 1 || h.is_locked === '1') && h.address);
+    if(unlockedHolders.length){
+      const creators = await getContractCreators(unlockedHolders.map(h => h.address));
+      unlockedHolders.forEach(h => {
+        const creator = creators[h.address.toLowerCase()];
+        if(creator === FLOKIFI_FACTORY){
+          lpLockedPct += parseFloat(h.percent);
+          flokifiDetected = true;
+        }
+      });
+    }
+  }
+
   setPill('pillLp', !hasLpData ? 'warn' : lpLockedPct > 0.5 ? 'ok' : lpLockedPct > 0 ? 'warn' : 'bad',
     !hasLpData ? 'Unknown' : lpLockedPct > 0.5 ? 'Locked' : lpLockedPct > 0 ? 'Partial' : 'Unlocked');
   document.getElementById('valLp').textContent = hasLpData ? pct(lpLockedPct) + ' of liquidity locked' : 'No liquidity pool data found';
   document.getElementById('noteLp').textContent = hasLpData
-    ? (lpLockedPct > 0.5 ? 'Most liquidity is locked, reducing rug-pull risk from the pool itself.' : 'Liquidity is only partially locked or unlocked — the pool could be withdrawn.')
+    ? (lpLockedPct > 0.5 ? 'Most liquidity is locked, reducing rug-pull risk from the pool itself.' : 'Liquidity is only partially locked or unlocked — the pool could be withdrawn.') + (flokifiDetected ? ' (Includes a lock verified on FlokiFi Locker.)' : '')
     : 'Could not detect a tracked liquidity pool for this token.';
   if(hasLpData && lpLockedPct < 0.5) riskPoints += 2;
 
@@ -713,6 +175,3 @@ navToggleBtn.addEventListener('click', () => {
   navToggleBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
 });
 </script>
-
-</body>
-</html>
