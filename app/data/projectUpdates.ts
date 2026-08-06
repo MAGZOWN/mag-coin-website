@@ -1,6 +1,6 @@
 export const projectUpdates = [
   {
-    title: "Homepage Version 2.0 Released",
+    title: "Homepage Update — v1.7.0 Released",
     status: "Completed",
   },
   {
