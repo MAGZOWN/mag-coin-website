@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 
 import AboutHero from "../components/AboutHero";
 import AboutSections from "../components/AboutSections";
-import CorePrinciples from "../components/CorePrinciples";
+import AboutProof from "../components/AboutProof";
 import FounderCommitment from "../components/FounderCommitment";
 
 export const metadata: Metadata = {
@@ -57,7 +57,7 @@ export default function About() {
         <section style={styles.container}>
           <AboutHero />
           <AboutSections />
-          <CorePrinciples />
+          <AboutProof />
           <FounderCommitment />
         </section>
       </main>
