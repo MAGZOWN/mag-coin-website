@@ -6,6 +6,9 @@ import HeroTitle from "./ui/HeroTitle";
 import PrimaryButton from "./ui/PrimaryButton";
 import SecondaryButton from "./ui/SecondaryButton";
 
+const BUY_MAG_URL =
+  "https://app.uniswap.org/swap?outputCurrency=0xbBd90410031Ed51023EF26Cca4e3e4f638F51A94&chain=base";
+
 export default function Hero() {
   const token = blockchainService.getTokenSummary();
 
@@ -33,9 +36,17 @@ export default function Hero() {
       </p>
 
       <div style={styles.buttons}>
-        <PrimaryButton href="/whitepaper">
-          Read Whitepaper
+        <PrimaryButton
+          href={BUY_MAG_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Buy MAG
         </PrimaryButton>
+
+        <SecondaryButton href="/whitepaper">
+          Read Whitepaper
+        </SecondaryButton>
 
         <SecondaryButton href="/audit">
           Audit Report
