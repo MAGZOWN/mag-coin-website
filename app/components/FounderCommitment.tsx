@@ -10,12 +10,11 @@ export default function FounderCommitment() {
       </h2>
 
       <p style={styles.text}>
-        MAG COIN is being built with patience, integrity, and responsibility.
-        Every milestone will be completed carefully, documented transparently,
-        and improved continuously. We believe that trust is earned through
-        consistent actions rather than promises, and our commitment is to build
-        something that can serve the community with credibility for generations
-        to come.
+        MAG COIN is being built one verified step at a time. Every milestone
+        is documented and checkable on-chain before it&apos;s called complete
+        — see the proof above, or dig into the full record on the
+        Transparency and Audit pages. We&apos;d rather earn trust slowly and
+        honestly than promise it upfront.
       </p>
     </section>
   );
