@@ -6,10 +6,10 @@ export default function AboutSections() {
       <div style={styles.card} className="cardHover">
         <h2 style={styles.heading}>Our Story</h2>
         <p>
-          MAG COIN began with a simple intention: to build a project honestly,
-          carefully, and transparently. Rather than depending on hype, the
-          project is being developed step by step with public documentation,
-          verifiable blockchain records, and long-term responsibility.
+          MAG COIN began with a simple intention: build it honestly, in the
+          open, step by step. No paid hype, no manufactured volume — just
+          public documentation and verifiable on-chain records as the project
+          grows.
         </p>
       </div>
 
@@ -26,9 +26,9 @@ export default function AboutSections() {
         <div style={styles.card} className="cardHover">
           <h2 style={styles.heading}>Vision</h2>
           <p>
-            To develop MAG COIN as a transparent, well-documented, and
-            responsibly managed digital project designed to endure and improve
-            over time.
+            To grow MAG COIN into a well-documented, carefully managed project
+            designed to endure and improve over time — not a short-term
+            trade.
           </p>
         </div>
       </div>
@@ -36,9 +36,9 @@ export default function AboutSections() {
       <div style={styles.card} className="cardHover">
         <h2 style={styles.heading}>Why Base?</h2>
         <p>
-          MAG COIN is built on the Base Network to support accessible,
-          efficient, and transparent blockchain participation while maintaining
-          a clear focus on responsible long-term development.
+          Base gives us low fees, fast transactions, and a growing ecosystem
+          of builders — a practical foundation to develop on without pricing
+          out everyday participants.
         </p>
       </div>
     </section>
