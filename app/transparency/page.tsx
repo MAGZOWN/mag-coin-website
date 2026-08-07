@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Transparency",
 
   description:
-    "Explore the official MAG COIN Transparency Centre with verified contract information, liquidity references, security records, foundation documents, official links, and public project milestones.",
+    "Explore the official MAG COIN Transparency Centre with verified contract information, liquidity references, security records, project documents, official links, and public project milestones.",
 
   alternates: {
     canonical: "/transparency",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "MAG COIN",
     title: "Transparency Centre | MAG COIN",
     description:
-      "Review verified MAG COIN contract information, liquidity references, foundation documents, security records, official links, and publicly documented project milestones.",
+      "Review verified MAG COIN contract information, liquidity references, project documents, security records, official links, and publicly documented project milestones.",
     images: [
       {
         url: "/mag-social-banner.png",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Transparency Centre | MAG COIN",
     description:
-      "Review verified MAG COIN contract information, liquidity references, foundation documents, security records, official links, and publicly documented project milestones.",
+      "Review verified MAG COIN contract information, liquidity references, project documents, security records, official links, and publicly documented project milestones.",
     images: ["/mag-social-banner.png"],
     creator: "@MAGCOINBASE",
     site: "@MAGCOINBASE",
