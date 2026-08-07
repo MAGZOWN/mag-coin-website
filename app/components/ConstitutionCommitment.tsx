@@ -3,14 +3,14 @@ import type { CSSProperties } from "react";
 export default function ConstitutionCommitment() {
   return (
     <section style={styles.section} className="cardHover fadeIn">
-      <p style={styles.label}>FOUNDATION COMMITMENT</p>
+      <p style={styles.label}>MAG COIN COMMITMENT</p>
 
       <h2 style={styles.title}>
         The Constitution exists to protect the mission, not the individuals.
       </h2>
 
       <p style={styles.text}>
-        The MAG Foundation is committed to preserving the principles established
+        MAG COIN is committed to preserving the principles established
         within this Constitution through responsible stewardship, transparent
         governance, careful documentation, and long-term accountability. Every
         decision should strengthen trust, protect the ecosystem, and serve the
@@ -21,8 +21,8 @@ export default function ConstitutionCommitment() {
         This Constitution is a living governance document. Future amendments may
         be adopted only through documented, transparent processes while
         preserving historical versions for public reference. Institutional
-        memory and accountability remain permanent responsibilities of the
-        Foundation.
+        memory and accountability remain permanent responsibilities of
+        MAG COIN.
       </p>
 
       <div style={styles.commitmentBox}>
