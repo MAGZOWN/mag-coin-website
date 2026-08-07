@@ -32,7 +32,7 @@ export default function FoundationDocuments() {
       <SectionTitle
         subtitle="Every major MAG COIN document should be easy to find, easy to verify, and connected to the relevant Trust Center page."
       >
-        Foundation Documents
+        Project Documents
       </SectionTitle>
 
       <div style={styles.grid}>
