@@ -5,19 +5,19 @@ const articles = [
     number: "Preamble",
     title: "Purpose of the Constitution",
     text:
-      "This Constitution establishes the enduring principles, governance framework, and stewardship responsibilities of the MAG Foundation. It is intended to provide long-term continuity, preserve institutional knowledge, and guide responsible development of the MAG ecosystem.",
+      "This Constitution establishes the enduring principles, governance framework, and stewardship responsibilities of MAG COIN. It is intended to provide long-term continuity, preserve institutional knowledge, and guide responsible development of the MAG ecosystem.",
   },
   {
     number: "Article I",
     title: "Mission and Purpose",
     text:
-      "The Foundation exists to support, maintain, document, and responsibly develop the MAG ecosystem. Every major decision should strengthen long-term sustainability, transparency, and public confidence.",
+      "MAG COIN exists to support, maintain, document, and responsibly develop the MAG ecosystem. Every major decision should strengthen long-term sustainability, transparency, and public confidence.",
   },
   {
     number: "Article II",
     title: "Foundational Principles",
     text:
-      "Integrity, transparency, accountability, stewardship, sustainability, responsible communication, continuous improvement, and respect for the community shall remain the permanent guiding principles of the Foundation.",
+      "Integrity, transparency, accountability, stewardship, sustainability, responsible communication, continuous improvement, and respect for the community shall remain the permanent guiding principles of MAG COIN.",
   },
   {
     number: "Article III",
@@ -35,7 +35,7 @@ const articles = [
     number: "Article V",
     title: "Treasury Stewardship",
     text:
-      "Foundation-controlled assets shall be managed prudently and only in ways that support the project's stability, security, and long-term objectives. Decisions affecting treasury resources should be documented.",
+      "Project-controlled assets shall be managed prudently and only in ways that support the project's stability, security, and long-term objectives. Decisions affecting treasury resources should be documented.",
   },
   {
     number: "Article VI",
@@ -47,7 +47,7 @@ const articles = [
     number: "Article VII",
     title: "Community",
     text:
-      "The Foundation shall communicate honestly, respectfully, and responsibly. Community members should receive accurate information rather than unrealistic expectations or promotional exaggeration.",
+      "MAG COIN shall communicate honestly, respectfully, and responsibly. Community members should receive accurate information rather than unrealistic expectations or promotional exaggeration.",
   },
   {
     number: "Article VIII",
@@ -73,8 +73,8 @@ export default function ConstitutionArticles() {
 
         <p style={styles.intro}>
           The following articles establish the enduring governance principles of
-          the MAG Foundation. They are intended to guide decision-making,
-          preserve transparency, and protect the long-term interests of the MAG
+          MAG COIN. They are intended to guide decision-making, preserve
+          transparency, and protect the long-term interests of the MAG
           ecosystem.
         </p>
       </div>
