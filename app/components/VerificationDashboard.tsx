@@ -11,7 +11,7 @@ export default function VerificationDashboard() {
       <h2 style={styles.title}>Verification Dashboard</h2>
 
       <p style={styles.subtitle}>
-        Official MAG Foundation information should always be verified through
+        Official MAG COIN information should always be verified through
         trusted project channels and public blockchain records.
       </p>
 
