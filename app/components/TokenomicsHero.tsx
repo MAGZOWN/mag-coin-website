@@ -27,7 +27,7 @@ export default function TokenomicsHero() {
       className="magCard cardHover fadeIn"
       aria-labelledby="tokenomics-title"
     >
-      <p style={styles.label}>MAG FOUNDATION</p>
+      <p style={styles.label}>MAG COIN TOKENOMICS</p>
 
       <h1 id="tokenomics-title" style={styles.title}>
         Transparent
