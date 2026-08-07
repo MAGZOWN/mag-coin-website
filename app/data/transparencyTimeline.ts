@@ -1,6 +1,6 @@
 export const transparencyTimeline = [
   {
-    title: "Foundation Established",
+    title: "Project Established",
     status: "Completed",
   },
   {
