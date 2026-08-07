@@ -102,7 +102,7 @@ export default function SupplyDistribution() {
 
       <p style={styles.subtitle}>
         MAG COIN distribution information is presented according to the current
-        verified state of the ecosystem. The Foundation will not publish
+        verified state of the ecosystem. MAG COIN will not publish
         speculative allocation percentages or describe planned distributions
         as completed.
       </p>
