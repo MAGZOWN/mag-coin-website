@@ -4,7 +4,7 @@ export default function AuditHero() {
   return (
     <section style={styles.hero} className="magCard cardHover fadeIn">
       <p style={styles.label}>
-        MAG FOUNDATION
+        MAG COIN AUDIT
       </p>
 
       <h1 style={styles.title}>
