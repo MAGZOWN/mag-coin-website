@@ -3,7 +3,7 @@ import type { CSSProperties } from "react";
 export default function RoadmapHero() {
   return (
     <section style={styles.hero} className="magCard cardHover fadeIn">
-      <p style={styles.label}>MAG FOUNDATION</p>
+      <p style={styles.label}>MAG COIN ROADMAP</p>
 
       <h1 style={styles.title}>
         Strategic
