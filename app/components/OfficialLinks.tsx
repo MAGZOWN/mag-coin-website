@@ -34,7 +34,7 @@ export default function OfficialLinks() {
       <h2 style={styles.title}>Official Links</h2>
 
       <p style={styles.subtitle}>
-        Use only official MAG Foundation links when verifying project
+        Use only official MAG COIN links when verifying project
         information.
       </p>
 
