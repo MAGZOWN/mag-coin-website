@@ -54,8 +54,8 @@ export default function TokenOverview() {
       </h2>
 
       <p style={styles.subtitle}>
-        MAG is the native token of the MAG ecosystem on Base Mainnet. The
-        Foundation is committed to publishing clear, accurate, and verifiable
+        MAG is the native token of the MAG ecosystem on Base Mainnet. MAG COIN
+        is committed to publishing clear, accurate, and verifiable
         token information through official project channels and public
         blockchain records.
       </p>
