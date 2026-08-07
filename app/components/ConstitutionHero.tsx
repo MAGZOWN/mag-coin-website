@@ -21,8 +21,8 @@ const documentDetails = [
 
 const foundationDetails = [
   {
-    label: "Foundation",
-    value: "MAG Foundation",
+    label: "Project",
+    value: "MAG COIN",
   },
   {
     label: "Network",
@@ -46,19 +46,19 @@ export default function ConstitutionHero() {
       className="magCard cardHover fadeIn"
       aria-labelledby="constitution-title"
     >
-      <p style={styles.label}>MAG FOUNDATION</p>
+      <p style={styles.label}>MAG COIN CONSTITUTION</p>
 
       <h1 id="constitution-title" style={styles.title}>
-        Constitution of the
+        Constitution of
         <br />
-        MAG Foundation
+        MAG COIN
       </h1>
 
       <p style={styles.subtitle}>
         The Constitution establishes the governance principles, stewardship
         responsibilities, transparency commitments, ethical standards, and
-        long-term operating framework of the MAG Foundation. It serves as the
-        guiding charter for the responsible development of MAG COIN and related
+        long-term operating framework of MAG COIN. It serves as the guiding
+        charter for the project&apos;s responsible development and related
         ecosystem activities.
       </p>
 
@@ -91,7 +91,7 @@ export default function ConstitutionHero() {
       </div>
 
       <div style={styles.sectionHeading}>
-        <p style={styles.sectionLabel}>FOUNDATION PROFILE</p>
+        <p style={styles.sectionLabel}>PROJECT PROFILE</p>
 
         <h2 style={styles.sectionTitle}>
           Constitutional Scope
@@ -118,10 +118,10 @@ export default function ConstitutionHero() {
         </h3>
 
         <p style={styles.noticeText}>
-          This Constitution establishes the enduring principles under which the
-          MAG Foundation should operate. It complements the Whitepaper,
-          Tokenomics, Roadmap, Transparency, Security, and Audit documentation
-          while providing a stable governance framework intended to guide the
+          This Constitution establishes the enduring principles under which
+          MAG COIN should operate. It complements the Whitepaper, Tokenomics,
+          Roadmap, Transparency, Security, and Audit documentation while
+          providing a stable governance framework intended to guide the
           project for the long term.
         </p>
       </div>
