@@ -1,9 +1,9 @@
 export const foundationUpdates = [
   {
     version: "Version 1.0",
-    title: "MAG Foundation Established",
+    title: "MAG COIN Established",
     description:
-      "Initial governance framework, Foundation documents, and website development completed.",
+      "Initial governance framework, project documents, and website development completed.",
   },
   {
     version: "Current Sprint",
