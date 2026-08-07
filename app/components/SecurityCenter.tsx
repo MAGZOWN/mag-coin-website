@@ -2,11 +2,11 @@ import type { CSSProperties } from "react";
 
 const items = [
   "Always verify the official contract address before interacting with MAG COIN.",
-  "Use only links published on the official MAG Foundation website.",
+  "Use only links published on the official MAG COIN website.",
   "Never share your private keys or recovery phrase with anyone.",
-  "Beware of fake social media accounts impersonating the Foundation.",
+  "Beware of fake social media accounts impersonating MAG COIN.",
   "Double-check wallet addresses before sending any transaction.",
-  "Report suspicious activity to the Foundation through official channels."
+  "Report suspicious activity to the MAG COIN team through official channels."
 ];
 
 export default function SecurityCenter() {
@@ -163,4 +163,3 @@ const styles: Record<string, CSSProperties> = {
   },
 
 };
-
