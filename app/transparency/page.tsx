@@ -59,7 +59,7 @@ export default function Transparency() {
       <main style={styles.main}>
         <section style={styles.container}>
           <div style={styles.statusBanner} className="cardHover">
-            <span style={styles.statusLabel}>Foundation Release v1.0</span>
+            <span style={styles.statusLabel}>MAG COIN Release v1.0</span>
 
             <span style={styles.statusText}>
               Contract verified • MAG/USDC liquidity live • DEXTools indexed •
