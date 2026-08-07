@@ -101,7 +101,7 @@ const revenuePaths = [
     number: "01",
     title: "Ecosystem Services",
     description:
-      "Optional premium tools, advanced analytics, APIs, reporting services or business integrations may create service revenue.",
+      "The free Base Trust Checker is our first shipped ecosystem tool. Future paid tiers — advanced analytics, APIs, or business integrations — may build on tools like it to create service revenue.",
   },
   {
     number: "02",
@@ -298,7 +298,9 @@ export default function EcosystemPage() {
             <p style={styles.sectionDescription}>
               MAG COIN will not depend on guaranteed-return promises.
               Sustainable income must come from real services, integrations,
-              utility or transparently documented ecosystem activity.
+              utility or transparently documented ecosystem activity — starting
+              from things we&apos;ve already built, like the free Base Trust
+              Checker, not just future plans.
             </p>
           </div>
 
