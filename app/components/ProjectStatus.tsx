@@ -151,6 +151,15 @@ export default function ProjectStatus() {
           responsible stewardship, and long-term sustainability at the core of
           {` ${foundationData.tokenName}`}.
         </p>
+
+        <a
+          href="https://github.com/MAGZOWN"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={styles.githubLink}
+        >
+          View the founder&apos;s GitHub profile ↗
+        </a>
       </div>
     </section>
   );
@@ -243,5 +252,13 @@ const styles: Record<string, CSSProperties> = {
     lineHeight: "1.8",
     fontSize: "16px",
   },
-};
 
+  githubLink: {
+    display: "inline-block",
+    marginTop: "18px",
+    color: "#f5c542",
+    fontSize: "15px",
+    fontWeight: 800,
+    textDecoration: "none",
+  },
+};
