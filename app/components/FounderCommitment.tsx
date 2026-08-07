@@ -12,10 +12,26 @@ export default function FounderCommitment() {
       <p style={styles.text}>
         MAG COIN is being built one verified step at a time. Every milestone
         is documented and checkable on-chain before it&apos;s called complete
-        — see the proof above, or dig into the full record on the
-        Transparency and Audit pages. We&apos;d rather earn trust slowly and
-        honestly than promise it upfront.
+        — see the proof above, or dig into the full record on the{" "}
+        <a href="/transparency" style={styles.inlineLink}>
+          Transparency
+        </a>{" "}
+        and{" "}
+        <a href="/audit" style={styles.inlineLink}>
+          Audit
+        </a>{" "}
+        pages. We&apos;d rather earn trust slowly and honestly than promise
+        it upfront.
       </p>
+
+      <a
+        href="https://github.com/MAGZOWN"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={styles.githubLink}
+      >
+        View the founder&apos;s GitHub profile ↗
+      </a>
     </section>
   );
 }
@@ -52,5 +68,20 @@ const styles: Record<string, CSSProperties> = {
     lineHeight: "1.9",
     maxWidth: "850px",
     margin: "0 auto",
+  },
+
+  inlineLink: {
+    color: "#f5c542",
+    fontWeight: 700,
+    textDecoration: "underline",
+  },
+
+  githubLink: {
+    display: "inline-block",
+    marginTop: "22px",
+    color: "#f5c542",
+    fontSize: "15px",
+    fontWeight: 800,
+    textDecoration: "none",
   },
 };
