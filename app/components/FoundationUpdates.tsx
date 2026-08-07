@@ -5,11 +5,11 @@ import { foundationUpdates } from "../data/foundationUpdates";
 export default function FoundationUpdates() {
   return (
     <section style={styles.section}>
-      <h2 style={styles.title}>Foundation Updates</h2>
+      <h2 style={styles.title}>Project Updates</h2>
 
       <p style={styles.subtitle}>
-        Follow the latest documented milestones and development progress of the
-        MAG Foundation.
+        Follow the latest documented milestones and development progress of
+        MAG COIN.
       </p>
 
       <div style={styles.grid}>
