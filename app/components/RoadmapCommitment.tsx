@@ -13,7 +13,7 @@ export default function RoadmapCommitment() {
       </h2>
 
       <p style={styles.text}>
-        The MAG Foundation follows a documentation-first philosophy. Progress
+        MAG COIN follows a documentation-first philosophy. Progress
         is measured through verified implementation, transparent reporting, and
         responsible stewardship rather than promotional announcements or
         unrealistic timelines.
