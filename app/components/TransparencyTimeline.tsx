@@ -19,7 +19,7 @@ export default function TransparencyTimeline() {
   return (
     <section style={styles.section}>
       <SectionTitle
-        subtitle="MAG Foundation believes progress should be visible, documented and independently verifiable."
+        subtitle="MAG COIN believes progress should be visible, documented and independently verifiable."
       >
         Transparency Timeline
       </SectionTitle>
