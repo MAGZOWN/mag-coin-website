@@ -25,7 +25,7 @@ export default function TokenGovernance() {
 
       <p style={styles.text}>
         Governance of MAG COIN should evolve responsibly as the ecosystem,
-        community, and operational capabilities mature. The Foundation will
+        community, and operational capabilities mature. MAG COIN will
         avoid making governance commitments that cannot yet be implemented or
         verified.
       </p>
@@ -60,7 +60,7 @@ export default function TokenGovernance() {
           Governance mechanisms, voting systems, treasury policies, delegation,
           or community participation models should only be introduced after
           appropriate technical, operational, and security readiness. Until
-          then, governance decisions remain guided by the Foundation's published
+          then, governance decisions remain guided by MAG COIN&apos;s published
           Constitution, Whitepaper, and Transparency commitments.
         </p>
       </div>
