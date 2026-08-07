@@ -53,14 +53,14 @@ export default function Contact() {
 
       <main style={styles.main}>
         <section style={styles.container}>
-          <p style={styles.label}>MAG FOUNDATION</p>
+          <p style={styles.label}>MAG COIN CONTACT</p>
 
           <h1 style={styles.title}>Contact MAG COIN</h1>
 
           <p style={styles.subtitle}>
             For official communication, project inquiries, documentation
             requests, or responsible reporting, please contact the MAG
-            Foundation through this form.
+            COIN team through this form.
           </p>
 
           <aside
