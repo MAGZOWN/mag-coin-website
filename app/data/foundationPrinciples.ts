@@ -15,7 +15,7 @@ export const foundationPrinciples = [
     title: "Long-Term Stewardship",
     principle: "Long-term stewardship over short-term hype.",
     description:
-      "The Foundation should protect the credibility, continuity, and resilience of the MAG ecosystem across generations.",
+      "MAG COIN should protect the credibility, continuity, and resilience of the ecosystem across generations.",
   },
   {
     title: "Documentation",
