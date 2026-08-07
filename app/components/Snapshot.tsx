@@ -271,7 +271,7 @@ export default function Snapshot() {
             href={MAG_USDC_POOL_URL}
             icon={<LiquidityIcon />}
             title="MAG/USDC Liquidity"
-            value="Live"
+            value="Locked"
             hint="View the Uniswap pool"
             external
           />
@@ -280,7 +280,7 @@ export default function Snapshot() {
             href="/security"
             icon={<SecurityIcon />}
             title="Security Centre"
-            value="Active"
+            value="Documented"
             hint="Review security information"
           />
 
@@ -288,7 +288,7 @@ export default function Snapshot() {
             href="/ecosystem"
             icon={<EcosystemIcon />}
             title="Ecosystem"
-            value="Growing"
+            value="6 Live Modules"
             hint="Explore live project modules"
           />
         </div>
