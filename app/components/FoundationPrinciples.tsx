@@ -13,13 +13,13 @@ export default function FoundationPrinciples() {
       <p style={styles.label}>ENDURING PRINCIPLES</p>
 
       <h2 id="foundation-principles-title" style={styles.title}>
-        Foundation Principles
+        MAG COIN Principles
       </h2>
 
       <p style={styles.subtitle}>
         These principles guide every constitutional, technical, financial, and
-        strategic decision made by the MAG Foundation. They are intended to
-        remain stable even as the project, technology, and ecosystem evolve.
+        strategic decision made for MAG COIN. They are intended to remain
+        stable even as the project, technology, and ecosystem evolve.
       </p>
 
       <div style={styles.grid}>
@@ -53,8 +53,8 @@ export default function FoundationPrinciples() {
 
         <p style={styles.safeguardsText}>
           No amendment, policy, partnership, treasury decision, governance
-          mechanism, or development initiative should weaken the
-          Foundation&apos;s commitment to integrity, transparency, security,
+          mechanism, or development initiative should weaken MAG
+          COIN&apos;s commitment to integrity, transparency, security,
           documentation, accountability, and long-term stewardship.
         </p>
       </div>
