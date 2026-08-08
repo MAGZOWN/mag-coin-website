@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 
 const priorities = [
   "Complete token-logo propagation across major trading and data platforms.",
-  "Publish and maintain the MAG COIN Master Audit Report v2.0.",
+  "Keep the Master Audit Report v2.0 accurate as new features or code changes are introduced.",
   "Continue expanding security documentation and operational safeguards.",
   "Keep liquidity, holder concentration, and project-controlled supply clearly disclosed.",
   "Maintain consistent information across the website, BaseScan, DEX platforms, and official documents.",
