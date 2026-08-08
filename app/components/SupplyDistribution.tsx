@@ -32,9 +32,9 @@ const distributionRecords = [
   },
   {
     title: "Official MAG/USDC Liquidity",
-    status: "Active",
+    status: "Active • Locked",
     description:
-      "An active MAG/USDC liquidity position exists on Uniswap v3. Liquidity remains limited and should not be presented as deep or mature market liquidity.",
+      "An active MAG/USDC liquidity position exists on Uniswap v3. It is locked through FlokiFi (locked 5 August 2026, unlocking 4 August 2028). Liquidity remains limited and should not be presented as deep or mature market liquidity.",
   },
   {
     title: "Legacy WETH/MAG Liquidity",
@@ -63,7 +63,7 @@ const distributionRecords = [
 ];
 
 function getStatusStyle(status: string): CSSProperties {
-  if (status === "Verified" || status === "Active") {
+  if (status === "Verified" || status === "Active" || status === "Active • Locked") {
     return {
       background: "rgba(25,135,84,.14)",
       border: "1px solid rgba(25,135,84,.42)",
