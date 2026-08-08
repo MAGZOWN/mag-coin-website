@@ -33,8 +33,8 @@ const progressItems = [
   },
   {
     area: "Master Audit Report v2.0",
-    status: "In Progress",
-    details: "Updated technical, website, liquidity, documentation, and readiness review is being prepared.",
+    status: "Completed",
+    details: "Smart contract permission review published, covering owner, mint, pause, blacklist, tax, and upgrade functions. Live on the Audit page.",
   },
   {
     area: "Trading Platform Branding",
