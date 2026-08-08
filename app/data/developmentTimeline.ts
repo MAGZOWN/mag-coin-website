@@ -12,7 +12,7 @@ export const developmentTimeline = [
   {
     phase: "Phase 3",
     title: "Security & Infrastructure",
-    status: "In Progress",
+    status: "Completed",
   },
   {
     phase: "Phase 4",
@@ -25,4 +25,3 @@ export const developmentTimeline = [
     status: "Long-Term",
   },
 ];
-
