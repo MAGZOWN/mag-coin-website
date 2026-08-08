@@ -28,7 +28,7 @@ const roadmapItems = [
   {
     phase: "Phase 3",
     title: "Security & Infrastructure",
-    status: "In Progress",
+    status: "Completed",
     text: "Improve infrastructure security, wallet practices, liquidity clarity, contact systems, metadata consistency, and public verification resources.",
     milestones: [
       "Infrastructure hardening",
@@ -398,4 +398,3 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "13px",
   },
 };
-
