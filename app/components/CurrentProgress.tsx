@@ -28,8 +28,8 @@ const progressItems = [
   },
   {
     area: "Liquidity",
-    status: "Active",
-    details: "MAG/USDC liquidity is active, with legacy WETH/MAG liquidity documented separately.",
+    status: "Active • Locked",
+    details: "MAG/USDC liquidity is active and locked through FlokiFi (locked 5 August 2026, unlocking 4 August 2028), with legacy WETH/MAG liquidity documented separately.",
   },
   {
     area: "Master Audit Report v2.0",
@@ -44,7 +44,7 @@ const progressItems = [
 ];
 
 function getStatusStyle(status: string): CSSProperties {
-  if (status === "Completed" || status === "Active") {
+  if (status === "Completed" || status === "Active" || status === "Active • Locked") {
     return {
       background: "rgba(25,135,84,.14)",
       border: "1px solid rgba(25,135,84,.42)",
