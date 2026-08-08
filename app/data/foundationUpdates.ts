@@ -6,15 +6,15 @@ export const foundationUpdates = [
       "Initial governance framework, project documents, and website development completed.",
   },
   {
-    version: "Current Sprint",
-    title: "Trust Center Development",
+    version: "Current Focus",
+    title: "Sitewide Accuracy Review",
     description:
-      "Building the official verification, transparency, and governance hub for MAG COIN.",
+      "Reviewing every page for accuracy, stale statuses, and consistent documentation across the ecosystem.",
   },
   {
     version: "Next Milestone",
-    title: "Tokenomics Publication",
+    title: "Trading Platform Branding",
     description:
-      "Preparing comprehensive tokenomics and ecosystem documentation.",
+      "Official logo and token profile information to be submitted to trading platforms and data aggregators.",
   },
 ];
