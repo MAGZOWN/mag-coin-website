@@ -13,7 +13,7 @@ export const transparencyTimeline = [
   },
   {
     title: "Tokenomics Publication",
-    status: "Upcoming",
+    status: "Completed",
   },
   {
     title: "MAG/USDC Liquidity",
@@ -21,6 +21,6 @@ export const transparencyTimeline = [
   },
   {
     title: "Security Audit",
-    status: "Planned",
+    status: "Completed",
   },
 ];
