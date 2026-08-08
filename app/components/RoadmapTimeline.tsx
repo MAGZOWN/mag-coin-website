@@ -25,7 +25,7 @@ const phases = [
   },
   {
     phase: "Phase 3",
-    status: "In Progress",
+    status: "Completed",
     title: "Security & Infrastructure",
     items: [
       "Security review",
@@ -176,4 +176,3 @@ const styles: Record<string, CSSProperties> = {
     margin: 0,
   },
 };
-
