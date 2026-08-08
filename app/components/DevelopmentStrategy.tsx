@@ -28,7 +28,7 @@ const phases = [
   {
     number: "03",
     title: "Security & Infrastructure",
-    status: "In Progress",
+    status: "Completed",
     description:
       "Review contract permissions, wallet practices, liquidity records, project infrastructure, and operational safeguards before wider public promotion.",
     priorities: [
@@ -560,4 +560,3 @@ const styles: Record<string, CSSProperties> = {
     overflowWrap: "anywhere",
   },
 };
-
