@@ -15,7 +15,7 @@ const documentDetails = [
   },
   {
     label: "Last Updated",
-    value: "July 2026",
+    value: "Updated Regularly",
   },
 ];
 
