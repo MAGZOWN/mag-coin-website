@@ -28,9 +28,9 @@ export default function Security() {
           <div style={styles.card} className="cardHover">
             <h2 style={styles.heading}>Liquidity Review</h2>
             <p>
-              Liquidity records, pool information, and related blockchain
-              activity will be reviewed and documented through audit and
-              transparency reports.
+              Liquidity records, pool information, lock status, and related
+              blockchain activity are reviewed and documented on an ongoing
+              basis through the project&apos;s audit and transparency reports.
             </p>
           </div>
 
