@@ -21,9 +21,9 @@ const auditSummary = [
   },
   {
     area: "Liquidity",
-    status: "Active / Limited",
+    status: "Active • Locked",
     finding:
-      "The MAG/USDC market is active, while legacy WETH/MAG liquidity remains documented separately. Current liquidity remains limited.",
+      "The official MAG/USDC pool is active and locked via FlokiFi Locker (locked 5 August 2026, unlocking 4 August 2028), while legacy WETH/MAG liquidity remains documented separately. Current liquidity remains limited.",
   },
   {
     area: "Documentation",
