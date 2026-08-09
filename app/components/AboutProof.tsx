@@ -3,7 +3,7 @@ import type { CSSProperties } from "react";
 const proofPoints = [
   {
     title: "Audited On-Chain",
-    text: "Independent contract review confirmed no mint, pause, blacklist, tax, or upgrade functions — checkable directly on BaseScan.",
+    text: "Contract review confirmed no mint, pause, blacklist, tax, or upgrade functions — checkable directly on BaseScan.",
     icon: "✅",
     href: "/audit",
   },
@@ -40,9 +40,7 @@ export default function AboutProof() {
             className="cardHover"
           >
             <div style={styles.icon}>{item.icon}</div>
-
             <h3 style={styles.heading}>{item.title}</h3>
-
             <p style={styles.text}>{item.text}</p>
           </a>
         ))}
@@ -55,14 +53,12 @@ const styles: Record<string, CSSProperties> = {
   section: {
     marginTop: "50px",
   },
-
   title: {
     textAlign: "center",
     color: "#f5c542",
     fontSize: "32px",
     marginBottom: "12px",
   },
-
   intro: {
     textAlign: "center",
     color: "#a9a9a9",
@@ -71,13 +67,11 @@ const styles: Record<string, CSSProperties> = {
     margin: "0 auto 34px",
     lineHeight: "1.7",
   },
-
   grid: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))",
     gap: "24px",
   },
-
   card: {
     display: "block",
     background:
@@ -89,17 +83,14 @@ const styles: Record<string, CSSProperties> = {
     color: "#e5e5e5",
     textDecoration: "none",
   },
-
   icon: {
     fontSize: "38px",
     marginBottom: "18px",
   },
-
   heading: {
     color: "#f5c542",
     marginBottom: "14px",
   },
-
   text: {
     lineHeight: "1.8",
     color: "#d6d6d6",
