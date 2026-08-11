@@ -6,13 +6,13 @@ import type { CSSProperties } from "react";
 const links = [
   ["Home", "/"],
   ["About", "/about"],
+  ["Tools", "/trust-checker.html"],
   ["Whitepaper", "/whitepaper"],
   ["Constitution", "/constitution"],
   ["Tokenomics", "/tokenomics"],
   ["Roadmap", "/roadmap"],
   ["Transparency", "/transparency"],
   ["Ecosystem", "/ecosystem"],
-  ["Tools", "/trust-checker.html"],
   ["Audit", "/audit"],
   ["Security", "/security"],
   ["FAQ", "/faq"],
@@ -209,4 +209,3 @@ const styles: Record<string, CSSProperties> = {
     borderBottom: "1px solid rgba(255,255,255,.06)",
   },
 };
-
