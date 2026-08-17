@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ReadOnlySafetyNotice from "../components/ReadOnlySafetyNotice";
 import {
   MAG_PROJECT_WALLET_ADDRESS,
   MAG_PROJECT_WALLET_BASESCAN_URL,
@@ -291,28 +292,17 @@ export default function TreasuryPage() {
             </div>
           </section>
 
-          <section style={styles.securityCard} className="cardHover">
-            <h2 style={styles.securityHeading}>Read-Only Transparency</h2>
-
-            <p style={styles.securityText}>
-              This dashboard reads public blockchain balances only. It cannot
-              access the wallet, move funds, request signatures, approve tokens
-              or initiate transactions.
-            </p>
-
-            <ul style={styles.securityList}>
-              <li>No wallet connection is required.</li>
-              <li>No private key or seed phrase is requested.</li>
-              <li>No transaction approval is requested.</li>
-              <li>All balances can be independently verified on BaseScan.</li>
-            </ul>
-          </section>
-
-          <div style={styles.disclaimer}>
-            Wallet balances may change at any time. Displayed balances do not
-            represent audited financial statements and do not constitute
-            financial, legal, tax or investment advice.
-          </div>
+          <ReadOnlySafetyNotice
+            heading="Read-Only Transparency"
+            description="This dashboard reads public blockchain balances only. It cannot access the wallet, move funds, request signatures, approve tokens or initiate transactions."
+            bullets={[
+              "No wallet connection is required.",
+              "No private key or seed phrase is requested.",
+              "No transaction approval is requested.",
+              "All balances can be independently verified on BaseScan.",
+            ]}
+            disclaimer="Wallet balances may change at any time. Displayed balances do not represent audited financial statements and do not constitute financial, legal, tax or investment advice."
+          />
         </section>
       </main>
 
@@ -565,45 +555,5 @@ const styles: Record<string, CSSProperties> = {
     color: "#bdbdbd",
     fontSize: "14px",
     lineHeight: 1.75,
-  },
-
-  securityCard: {
-    padding: "30px",
-    border: "1px solid rgba(255,255,255,.10)",
-    borderRadius: "18px",
-    background:
-      "linear-gradient(145deg, rgba(18,18,18,.96), rgba(5,5,5,.96))",
-    boxShadow: "0 20px 55px rgba(0,0,0,.20)",
-  },
-
-  securityHeading: {
-    margin: "0 0 14px",
-    color: "#f5c542",
-    fontSize: "30px",
-  },
-
-  securityText: {
-    margin: "0 0 18px",
-    color: "#d1d1d1",
-    fontSize: "15px",
-    lineHeight: 1.8,
-  },
-
-  securityList: {
-    margin: 0,
-    paddingLeft: "22px",
-    color: "#bdbdbd",
-    lineHeight: 2,
-  },
-
-  disclaimer: {
-    marginTop: "22px",
-    padding: "17px 20px",
-    border: "1px solid rgba(245,197,66,.14)",
-    borderRadius: "14px",
-    background: "rgba(245,197,66,.035)",
-    color: "#929292",
-    fontSize: "13px",
-    lineHeight: 1.7,
   },
 };
